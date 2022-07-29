@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
+/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:14:57 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/07/15 11:32:42 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/07/27 14:42:42 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,25 @@ int ft_space(int c)
 int ft_lecture(argc, argv)
 {
     int i;
+	int	j;
     
+	j= 0;
     if (argc > 2)
     {
         i = 1;
         while(argv[i])
         {
-            if ((ft_isdigit(argv[i]) = 102) || (ft_space(argv[i]== 102)))
-                i++;
-			else
-				return(ft_printf("Error"));
-        }
+			j = 0;
+			while(argv[i][j])
+			{
+            	if ((ft_isdigit(argv[i][j]) = 102))
+                	j++;
+				else if (argv[i] == 45 && ft_isdigit(argv[i + 1]) = 102)
+				
+				else
+					return(ft_printf("Error \n"));
+			}
+		}
 
     }
     if (argc = 2)
@@ -52,13 +60,19 @@ int ft_lecture(argc, argv)
             if ((ft_isdigit(argv[1][i]) = 102) || (ft_space(argv[1][i]== 102)))
                 i++;
             else 
-                return(ft_printf("Error"));
+                return(ft_printf("Error\n"));
         }
     }
 }
 
 
-int main(argc, argv)
+int main(int argc, char** argv)
 {
-    ft_lecture(argc, argv[1]);
+    if (ft_lecture(argc, argv[1]) == 0)
 }
+
+ARG="1 2 3"
+./aout $ARG
+./aout 1 2 3
+
+argv[i][j]
