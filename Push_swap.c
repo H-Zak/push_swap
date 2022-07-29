@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 14:21:49 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/07/29 15:19:56 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/07/29 15:24:37 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	check_list(char **argv)
 			j++;
 		if (ft_isdigit(argv, i, j) == 102)
 			i++;
-		if (ft_space(j) != 102)
+		if (ft_space(j) != 102) // ou "\0"
 			return (printf("Error\n"));
 	}
 	
