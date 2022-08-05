@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 14:21:49 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/07/30 15:32:48 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/08/03 16:08:00 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ int	check_list(char **argv)
 	j = 0;
 	while (argv[i])
 	{
-		if (ft_space(j) == 102)
-			j++;
-		if (ft_isdigit(argv, i, j) == 0) // 
+		if (argv[i][j] == '\0') // ou "\0"
+			return (1);
+		if (argv[i][j + 1] == '\0' && ft_isdigit(argv, i, j) == 1)
+			return (1);
+		if (ft_isdigit(argv, i, j) == 1) // 
 			return (1);
 		if (ft_isdigit(argv, i, j) == 102) // 
 			i++;
-		//if (argv[i][j] == '\0') // ou "\0"
-		//	return (1);
 	}
 	
 	return (printf("t'es le boss"));
@@ -49,16 +49,28 @@ int	check_list(char **argv)
 
 int	ft_isdigit(char** argv, int i, int j)
 {
-	if (j == 45)
-		j++;
+
 	while (argv[i][j])
 	{
-		if (47 < argv[i][j] && argv[i][j] < 58) // rajouter le - et accepter un seul moins et voir forcement un noombre/chiffre apres un moins
+		if (ft_space(argv[i][j]) == 102)
+		{
+			while (ft_space(argv[i][j]) == 102)
+				j++;
+		}
+		else if (argv[i][j] == 45 && (47 < argv[i][j + 1] && argv[i][j + 1] < 58))
 			j++;
+		else if (47 < argv[i][j] && argv[i][j] < 58)
+		{
+			while(47 < argv[i][j] && argv[i][j] < 58)
+				j++;
+		}
 		else
-			return (1);
+			break;
 	}
-	return (102);
+	if ((47 > argv[i][j] && argv[i][j] > 58) && ft_space(argv[i][j]) != 102)
+		return (1);
+	else
+		return (102);
 }
 
 int ft_space(int c)

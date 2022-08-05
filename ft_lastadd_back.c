@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lastadd_back.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/07/27 14:35:51 by zhamdouc         ###   ########.fr       */
+/*   Created: 2022/08/05 15:08:37 by zhamdouc          #+#    #+#             */
+/*   Updated: 2022/08/05 15:09:50 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "Push.h"
 
-# include <unistd.h>
-# include <stddef.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <string.h>
-# include <limits.h>
-
-int ft_lecture(argc, argv);
-typedef struct t_list
+void	ft_lastadd_back(t_list **lst, t_list *new)
 {
-    void    *content;
-    t_list  *next;
-}           s_list;
+	t_list	*last;
 
-#endif
+	if (*lst == NULL)
+	{
+		*lst = new;
+	}
+	else
+	{
+		last = *lst;
+		while (last->next != NULL)
+			last = last->next;
+		last->next = new;
+	}
+}
