@@ -6,22 +6,22 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/08/05 17:56:45 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/08/16 10:10:14 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push.h"
 
-int ft_push_swap (char** argv);
+int ft_push_swap (char** argv, t_list *a, t_list *b);
 int	check_list (char** argv, char**tab);
 int	check (char** tab);
-int	do_it(char** argv, char** tab, int i);
+int	do_it(char** argv, char** tab, t_list *a, t_list *b);
 
-int ft_push_swap (char** argv)
+int ft_push_swap (char** argv, t_list *a, t_list *b)
 {
 	int	i;
 	char **tab;
-
+//If no parameters are specified, the program must not display anything and give the prompt back.
 	i = 1;
 	if (check_list(argv, tab) == 1)
 	{
@@ -30,7 +30,7 @@ int ft_push_swap (char** argv)
 	}
 	if (check_list(argv, tab) == 2) //ajouter le while(free(tab))
 	{
-		do_it(argv, tab, i);
+		do_it(argv, tab, a, b);
 		printf("t'es le boss\n");
 		return (2);
 	}
@@ -38,19 +38,21 @@ int ft_push_swap (char** argv)
 		return(0);
 }
 
-int	do_it(char** argv, char** tab, int i)
+int	do_it(char** argv, char** tab, t_list *a, t_list *b)
 {
 	int	j;
-	
+	int	i;
+
+	i = 1;
 	j = 0;
 	while (argv[i])
 	{
 		tab = ft_split(argv[i], ' ');
 		while (tab[j])
 		{
-			ft_lastadd_back(a, ft_lastnew(ft_atoi(tab[j])));
+			ft_lastadd_back(&a, ft_lastnew(ft_atoi(tab[j])));
 			j++;
-			free(tab[j])
+			free(tab[j]);
 		}
 		j = 0;
 		i++;	
@@ -102,11 +104,16 @@ int	check (char** tab)
 
 int	main (int argc, char** argv)
 {
-	t_list	a;
-	t_list	b;
+	t_list	*a;
+	t_list	*b;
 
-	a = NULL;
-	b = NULL;
-	ft_push_swap(argv);
+	//a = list_new();
+	//b = NULL;
+	ft_push_swap(argv, a, b);
 	return (0);
+}
+
+t_list	list_new()
+{
+	return (NULL);
 }
