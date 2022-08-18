@@ -6,7 +6,7 @@
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 15:08:37 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/08/05 15:09:50 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/08/18 16:33:27 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ void	ft_lastadd_back(t_list **lst, t_list *new)
 		while (last->next != NULL)
 			last = last->next;
 		last->next = new;
+		new->prev = last; //check
 	}
 }

@@ -1,26 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lastnew.c                                       :+:      :+:    :+:   */
+/*   rra.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/05 15:10:34 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/08/18 16:33:35 by zhamdouc         ###   ########.fr       */
+/*   Created: 2022/08/18 15:40:33 by zhamdouc          #+#    #+#             */
+/*   Updated: 2022/08/18 19:15:31 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push.h"
 
-t_list	*ft_lstnew(void *content)
+void	rra (t_list **a)
 {
-	t_list	*first;
+	t_list *tmp;
 
-	first = malloc(sizeof(t_list));
-	if (!first)
-		return (NULL);
-	first->content = content;
-	first->next = NULL;
-	first->prev = NULL; // check
-	return (first);
+	tmp = (*a);
+	while ((*a)->next->next != NULL)
+		(*a) = (*a)->next;
+	(*a)->next->next = tmp;
+	tmp = (*a)->next;
+	(*a)->next = NULL;
+	(*a) = tmp;	
+
+
+		
+	if (a->next == NULL)
+		a = tmp;
+	free(tmp); //ou del
+}
+
+
+int	stack_size(t_list *a)
+{
+	int	size;
+	size = 0;
+	while (a && a->next)
+	{
+		size++;
+		a = a->next;
+	}
+	return (size);
 }

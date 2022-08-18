@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lastnew.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/05 15:10:34 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/08/18 16:33:35 by zhamdouc         ###   ########.fr       */
+/*   Created: 2022/05/20 13:57:23 by zhamdouc          #+#    #+#             */
+/*   Updated: 2022/08/18 18:22:08 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list	*first;
-
-	first = malloc(sizeof(t_list));
-	if (!first)
-		return (NULL);
-	first->content = content;
-	first->next = NULL;
-	first->prev = NULL; // check
-	return (first);
+	if (lst == NULL || new == NULL)
+		return ;
+	new->next = *lst;
+	new->prev = NULL;
+	*lst->prev = new;//check
+	*lst = new;
 }
