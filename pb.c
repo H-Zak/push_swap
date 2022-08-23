@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   pb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 17:14:40 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/08/18 16:34:06 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/08/19 12:46:24 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push.h"
 
-void	pb (t_list **a, t_list **b)
+void	ptb (t_list **a, t_list **b)
 {
 	t_list *tmp;
 	

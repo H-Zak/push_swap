@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rra.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 15:40:33 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/08/18 19:15:31 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/08/19 12:30:43 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,12 @@ void	rra (t_list **a)
 	tmp = (*a)->next;
 	(*a)->next = NULL;
 	(*a) = tmp;	
-
-
 		
-	if (a->next == NULL)
-		a = tmp;
-	free(tmp); //ou del
 }
 
+	// if (a->next == NULL)
+	// 	a = tmp;
+	// free(tmp); //ou del
 
 int	stack_size(t_list *a)
 {
