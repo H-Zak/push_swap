@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/08/17 17:11:30 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/08/25 18:48:46 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push.h"
+#include "Push_swap.h"
 
 int ft_push_swap (char** argv, t_list *a, t_list *b);
 int	check_list (char** argv, char**tab);

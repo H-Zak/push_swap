@@ -1,7 +1,7 @@
 NAME = Push.a
 
 SRC =  ft_strlen.c \ ft_split.c ft_swap.c \ ft_lastadd_back.c \ ft_lastnew.c \ 
-ft_atoi.c
+ft_atoi.c \ ft_lastadd_front.c \ ft_sort_int_tab.c \ rotate.c \ swap.c \ reverse_rotate.c \ft_stack_size.c \ ft_sort_int_tab.c \ 
 
 OBJ = ${SRC:.c=.o}
 

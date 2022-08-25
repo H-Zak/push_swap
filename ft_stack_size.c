@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rr.c                                               :+:      :+:    :+:   */
+/*   ft_stack_size.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 15:32:23 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/08/18 16:34:26 by zhamdouc         ###   ########.fr       */
+/*   Created: 2022/08/25 18:44:03 by zakariyaham       #+#    #+#             */
+/*   Updated: 2022/08/25 18:44:32 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push.h"
+#include "Push_swap.h"
 
-void	rr (t_list **a, t_list **b)
+int	stack_size(t_list *a) //je pourrais possiblement en avoir besoin
 {
-	
+	int	size;
+	size = 0;
+	while (a && a->next)
+	{
+		size++;
+		a = a->next;
+	}
+	return (size);
 }

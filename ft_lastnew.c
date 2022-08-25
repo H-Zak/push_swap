@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lastnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 15:10:34 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/08/18 16:33:35 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/08/25 18:47:19 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push.h"
+#include "Push_swap.h"
 
 t_list	*ft_lstnew(void *content)
 {

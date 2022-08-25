@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ra.c                                               :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 14:48:25 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/08/18 18:26:34 by zhamdouc         ###   ########.fr       */
+/*   Created: 2022/05/20 13:57:23 by zhamdouc          #+#    #+#             */
+/*   Updated: 2022/08/25 18:47:27 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push.h"
+#include "Push_swap.h"
 
-void	ra(t_list **a)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list	*tmp;
-
-	while
+	if (lst == NULL || new == NULL)
+		return ;
+	new->next = *lst;
+	new->prev = NULL;
+	*lst->prev = new;//check
+	*lst = new;
 }
-	

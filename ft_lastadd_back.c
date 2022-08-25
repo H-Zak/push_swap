@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lastadd_back.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 15:08:37 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/08/18 16:33:27 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/08/25 18:47:09 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push.h"
+#include "Push_swap.h"
 
 void	ft_lastadd_back(t_list **lst, t_list *new)
 {

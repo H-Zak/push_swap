@@ -1,5 +1,5 @@
 
-#include "Push.h"
+#include "Push_swap.h"
 
 static int		count_1(char const *s, char c);
 static void		*count_2(char const *s, char c, char **tab, int nb_words);

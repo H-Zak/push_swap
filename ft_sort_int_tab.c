@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:49:02 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/08/16 12:51:54 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/08/25 18:26:17 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 void	ft_sort_int_tab(int *tab, int size);
 
-int	main()
-{
-	int i;
-	int tab[7] = {10, 80, 30, 90, 40, 50, -70};
-	ft_sort_int_tab(tab, 7);
-	for (i = 0; i < 7; i++ )
-        printf("%d\n", tab[i]);
-}
+// int	main()
+// {
+// 	int i;
+// 	int tab[7] = {10, 80, 30, 90, 40, 50, -70};
+// 	ft_sort_int_tab(tab, 7);
+// 	for (i = 0; i < 7; i++ )
+//         printf("%d\n", tab[i]);
+// }
 
 void	ft_sort_int_tab(int *tab, int size)
 {
