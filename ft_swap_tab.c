@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/08/25 18:48:46 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/09/01 14:37:29 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ int ft_push_swap (char** argv, t_list *a, t_list *b)
 	}
 	if (check_list(argv, tab) == 2) //ajouter le while(free(tab))
 	{
-	//	do_it(argv, tab, a, b);
-		printf("t'es le boss\n");
+		do_it_chainlist(argv, tab, a, b);
+		printf("good\n");
 		return (2);
 	}
 	else
 		return(0);
 }
-/*
+
 int	do_it_chainlist(char** argv, char** tab, t_list *a, t_list *b)
 {
 	int	j;
@@ -59,7 +59,7 @@ int	do_it_chainlist(char** argv, char** tab, t_list *a, t_list *b)
 	}
 	//free tab
 }
-*/
+
 
 int	check_list (char** argv, char** tab)
 {
@@ -109,7 +109,7 @@ int	main (int argc, char** argv)
 	t_list	*b;
 
 	a = NULL;
-	//b = NULL;
+	b = NULL;
 	ft_push_swap(argv, a, b);
 	return (0);
 }
