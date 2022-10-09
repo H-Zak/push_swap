@@ -6,23 +6,34 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/09/01 14:37:29 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/09 19:38:12 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-int ft_push_swap (char** argv, t_list *a, t_list *b);
+int ft_push_swap (char** argv, t_list **a, t_list *b);
 int	check_list (char** argv, char**tab);
 int	check (char** tab);
 int	do_it(char** argv, char** tab, t_list *a, t_list *b);
+t_list	*do_it_chainlist(char** argv, char** tab, t_list *a);
 
-int ft_push_swap (char** argv, t_list *a, t_list *b)
+void	print_list(t_list *a)
 {
-	int	i;
+	while (a)
+	{
+		printf("%d\n", a->content);
+		a = a->next;
+	}
+}
+
+int ft_push_swap (char** argv, t_list **a, t_list *b)
+{
+	//int	i;
 	char **tab;
 //If no parameters are specified, the program must not display anything and give the prompt back.
-	i = 1;
+	tab = NULL;
+	//i = 1;
 	if (check_list(argv, tab) == 1)
 	{
 		printf("Error\n");
@@ -30,15 +41,14 @@ int ft_push_swap (char** argv, t_list *a, t_list *b)
 	}
 	if (check_list(argv, tab) == 2) //ajouter le while(free(tab))
 	{
-		do_it_chainlist(argv, tab, a, b);
-		printf("good\n");
+		*a = do_it_chainlist(argv, tab, *a);
 		return (2);
 	}
 	else
 		return(0);
 }
 
-int	do_it_chainlist(char** argv, char** tab, t_list *a, t_list *b)
+t_list	*do_it_chainlist(char** argv, char** tab, t_list *a)
 {
 	int	j;
 	int	i;
@@ -50,14 +60,14 @@ int	do_it_chainlist(char** argv, char** tab, t_list *a, t_list *b)
 		tab = ft_split(argv[i], ' ');
 		while (tab[j])
 		{
-			ft_lastadd_back(&a, ft_lastnew(ft_atoi(tab[j])));
+			ft_lastadd_back(&a, ft_lstnew(ft_atoi(tab[j])));
 			j++;
 			free(tab[j]);
 		}
 		j = 0;
 		i++;	
 	}
-	//free tab
+	return (a);
 }
 
 
@@ -72,7 +82,7 @@ int	check_list (char** argv, char** tab)
 	{
 		tab = ft_split(argv[j], ' ');
 		if (check(tab) == 1)
-			return (1);		
+			return (1);
 		j++;
 	}
 	return (2);
@@ -103,13 +113,17 @@ int	check (char** tab)
 	return (2);
 }
 
-int	main (int argc, char** argv)
+
+int	main (int argc, char** argv) //commencer par faire la size et la fonction size renverra vers la fonction de trie efficace donc : 3, 5 ou plus
 {
 	t_list	*a;
 	t_list	*b;
 
 	a = NULL;
 	b = NULL;
-	ft_push_swap(argv, a, b);
+	ft_push_swap(argv, &a, b);
+	size_5(&a, &b);
+	print_list(a);
+	// print_list(b);
 	return (0);
 }

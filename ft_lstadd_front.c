@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 13:57:23 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/08/25 18:47:27 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/09/27 20:21:27 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		return ;
 	new->next = *lst;
 	new->prev = NULL;
-	*lst->prev = new;//check
+	(*lst)->prev = new;//check
 	*lst = new;
 }

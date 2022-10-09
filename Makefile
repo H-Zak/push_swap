@@ -1,19 +1,18 @@
-NAME = Push.a
+NAME = push_swap
 
-SRC =  ft_strlen.c \ ft_split.c ft_swap.c \ ft_lastadd_back.c \ ft_lastnew.c \ 
-ft_atoi.c \ ft_lastadd_front.c \ ft_sort_int_tab.c \ rotate.c \ swap.c \ reverse_rotate.c \ft_stack_size.c \ ft_sort_int_tab.c \ 
-
+SRC =   ft_split.c ft_lastadd_back.c ft_lastnew.c push.c ft_atoi.c ft_lstadd_front.c ft_sort_int_tab.c rotate.c ft_swap_tab.c reverse_rotate.c ft_stack_size.c swap.c ft_lstsize_bonus.c
+		
 OBJ = ${SRC:.c=.o}
 
-CFLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g3
 
-all : ${NAME}
-	
 ${NAME} : ${OBJ}
-	ar rc ${NAME} $^
+	$(CC) ${FLAGS} $(OBJ) -o ${NAME}
 
 %.o : %.c
-	gcc ${CFLAGS} -o $@ -c $<
+	gcc ${FLAGS} -c $< -o $@
+
+all : ${NAME}
 
 clean :
 	rm -f ${OBJ} 
@@ -22,4 +21,4 @@ fclean : clean
 	rm -f ${NAME}
 re : fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 14:48:25 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/08/25 18:40:17 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/09 18:49:26 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ void	ra(t_list **a) //chacun nombre gagne une place et le premier devient le der
 	t_list	*tmp;
 	t_list	*second;
 
+	write (1, "ra\n", 3);
 	tmp = (*a);
 	second = (*a)->next;
-	while((*a)->next == NULL)
+	while((*a)->next != NULL)
 		(*a) = (*a)->next;
 	(*a)->next = tmp;
 	(*a)->next->next = NULL;
@@ -31,6 +32,7 @@ void    rb(t_list **b)
     t_list  *tmp;
     t_list  *second;
 
+	write (1, "rb\n", 3);
     tmp = (*b);
     second = (*b)->next;
     while ((*b)->next != NULL)
@@ -46,9 +48,10 @@ void	rr (t_list **a, t_list **b)
 	t_list	*tmp;
 	t_list	*second;
 
+	write (1, "rr\n", 3);
 	tmp = (*a);
 	second = (*a)->next;
-	while((*a)->next == NULL)
+	while((*a)->next != NULL)
 		(*a) = (*a)->next;
 	(*a)->next = tmp;
 	(*a)->next->next = NULL;

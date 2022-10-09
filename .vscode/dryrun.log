@@ -1,6 +1,10 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/zakariyahamdouchi/push_swap'
+gcc -g3 -c ft_swap_tab.c -o ft_swap_tab.o
+gcc -g3 -c reverse_rotate.c -o reverse_rotate.o
+gcc -g3 -c ft_stack_size.c -o ft_stack_size.o
+gcc -g3 -c swap.c -o swap.o
+gcc -g3 -c ft_lstsize_bonus.c -o ft_lstsize_bonus.o
+cc -g3 ft_split.o ft_lastadd_back.o ft_lastnew.o push.o ft_atoi.o ft_lstadd_front.o ft_sort_int_tab.o rotate.o ft_swap_tab.o reverse_rotate.o ft_stack_size.o swap.o ft_lstsize_bonus.o -o push_swap
 make: Leaving directory `/Users/zakariyahamdouchi/push_swap'
  
-Makefile:4: *** missing separator.  Stop.
-

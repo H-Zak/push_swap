@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/08/25 18:48:32 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/09 19:25:03 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_list
 
 size_t	ft_strlen(const char *str);
 char	**ft_split(char const *s, char c);
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstnew(int content);
 int     ft_atoi(const char *nptr);
 void	ft_lastadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
@@ -46,5 +46,8 @@ void    sb(t_list **b);
 void    ss(t_list **a, t_list **b);
 int	    stack_size(t_list *a);
 void	ft_sort_int_tab(int *tab, int size);
+int	ft_lstsize(t_list *lst);
+int size_3 (t_list **a);
+void	size_5 (t_list **a, t_list **b);
 
 #endif
