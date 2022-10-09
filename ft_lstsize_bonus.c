@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
+/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/09 19:33:41 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/09 20:14:01 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,15 +125,18 @@ void	size_5 (t_list **a, t_list **b)
 	// 	printf("%d\n", tab[i]);
 	// 	i++;
 	// }
-	while (i >= 0)
+	while (i > 3)
 	{
-		while (tab[3] != (*a)->content || tab[4] != (*a)->content)
+		while (1)
 		{
+			if (tab[4] == (*a)->content || tab[3] == (*a)->content)
+			{
+				i--;
+				break;
+			}
 			ra(a);
 		}
-		if (tab[3] == (*a)->content || tab[4] == (*a)->content)
-			ptb(a, b);
-		i--;
+		ptb(a, b);
 	}
 	size_3(a);
 	if ((*b)->content < (*b)->next->content)
