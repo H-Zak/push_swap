@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
+/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/10 17:59:52 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/10 19:24:41 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@ int ft_push_swap (char** argv, t_list **a, t_list *b);
 int	check_list (char** argv, char**tab);
 int	check (char** tab);
 int	do_it(char** argv, char** tab, t_list *a, t_list *b);
-t_list	*do_it_chainlist(char** argv, char** tab, t_list *a);
-int check_doublons_int(char **tab);
+t_list	*do_it_chainlist(char** argv, char** tab, t_list **a);
+int check_doublons_int(t_list *a, char **tab);
 
 void	print_list(t_list *a)
 {
 	while (a)
 	{
-		printf("%d\n", a->content);
+		printf("%ld\n", a->content);
 		a = a->next;
 	}
 }
-
+// amelioration : utiliser un check_list en moins, ne pas faire split a chaque fois (donc utiliser ***tab ?), free apres split (faire une fonction free ?)
 int ft_push_swap (char** argv, t_list **a, t_list *b)
 {
 	//int	i;
@@ -43,61 +43,58 @@ int ft_push_swap (char** argv, t_list **a, t_list *b)
 	if (check_list(argv, tab) == 2) //ajouter le while(free(tab))
 	{
 		//faire un atoi pour verifier si plus petit ou plus grand que int et verifier les doublons
-		if(check_doublons_int(tab) == 1)
+		*a = do_it_chainlist(argv, tab, &a);
+		if(check_doublons_int(*a, tab) == 1) // en cas d'erreur free les tableaux et free la liste chaine
 		{
 			printf("Error\n");
 			return(1);
 		}
-		*a = do_it_chainlist(argv, tab, *a);
 		return (2);
 	}
 	else
 		return(0);
 }
 
-int	check_doublons_int(char **tab)
+int	check_doublons_int(t_list *a, char **tab) //ca ne modifie pas le pointeur car j'ai envoye *a et pas **a ???
 {
 	int	i;
 	int	j;
-	long **tabtest;
+	long *tabtest;
 
-	j = 0;
-	i = 0;
-	while(tab[i])
-		i++;
+	i = ft_lstsize(a);
 	tabtest = malloc (i * sizeof(long));
-	// if(tabtest == NULL)
-	// 		return (NULL);
 	i = 0;
-	while(tab[i])
+	j = 0;
+	while (a)
 	{
-		tabtest[i][j] = ft_atol(tab[i]);
-		if (tabtest[i][j] > 2147483647 || tabtest[i][j] < -2147483648)
-			return(1);
-		
+		tabtest[i] = a->content;
+		if (tabtest[i] > 2147483647 || tabtest[i] < -2147483648)
+	 		return(1);
+		a = a->next;
 		i++;
-	}
-	i = 0;
-	while (tab[i])
-	{
-		while (tab[i])
-		{
-			j = i + 1;
-			if (tab[i][0] == tab[j][0])
-				return(1);
-		}
-		i = i + 1;
 	}
 	i = 0;
 	while (tabtest[i])
 	{
-		free(tabtest[i]);
-		i++;	
+		j = i + 1;
+		while (tabtest[j])
+		{
+			if (tabtest[i] == tabtest[j])
+				return(1);
+			j++;
+		}
+		i = i + 1;
 	}
+	// i = 0;
+	// while (tabtest[i])
+	// {
+	// 	free(tabtest);
+	// 	i++;	
+	// }
 	return (0);
 }
 
-t_list	*do_it_chainlist(char** argv, char** tab, t_list *a)
+t_list	*do_it_chainlist(char** argv, char** tab, t_list **a) //est ce que je dois envoyer **a pour que ca fonctionne ????
 {
 	int	j;
 	int	i;
