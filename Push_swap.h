@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/09 19:25:03 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/10 17:55:55 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_list
 size_t	ft_strlen(const char *str);
 char	**ft_split(char const *s, char c);
 t_list	*ft_lstnew(int content);
-int     ft_atoi(const char *nptr);
+long     ft_atol(const char *nptr);
 void	ft_lastadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ptb (t_list **a, t_list **b);

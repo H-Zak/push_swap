@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/09 19:38:12 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/10 17:59:52 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	check_list (char** argv, char**tab);
 int	check (char** tab);
 int	do_it(char** argv, char** tab, t_list *a, t_list *b);
 t_list	*do_it_chainlist(char** argv, char** tab, t_list *a);
+int check_doublons_int(char **tab);
 
 void	print_list(t_list *a)
 {
@@ -41,11 +42,59 @@ int ft_push_swap (char** argv, t_list **a, t_list *b)
 	}
 	if (check_list(argv, tab) == 2) //ajouter le while(free(tab))
 	{
+		//faire un atoi pour verifier si plus petit ou plus grand que int et verifier les doublons
+		if(check_doublons_int(tab) == 1)
+		{
+			printf("Error\n");
+			return(1);
+		}
 		*a = do_it_chainlist(argv, tab, *a);
 		return (2);
 	}
 	else
 		return(0);
+}
+
+int	check_doublons_int(char **tab)
+{
+	int	i;
+	int	j;
+	long **tabtest;
+
+	j = 0;
+	i = 0;
+	while(tab[i])
+		i++;
+	tabtest = malloc (i * sizeof(long));
+	// if(tabtest == NULL)
+	// 		return (NULL);
+	i = 0;
+	while(tab[i])
+	{
+		tabtest[i][j] = ft_atol(tab[i]);
+		if (tabtest[i][j] > 2147483647 || tabtest[i][j] < -2147483648)
+			return(1);
+		
+		i++;
+	}
+	i = 0;
+	while (tab[i])
+	{
+		while (tab[i])
+		{
+			j = i + 1;
+			if (tab[i][0] == tab[j][0])
+				return(1);
+		}
+		i = i + 1;
+	}
+	i = 0;
+	while (tabtest[i])
+	{
+		free(tabtest[i]);
+		i++;	
+	}
+	return (0);
 }
 
 t_list	*do_it_chainlist(char** argv, char** tab, t_list *a)
@@ -60,7 +109,7 @@ t_list	*do_it_chainlist(char** argv, char** tab, t_list *a)
 		tab = ft_split(argv[i], ' ');
 		while (tab[j])
 		{
-			ft_lastadd_back(&a, ft_lstnew(ft_atoi(tab[j])));
+			ft_lastadd_back(&a, ft_lstnew(ft_atol(tab[j])));
 			j++;
 			free(tab[j]);
 		}
@@ -122,8 +171,8 @@ int	main (int argc, char** argv) //commencer par faire la size et la fonction si
 	a = NULL;
 	b = NULL;
 	ft_push_swap(argv, &a, b);
-	size_5(&a, &b);
-	print_list(a);
+	// size_5(&a, &b);
+	// print_list(a);
 	// print_list(b);
 	return (0);
 }
