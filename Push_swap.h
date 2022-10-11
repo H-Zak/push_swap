@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/11 12:21:10 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/11 17:27:55 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ size_t	ft_strlen(const char *str);
 char	**ft_split(char const *s, char c);
 t_list	*ft_lstnew(int content);
 long long    ft_atol(const char *nptr);
+int	ft_atoi(const char *nptr);
 void	ft_lastadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ptb (t_list **a, t_list **b);
@@ -49,5 +50,6 @@ void	ft_sort_int_tab(int *tab, int size);
 int	ft_lstsize(t_list *lst);
 int size_3 (t_list **a);
 void	size_5 (t_list **a, t_list **b);
+int ft_push_swap (char** argv, t_list **a, t_list **b);
 
 #endif

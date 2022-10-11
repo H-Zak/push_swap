@@ -1,18 +1,5 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/zakariyahamdouchi/push_swap'
-gcc -g3 -c ft_split.c -o ft_split.o
-gcc -g3 -c ft_lastadd_back.c -o ft_lastadd_back.o
-gcc -g3 -c ft_lastnew.c -o ft_lastnew.o
-gcc -g3 -c push.c -o push.o
-gcc -g3 -c ft_atol.c -o ft_atol.o
-gcc -g3 -c ft_lstadd_front.c -o ft_lstadd_front.o
-gcc -g3 -c ft_sort_int_tab.c -o ft_sort_int_tab.o
-gcc -g3 -c rotate.c -o rotate.o
-gcc -g3 -c ft_swap_tab.c -o ft_swap_tab.o
-gcc -g3 -c reverse_rotate.c -o reverse_rotate.o
-gcc -g3 -c ft_stack_size.c -o ft_stack_size.o
-gcc -g3 -c swap.c -o swap.o
-gcc -g3 -c ft_lstsize_bonus.c -o ft_lstsize_bonus.o
-cc -g3 ft_split.o ft_lastadd_back.o ft_lastnew.o push.o ft_atol.o ft_lstadd_front.o ft_sort_int_tab.o rotate.o ft_swap_tab.o reverse_rotate.o ft_stack_size.o swap.o ft_lstsize_bonus.o -o push_swap
+make: `push_swap' is up to date.
 make: Leaving directory `/Users/zakariyahamdouchi/push_swap'
  
