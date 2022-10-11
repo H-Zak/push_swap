@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
+/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/11 19:29:40 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/11 19:55:29 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,8 +99,8 @@ int do_it_chainlist(char** argv, char** tab, t_list **a) //est ce que je dois en
 			if(ft_atol(tab[j]) != ft_atoi(tab[j]))
 				return(1);
 			ft_lastadd_back(a, ft_lstnew(ft_atol(tab[j])));
-			j++;
 			free(tab[j]);
+			j++;
 		}
 		j = 0;
 		i++;	
@@ -139,19 +139,17 @@ int	check (char** tab)
 		{
 			if (tab[i][j] == 45 && (47 < tab[i][j + 1] && tab[i][j + 1] < 58))
 				j++;
+			else if (tab[i][j] == '+' && (47 < tab[i][j + 1] && tab[i][j + 1] < 58))
+				j++;
 			else if (47 < tab[i][j] && tab[i][j] < 58)
 				j++;
 			else //free tab
-			{
-				free_tabchar(tab);
-				return(1);
-			}
+				return(free_tabchar(tab),1);
 		}
 		j = 0;
 		i++;
 	}
-	free_tabchar(tab);
-	return (2);
+	return (free_tabchar(tab),2);
 }
 
 void	free_tabchar(char **tab)
@@ -175,6 +173,6 @@ int	main (int argc, char** argv) //commencer par faire la size et la fonction si
 	a = NULL;
 	b = NULL;
 	ft_push_swap(argv, &a, &b);
-	print_list(a);
+	//print_list(a);
 	return (0);
 }

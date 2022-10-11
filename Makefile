@@ -4,7 +4,7 @@ SRC =   ft_atoi.c ft_split.c ft_lastadd_back.c ft_lastnew.c push.c ft_atol.c ft_
 		
 OBJ = ${SRC:.c=.o}
 
-FLAGS = 
+FLAGS = -g3
 
 ${NAME} : ${OBJ}
 	$(CC) ${FLAGS} $(OBJ) -o ${NAME}
