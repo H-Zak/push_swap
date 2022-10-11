@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/10 18:48:23 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/10/11 12:21:10 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 typedef struct s_list
 {
-    long    content;
+    long long    content;
     struct	s_list	*next;
 	struct	s_list	*prev; //check not use yet
 }			t_list;
@@ -30,7 +30,7 @@ typedef struct s_list
 size_t	ft_strlen(const char *str);
 char	**ft_split(char const *s, char c);
 t_list	*ft_lstnew(int content);
-long     ft_atol(const char *nptr);
+long long    ft_atol(const char *nptr);
 void	ft_lastadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ptb (t_list **a, t_list **b);

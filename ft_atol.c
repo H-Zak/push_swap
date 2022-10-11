@@ -6,17 +6,17 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 15:14:32 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/10 17:55:39 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/11 12:20:54 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-long	ft_atol(const char *nptr)
+long long	ft_atol(const char *nptr)
 {
-	long	i;
-	long	j;
-	long	num;
+	long long	i;
+	long long	j;
+	long long	num;
 
 	i = 0;
 	j = 1;
