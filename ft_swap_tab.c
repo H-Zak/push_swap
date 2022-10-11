@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/11 17:39:15 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/11 19:29:40 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	check (char** tab);
 int	do_it(char** argv, char** tab, t_list *a, t_list *b);
 int do_it_chainlist(char** argv, char** tab, t_list **a);// mettre un return en cas d'erreur
 int check_doublons_int(t_list *a, char **tab);
+void	free_tabchar(char **tab);
 
 void	print_list(t_list *a)
 {
@@ -35,20 +36,10 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 //If no parameters are specified, the program must not display anything and give the prompt back.
 	tab = NULL;
 	//i = 1;
-	if (check_list(argv, tab) == 1)
-	{
-		printf("Error\n");
-		return(1);
-	}
-	if (check_list(argv, tab) == 2) //ajouter le while(free(tab))
+	if (check_list(argv, tab) != 1 && do_it_chainlist(argv, tab, a) != 1 && check_doublons_int(*a, tab) != 1)
 	{
 		//faire un atoi pour verifier si plus petit ou plus grand que int et verifier les doublons
 	//	do_it_chainlist(argv, tab, a); // il faut envoyer a ou &a
-		if(do_it_chainlist(argv, tab, a) == 1 || check_doublons_int(*a, tab) == 1) // en cas d'erreur free les tableaux et free la liste chaine
-		{
-			printf("Error\n");
-			return(1);
-		}
 		if (ft_lstsize(*a) == 3)
 			size_3(a);
 		else if (ft_lstsize(*a) == 5)
@@ -56,7 +47,10 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 		return (0);
 	}
 	else
-		return(0);
+	{
+		printf("Error\n");
+		return(1);
+	}
 }
 
 int	check_doublons_int(t_list *a, char **tab) //ca ne modifie pas le pointeur car j'ai envoye *a et pas **a ???
@@ -81,17 +75,12 @@ int	check_doublons_int(t_list *a, char **tab) //ca ne modifie pas le pointeur ca
 		while (tabtest[j])
 		{
 			if (tabtest[i] == tabtest[j])
-				return(1);
+				return(free(tabtest), 1);
 			j++;
 		}
 		i = i + 1;
 	}
-	// i = 0;
-	// while (tabtest[i])
-	// {
-	// 	free(tabtest);
-	// 	i++;	
-	// }
+	free(tabtest);
 	return (0);
 }
 
@@ -153,15 +142,30 @@ int	check (char** tab)
 			else if (47 < tab[i][j] && tab[i][j] < 58)
 				j++;
 			else //free tab
+			{
+				free_tabchar(tab);
 				return(1);
+			}
 		}
 		j = 0;
 		i++;
 	}
-	// free tab
+	free_tabchar(tab);
 	return (2);
 }
 
+void	free_tabchar(char **tab)
+{
+	int i;
+
+	i = 0;
+	while(tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+}
 
 int	main (int argc, char** argv) //commencer par faire la size et la fonction size renverra vers la fonction de trie efficace donc : 3, 5 ou plus
 {
