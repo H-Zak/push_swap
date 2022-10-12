@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
+/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/12 14:08:58 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/12 14:59:36 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	size_5 (t_list **a, t_list **b, int j)
 	bubbleSort(&tab[0], j);
 	size_5_2(tab, a, b, i, j);
 	size_3(a);
-	if ((*b)->content < (*b)->next->content)
+	if (j == 5 && (*b)->content < (*b)->next->content)
 		sb(b);
 	pta(a, b);
 	if (j == 5)
