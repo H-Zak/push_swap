@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:37:37 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/09 18:50:01 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/12 11:18:12 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void    sb(t_list **b)
     tmp = (*b);
     second = (*b)->next;
     (*b)->next = (*b)->next->next;
-    (*b)->next->next = second;
     (*b) = second;
+    (*b)->next = tmp;
  //   return (second);
 }
 

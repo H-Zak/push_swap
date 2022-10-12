@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/11 19:55:29 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/10/12 14:09:59 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,38 +19,60 @@ int	do_it(char** argv, char** tab, t_list *a, t_list *b);
 int do_it_chainlist(char** argv, char** tab, t_list **a);// mettre un return en cas d'erreur
 int check_doublons_int(t_list *a, char **tab);
 void	free_tabchar(char **tab);
+int	list_check (char **argv, char **tab, t_list **a);
 
 void	print_list(t_list *a)
 {
 	while (a)
 	{
-		printf("%lld\n", a->content);
+		printf("%ld\n", a->content);
 		a = a->next;
 	}
 }
 // amelioration : utiliser un check_list en moins, ne pas faire split a chaque fois (donc utiliser ***tab ?), free apres split (faire une fonction free ?)
 int ft_push_swap (char** argv, t_list **a, t_list **b)
 {
-	//int	i;
+	int	j;
 	char **tab;
 //If no parameters are specified, the program must not display anything and give the prompt back.
 	tab = NULL;
-	//i = 1;
-	if (check_list(argv, tab) != 1 && do_it_chainlist(argv, tab, a) != 1 && check_doublons_int(*a, tab) != 1)
+	if (list_check(argv, tab, a) == 0)
 	{
-		//faire un atoi pour verifier si plus petit ou plus grand que int et verifier les doublons
-	//	do_it_chainlist(argv, tab, a); // il faut envoyer a ou &a
-		if (ft_lstsize(*a) == 3)
-			size_3(a);
-		else if (ft_lstsize(*a) == 5)
-			size_5(a,b);
-		return (0);
+		if (checker_if_list_sort(*a) == 0)//free chainlist
+			return(0);
+		else
+		{
+			j = ft_lstsize(*a);
+			if (j == 3)
+				size_3(a);
+			else if (j == 5 || j == 4)
+				size_5(a, b, j);
+			//free chainlist
+			return (0);
+		}
 	}
 	else
 	{
+		// while(a)
+		// {
+		// 	ft_lstdelone(a, free);
+		// 	(*a) = (*a)->next;
+		// }
 		printf("Error\n");
 		return(1);
 	}
+}
+
+int	list_check (char **argv, char **tab, t_list **a)
+{
+	if(check_list(argv, tab) == 1)
+		return(1);
+	else if(do_it_chainlist(argv, tab, a) == 1)//free chainlist
+		return(1);
+	else if(check_doublons_int(*a, tab) == 1)//free la chainlist
+		return(1);
+	else 
+		return(0);
 }
 
 int	check_doublons_int(t_list *a, char **tab) //ca ne modifie pas le pointeur car j'ai envoye *a et pas **a ???
@@ -80,8 +102,7 @@ int	check_doublons_int(t_list *a, char **tab) //ca ne modifie pas le pointeur ca
 		}
 		i = i + 1;
 	}
-	free(tabtest);
-	return (0);
+	return (free(tabtest),0);
 }
 
 int do_it_chainlist(char** argv, char** tab, t_list **a) //est ce que je dois envoyer **a pour que ca fonctionne ????
@@ -173,6 +194,6 @@ int	main (int argc, char** argv) //commencer par faire la size et la fonction si
 	a = NULL;
 	b = NULL;
 	ft_push_swap(argv, &a, &b);
-	//print_list(a);
+	print_list(a);
 	return (0);
 }

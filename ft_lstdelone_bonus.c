@@ -1,39 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/05 15:14:32 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/12 11:49:19 by zakariyaham      ###   ########.fr       */
+/*   Created: 2022/05/20 16:37:49 by zhamdouc          #+#    #+#             */
+/*   Updated: 2022/10/11 20:21:23 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-long	ft_atol(const char *nptr)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	long	i;
-	long	j;
-	long	num;
-
-	i = 0;
-	j = 1;
-	num = 0;
-	while (nptr[i] == ' ' || (9 <= nptr[i] && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '+')
-		i++;
-	else if (nptr[i] == '-')
-	{
-		i++;
-		j = -1;
-	}
-	while ('0' <= nptr[i] && nptr[i] <= '9')
-	{
-		num = num * 10 + nptr[i] - '0';
-		i++;
-	}
-	return (num * j);
+	if (lst == NULL || del == NULL)
+		return ;
+	del(lst->content);
+	free(lst);
 }

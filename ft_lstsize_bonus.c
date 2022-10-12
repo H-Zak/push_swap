@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/09 20:14:01 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/10/12 14:08:58 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void swap(int* xp, int* yp);
 void bubbleSort(int *tab, int n);
+void	size_5_2(int *tab, t_list **a, t_list **b, int i, int j);
 
 int	ft_lstsize(t_list *lst)
 {
@@ -40,70 +41,106 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-int size_3 (t_list **a)
+int	checker_if_list_sort (t_list *a)
 {
-	if (ft_lstsize (*a) == 3)
+	while(a->next != NULL && a->content < a->next->content)
 	{
-		if ((*a)->content < (*a)->next->content && (*a)->next->content < (*a)->next->next->content)
-			return(0);
-		if ((*a)->content < (*a)->next->content && (*a)->content < (*a)->next->next->content && (*a)->next->content > (*a)->next->next->content)
-		{
-			rra(a);
-			sa(a);
-			return (0);
-		}
-		if ((*a)->content > (*a)->next->content && (*a)->content < (*a)->next->next->content && (*a)->next->content < (*a)->next->next->content)
-		{
-			sa(a);
-			return (0);
-		}
-		if ((*a)->content < (*a)->next->content && (*a)->content > (*a)->next->next->content && (*a)->next->content > (*a)->next->next->content)
-		{
-			rra(a);
-			return (0);
-		}
-		if ((*a)->content > (*a)->next->content && (*a)->content > (*a)->next->next->content && (*a)->next->content > (*a)->next->next->content)
-		{
-			sa(a);
-			rra(a);
-			return (0);
-		}
-		if ((*a)->content > (*a)->next->content && (*a)->content > (*a)->next->next->content && (*a)->next->content < (*a)->next->next->content)
-		{
-			ra(a);
-			return (0);
-		}
+		a = a->next;
+	}
+	if (a->next == NULL)
+	{
+		printf("c'est deja trie");
+		return(0);
+	}
+	else
+	{
+		printf("c'est pas trie");
 		return (1);
 	}
+}
+
+int size_3 (t_list **a)
+{
+	if ((*a)->content < (*a)->next->content && (*a)->content < (*a)->next->next->content && (*a)->next->content > (*a)->next->next->content)
+	{
+		rra(a);
+		sa(a);
+	}
+	if ((*a)->content > (*a)->next->content && (*a)->content < (*a)->next->next->content && (*a)->next->content < (*a)->next->next->content)
+		sa(a);
+	if ((*a)->content < (*a)->next->content && (*a)->content > (*a)->next->next->content && (*a)->next->content > (*a)->next->next->content)
+		rra(a);
+	if ((*a)->content > (*a)->next->content && (*a)->content > (*a)->next->next->content && (*a)->next->content > (*a)->next->next->content)
+	{
+		sa(a);
+		rra(a);
+	}
+	if ((*a)->content > (*a)->next->content && (*a)->content > (*a)->next->next->content && (*a)->next->content < (*a)->next->next->content)
+		ra(a);
 	return (0);	
 }
-/*
-int size_5 (t_list **a, t_list **b)
+
+void	size_5 (t_list **a, t_list **b, int j)
 {
+	int *tab;
 	int	i;
-	int	j;
 	t_list *tmp;
-
+	
+	tab = malloc (j * sizeof(int));
+	// if (tab == NULL)
+	// 	return(NULL);
 	i = 0;
-	j = 2;
-	while (a)
+	tmp = (*a);
+	while (i < j)
 	{
-		tmp = (*a);
-		while ((*a)->next != NULL)
-		{
-			if (tmp->content < (*a)->next->content)
-				i++;
-			(*a) = (*a)->next;
-		}
-		if(i >= j)
-			ptb(a, b);
-		if (j > 0 )
-			j--;
-		i = 0;
-		(*a) = (*a)->next;
+		tab[i] = tmp-> content;
+		tmp = tmp->next;
+		i++;
 	}
-}*/
+	bubbleSort(&tab[0], j);
+	size_5_2(tab, a, b, i, j);
+	size_3(a);
+	if ((*b)->content < (*b)->next->content)
+		sb(b);
+	pta(a, b);
+	if (j == 5)
+		pta(a, b);
+	ra(a);
+	if (j == 5)
+		ra(a);	
+}
 
+void	size_5_2(int *tab, t_list **a, t_list **b, int i, int j)
+{
+	if (j == 5)
+	{
+		while (i > 3)
+		{
+			while (1)
+			{
+				if (tab[4] == (*a)->content || tab[3] == (*a)->content)
+					break;
+				ra(a);
+			}
+			i--;
+			ptb(a, b);
+		}
+	}
+	if (j == 4)
+	{
+		while (1)
+		{
+			if (tab[3] == (*a)->content)
+				break;
+			ra(a);
+		}
+		ptb(a, b);
+	}
+}
+
+
+
+/*
 void	size_5 (t_list **a, t_list **b)
 {
 	int tab[5];
@@ -119,12 +156,18 @@ void	size_5 (t_list **a, t_list **b)
 		i++;
 	}
 	bubbleSort(&tab[0], 5);
-	// i = 0;
-	// while (i < 5)
-	// {
-	// 	printf("%d\n", tab[i]);
-	// 	i++;
-	// }
+	size_5_2(tab, a, b, i);
+	size_3(a);
+	if ((*b)->content < (*b)->next->content)
+		sb(b);
+	pta(a, b);
+	pta(a, b);
+	ra(a);
+	ra(a);	
+}
+
+void	size_5_2(int *tab, t_list **a, t_list **b, int i)
+{
 	while (i > 3)
 	{
 		while (1)
@@ -138,16 +181,8 @@ void	size_5 (t_list **a, t_list **b)
 		}
 		ptb(a, b);
 	}
-	size_3(a);
-	if ((*b)->content < (*b)->next->content)
-		sb(b);
-	pta(a, b);
-	pta(a, b);
-	ra(a);
-	ra(a);	
 }
-
-
+*/
 void swap(int* xp, int* yp)
 {
     int temp = *xp;

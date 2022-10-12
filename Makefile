@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRC =   ft_atoi.c ft_split.c ft_lastadd_back.c ft_lastnew.c push.c ft_atol.c ft_lstadd_front.c ft_sort_int_tab.c rotate.c ft_swap_tab.c reverse_rotate.c ft_stack_size.c swap.c ft_lstsize_bonus.c
+SRC =   ft_lstdelone_bonus.c ft_atoi.c ft_split.c ft_lastadd_back.c ft_lastnew.c push.c ft_atol.c ft_lstadd_front.c ft_sort_int_tab.c rotate.c ft_swap_tab.c reverse_rotate.c ft_stack_size.c swap.c ft_lstsize_bonus.c
 		
 OBJ = ${SRC:.c=.o}
 
