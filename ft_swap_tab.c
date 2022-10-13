@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/12 14:09:59 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/13 17:11:27 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 	tab = NULL;
 	if (list_check(argv, tab, a) == 0)
 	{
-		if (checker_if_list_sort(*a) == 0)//free chainlist
-			return(0);
+		if (checker_if_list_sort(*a) == 0)
+			return(0);//pas besoin de return il faut qu'il aille free a la fin ou mettre une fonction qui free
 		else
 		{
 			j = ft_lstsize(*a);
@@ -47,20 +47,20 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 				size_3(a);
 			else if (j == 5 || j == 4)
 				size_5(a, b, j);
-			//free chainlist
-			return (0);
+			else
+			{
+				//appelle de la fonction qui trie, avec l'algo, la mise en place de l'index, de la pos et etc
+			}
 		}
 	}
 	else
-	{
-		// while(a)
-		// {
-		// 	ft_lstdelone(a, free);
-		// 	(*a) = (*a)->next;
-		// }
 		printf("Error\n");
-		return(1);
-	}
+	//free chainlist
+	// while(a)
+	// {
+	// 	ft_lstdelone(a, free);
+	// 	(*a) = (*a)->next;
+	// }
 }
 
 int	list_check (char **argv, char **tab, t_list **a)

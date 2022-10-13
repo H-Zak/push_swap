@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/12 13:53:05 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/13 17:07:24 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@
 typedef struct s_list
 {
     long    content;
+    int cost_a;
+    int cost_b;
+    int index;
+    int pos;
+    int target_pos;
     struct	s_list	*next;
 	struct	s_list	*prev; //check not use yet
 }			t_list;

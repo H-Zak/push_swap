@@ -2,3 +2,5 @@ il faut free les chainlist quand il y a un probleme et a la fin si tout se passe
 gerer pour 4
 free la chainlist
 enlever le printf "c'est deja trier
+
+possible de mettre l'actualisation des pos et tout dans les mouvement mais risque de ralentir car trop d'actualisation inutile
