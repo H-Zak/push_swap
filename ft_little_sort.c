@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_little_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/13 17:20:36 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/13 18:20:11 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,8 @@ void	size_5 (t_list **a, t_list **b, int j)
 		pta(a, b);
 	ra(a);
 	if (j == 5)
-		ra(a);	
+		ra(a);
+	//free(tab);
 }
 
 void	size_5_2(int *tab, t_list **a, t_list **b, int i, int j)
@@ -132,7 +133,7 @@ void bubbleSort(int *tab, int n)
 		j = 0;
 		while (j < (n - i - 1))
 		{
-			if (tab[j] > tab[j+1])
+			if (tab[j] > tab[j + 1])
 				swap(&tab[j], &tab[j + 1]);
 			j++;
 		}

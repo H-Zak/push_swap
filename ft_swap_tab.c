@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/13 17:11:27 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/13 18:06:00 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 				size_5(a, b, j);
 			else
 			{
-				//appelle de la fonction qui trie, avec l'algo, la mise en place de l'index, de la pos et etc
+				ft_big_sort(a ,b, j);//appelle de la fonction qui trie, avec l'algo, la mise en place de l'index, de la pos et etc
 			}
 		}
 	}
