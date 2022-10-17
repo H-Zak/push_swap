@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/17 17:15:07 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 18:02:34 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,6 +171,10 @@ int    cout_global (t_list **a, t_list **b) //prendre en compte le cas ou les de
     while(tmp_b)
     {
         cout_2 = cout_reel(tmp_b->cost_a, tmp_b->cost_b);
+        if (cout_1 < 0)
+            cout_1 = cout_1 * -1;
+        if (cout_2 < 0)
+            cout_2 = cout_2 * -1;
         if (cout_2 < cout_1)
         {
             cout_1 = cout_2;
