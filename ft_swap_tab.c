@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/17 12:59:31 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 15:06:27 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	print_list(t_list *a)
 {
 	while (a)
 	{
-		printf("%ld\n", a->content);
+		printf("%d\n", a->pos);
 		a = a->next;
 	}
 }

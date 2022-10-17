@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/17 14:58:42 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 15:06:18 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ int ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de 
     while((*b))
     {
         pos(a, b);
-        target_pos(a, b);
-        cost_a(a, b);
-        cost_b(a, b);
-        fait_le_mouv(cout_global(a, b), a, b);
+        // target_pos(a, b);
+        // cost_a(a, b);
+        // cost_b(a, b);
+        // fait_le_mouv(cout_global(a, b), a, b);
     }
     //une fois quon sait le quelle bouger, faire le mouvement, recalculer les positions et les targets
     free(tab);
