@@ -8,13 +8,12 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Thu Oct 13 17:59:16 2022
+# Make data base, printed on Mon Oct 17 21:25:45 2022
 
 # Variables
 
 # environment
 VSCODE_GIT_ASKPASS_MAIN = /private/var/folders/zh/gpz9zszs6dl7p4vr3ysw01ym0000gn/T/AppTranslocation/AC68DF6D-8FED-4F05-81E9-6C9A003DD753/d/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
- 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -32,7 +31,7 @@ SRC = ft_little_sort.c ft_split.c ft_lst_utils.c push.c ft_utils.c ft_sort_int_t
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/zakariyahamdouchi/pushtest
+CURDIR := /Users/zakariyahamdouchi/testtest/push_swap
 # makefile
 SHELL = /bin/sh
 # environment
@@ -44,11 +43,11 @@ MAKEFILE_LIST :=  Makefile
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-INFOPATH = /opt/homebrew/share/info:
+INFOPATH = /opt/homebrew/share/info:/opt/homebrew/share/info:
 # environment
-VSCODE_CWD = /Users/zakariyahamdouchi/pushtest
+VSCODE_CWD = /Users/zakariyahamdouchi/testtest/push_swap
 # environment
-PATH = /opt/homebrew/bin:/opt/homebrew/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/opt/local/bin:/opt/local/sbin
+PATH = /opt/homebrew/bin:/opt/homebrew/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/local/bin:/opt/local/sbin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
@@ -60,13 +59,13 @@ SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.rGUtvN00G3/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-PWD = /Users/zakariyahamdouchi/pushtest
+PWD = /Users/zakariyahamdouchi/testtest/push_swap
 # environment
 HOMEBREW_CELLAR = /opt/homebrew/Cellar
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
-MANPATH = /opt/homebrew/share/man::
+MANPATH = /opt/homebrew/share/man:/usr/share/man:/usr/local/share/man:/opt/homebrew/share/man:
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -98,7 +97,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 3
+SHLVL = 5
 # default
 MAKE_VERSION := 3.81
 # environment
@@ -125,7 +124,6 @@ TMPDIR = /var/folders/zh/gpz9zszs6dl7p4vr3ysw01ym0000gn/T/
 *F = $(notdir $*)
 # environment
 VSCODE_IPC_HOOK = /Users/zakariyahamdouchi/Library/Application Support/Code/1.69.0-main.sock
- 
 # environment
 VSCODE_GIT_ASKPASS_NODE = /private/var/folders/zh/gpz9zszs6dl7p4vr3ysw01ym0000gn/T/AppTranslocation/AC68DF6D-8FED-4F05-81E9-6C9A003DD753/d/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper
 # environment
@@ -139,7 +137,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 1.69.0
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.478397.478403.D98F9459-C21E-4FCC-8E1E-490251C91705
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.478397.478403.F2242A0C-5EC5-4844-9159-12A03B5E21AC
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
@@ -169,7 +167,7 @@ SUFFIXES :=
 # makefile (from `Makefile', line 7)
 FLAGS = -g3
 # environment
-VSCODE_GIT_IPC_HANDLE = /var/folders/zh/gpz9zszs6dl7p4vr3ysw01ym0000gn/T/vscode-git-f3c34a8ee7.sock
+VSCODE_GIT_IPC_HANDLE = /var/folders/zh/gpz9zszs6dl7p4vr3ysw01ym0000gn/T/vscode-git-c914e11c90.sock
 # environment
 LANG = C
 # environment
@@ -185,9 +183,9 @@ VSCODE_PID = 19119
 
 # Directories
 
-# . (device 16777233, inode 6172757): 20 files, no impossibilities.
+# . (device 16777233, inode 6890568): 21 files, no impossibilities.
 
-# 20 files, no impossibilities in 1 directories.
+# 21 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -219,7 +217,6 @@ all: push_swap
 .PHONY: all clean fclean re
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 # Not a target:
@@ -261,7 +258,7 @@ push.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-10-13 17:59:14
+#  Last modified 2022-10-17 21:06:35
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -314,6 +311,7 @@ ft_little_sort.o: ft_little_sort.c
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
 re: fclean all
@@ -333,7 +331,7 @@ clean:
 
 push_swap: ft_little_sort.o ft_split.o ft_lst_utils.o push.o ft_utils.o ft_sort_int_tab.o rotate.o ft_swap_tab.o reverse_rotate.o swap.o ft_big_sort.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-10-13 17:55:07
+#  Last modified 2022-10-17 21:17:38
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -351,7 +349,7 @@ swap.o:
 # Not a target:
 ft_little_sort.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-10-13 17:55:07
+#  Last modified 2022-10-17 21:06:35
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -382,6 +380,6 @@ ft_lst_utils.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Oct 13 17:59:16 2022
+# Finished Make data base on Mon Oct 17 21:25:45 2022
 
  

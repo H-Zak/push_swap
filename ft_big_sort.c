@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/17 19:36:50 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 21:26:26 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -221,7 +221,10 @@ void target_pos(t_list **a, t_list **b) // probleme tmp_a doit revenir au debut
         tmp_a = (*a);// est ce que ca resout le probleme ?? donne la tete de serie ou pas sinon devoir coder prev et revenir avant ou faire un tableau a chaque fois
         while(tmp_a->next && (tmp_b->index > tmp_a->index))
             tmp_a = tmp_a->next;
-        tmp_b->target_pos = tmp_a->pos;
+        if (tmp_b->index > tmp_a->index)
+            tmp_b->target_pos = tmp_a->pos;
+        else
+            tmp_b->target_pos = tmp_a->pos - 1;
         tmp_b = tmp_b->next;
     }
 }
