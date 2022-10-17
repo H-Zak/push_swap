@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/17 21:31:47 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 21:49:11 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,11 @@ void    fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas
         return(pta(a,b));
     while (tmp_b->cost_a != 0 || tmp_b->cost_b != 0)
     {
-        if (tmp_b->cost_b == 0)
+        if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)
             pta(a,b);
         if (tmp_b->cost_a < 0 && tmp_b->cost_b < 0)
             rrr(a, b);
-        if (tmp_b->cost_a > 0 && tmp_b->cost_b > 0)
+        else if (tmp_b->cost_a > 0 && tmp_b->cost_b > 0)
             rr(a , b);
         if (tmp_b->cost_a > 0 && tmp_b->cost_b == 0)
             rra(a);
