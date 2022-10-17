@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/17 16:52:42 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 17:11:03 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ void    fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas
     i = 1;
     if (tmp_b->cost_a < 0 || tmp_b->cost_b < 0)
         i = -1;
-    if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)//je ne comptabilise pas le cout du pta donc quand le cout est a 0 pour les 2 cote le while ne le prend pas en compte
-            pta(a,b);
-    while (tmp_b->cost_a != 0 && tmp_b->cost_b != 0)
+    // if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)//je ne comptabilise pas le cout du pta donc quand le cout est a 0 pour les 2 cote le while ne le prend pas en compte
+    //         pta(a,b);
+    while (tmp_b->cost_a != 0 || tmp_b->cost_b != 0)
     {
         if (tmp_b->cost_b == 0)
             pta(a,b);
@@ -115,7 +115,7 @@ void cost_a(t_list **a, t_list **b)//differencier le cas ou cest vers le bas ou 
         //si cout de b negatif alors faire negativement et inversement
     while(tmp_b)
     {
-        if (tmp_b->target_pos >= mediane)
+        if (tmp_b->target_pos > mediane) // ou >=
             tmp_b->cost_a = tmp_b->target_pos - taille;//negatif
         else
             tmp_b->cost_a = tmp_b->target_pos;
@@ -192,7 +192,7 @@ void cost_b(t_list **a, t_list **b)//differencier le cas ou cest vers le bas ou 
     tmp_b = (*b);
     while(tmp_b)
     {
-        if (tmp_b->pos >= mediane)
+        if (tmp_b->pos > mediane)
             tmp_b->cost_b = tmp_b->pos - taille;
         else
             tmp_b->cost_b = tmp_b->pos;
