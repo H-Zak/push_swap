@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/17 17:11:03 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 17:15:07 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void    fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas
     while (tmp_b->pos != elu)
         tmp_b = tmp_b->next;
     i = 1;
-    if (tmp_b->cost_a < 0 || tmp_b->cost_b < 0)
+    if (tmp_b->cost_a > 0 || tmp_b->cost_b > 0)
         i = -1;
     // if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)//je ne comptabilise pas le cout du pta donc quand le cout est a 0 pour les 2 cote le while ne le prend pas en compte
     //         pta(a,b);
@@ -97,8 +97,10 @@ void    fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas
             ra(a);
         if (tmp_b->cost_b > 0 && tmp_b->cost_a == 0)
             rb(b);
-        tmp_b->cost_a = tmp_b->cost_a + i;
-        tmp_b->cost_b = tmp_b->cost_b + i;
+        if(tmp_b->cost_a != 0)
+            tmp_b->cost_a = tmp_b->cost_a + i;
+        if(tmp_b->cost_b != 0)
+            tmp_b->cost_b = tmp_b->cost_b + i;
     }
 }
 
