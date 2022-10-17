@@ -5,3 +5,4 @@ enlever le printf "c'est deja trier
 
 possible de mettre l'actualisation des pos et tout dans les mouvement mais risque de ralentir car trop d'actualisation inutile
 test1
+PUSH DANS B

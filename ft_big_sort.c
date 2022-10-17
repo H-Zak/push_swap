@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/17 12:57:25 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 14:54:54 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ void    fait_le_mouv(int i, t_list **a, t_list **b);
 int ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de faire une seule fois le trie pour tous les cas de trie 3,5 et plus
 {
     int *tab;
+    int i;
     
+    i = 0;
     //tout push dans b sauf trois (peut etre des exception ou une optimisation a faire)
     tab = malloc (j * sizeof(int));
     // if (tab == NULL)
@@ -42,6 +44,12 @@ int ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de 
     trie((*a), (*b), j, &tab[0]);
     put_index(a, &tab[0], j);
     //push dans b, choisir la bonne methode
+    while(i <= (j - 3))
+    {
+        ptb(a, b);
+        i++;
+    }
+    size_3(a);
     while((*b))
     {
         pos(a, b);
