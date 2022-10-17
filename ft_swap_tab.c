@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/17 15:48:27 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 20:01:06 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,6 +199,6 @@ int	main (int argc, char** argv) //commencer par faire la size et la fonction si
 	b = NULL;
 	ft_push_swap(argv, &a, &b);
 	//test(a);
-	print_list(a);
+	//print_list(a);
 	return (0);
 }

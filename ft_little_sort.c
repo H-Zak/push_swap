@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/14 15:36:16 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 20:00:55 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ int	checker_if_list_sort (t_list *a)
 	}
 	if (a->next == NULL)
 	{
-		printf("c'est deja trie");
+		//printf("c'est deja trie");
 		return(0);
 	}
 	else
 	{
-		printf("c'est pas trie");
+		//printf("c'est pas trie");
 		return (1);
 	}
 }
