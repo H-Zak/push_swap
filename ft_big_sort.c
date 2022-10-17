@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/17 12:07:14 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 12:54:51 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void    fait_le_mouv(int i, t_list **a, t_list **b);
 // celui qui prend le moins de cout pour se tp 
 //ne pas oublier le cout du pta mais c'est le cas pour tous donc pas besoin de le prendre en compte
 
-int ft_big_sort(t_list **a, t_list **b, int j, int *tab)
+int ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de faire une seule fois le trie pour tous les cas de trie 3,5 et plus
 {
     int *tab;
     
@@ -39,7 +39,7 @@ int ft_big_sort(t_list **a, t_list **b, int j, int *tab)
     // if (tab == NULL)
 	    // 	return(NULL);
     //donne les valeurs aux tableay
-    trie(a, b, j, &tab[0]);
+    trie((*a), (*b), j, &tab[0]);
     put_index(a, &tab[0], j);
     //push dans b, choisir la bonne methode
     while((*b))
@@ -73,13 +73,13 @@ void    fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas
         if (tmp_b->cost_a < 0 && tmp_b->cost_b < 0)
             rrr(a, b);
         if (tmp_b->cost_a > 0 && tmp_b->cost_b > 0)
-            rr(a , b)
+            rr(a , b);
         if (tmp_b->cost_a < 0 && tmp_b->cost_b == 0)
             rra(a, b);
         if (tmp_b->cost_b < 0 && tmp_b->cost_a == 0)
             rrb(a, b);
         if (tmp_b->cost_a > 0 && tmp_b->cost_b == 0)
-            ra(a , b)
+            ra(a , b);
         if (tmp_b->cost_b > 0 && tmp_b->cost_a == 0)
             rb(a, b);
         tmp_b->cost_a = tmp_b->cost_a + i;
@@ -116,23 +116,23 @@ int cout_reel (int  cost_a, int cost_b)
     if (cost_a < 0 && cost_b < 0)
     {
         if (cost_a < cost_b)
-            return (cost_a * -1)
+            return (cost_a * -1);
         else
-            return (cost_b * -1)
+            return (cost_b * -1);
     }
     else if (cost_a > 0 && cost_b > 0)
     {
         if (cost_a > cost_b)
-            return (cost_a)
+            return (cost_a);
         else
-            return (cost_b)
+            return (cost_b);
     }
     else
     {
         if(cost_a =< 0)
             cout = (cost_a * -1) + cost_b;
         else if (cost_b =< 0)
-            cout = cost_a + (cost_b * -1)
+            cout = cost_a + (cost_b * -1);
         return (cout);
     }
 }
@@ -147,12 +147,12 @@ int    cout_global (t_list **a, t_list **b) //prendre en compte le cas ou les de
     
     tmp_b = (*b);
     i = 0;
-    taille = ft_lstsize(b);
+    taille = ft_lstsize((*b));
     cout_1 = cout_reel(tmp_b->cost_a, tmp_b->cost_b);
     tmp_b = tmp_b->next;
     while(tmp_b)
     {
-        cout 2 = cout_reel(tmp_b->cost_a, tmp_b->cost_b);
+        cout_2 = cout_reel(tmp_b->cost_a, tmp_b->cost_b);
         if (cout_2 < cout_1)
         {
             cout_1 = cout_2;
@@ -245,9 +245,9 @@ void put_index(t_list **a, int *tab, int j)
     }
 }
 
-void	trie(t_list *a, t_list *b, int j, int *tab)
+void	trie(t_list *a, t_list *b, int j, int *tab)//pourquoi j'avais redeclarer tab, pas besois de return tab si j'ai enovoyer l'adresse ?
 {
-	int *tab;
+//	int *tab;
 	int	i;
 	t_list *tmp;
 	
@@ -260,5 +260,5 @@ void	trie(t_list *a, t_list *b, int j, int *tab)
 		i++;
 	}
 	bubbleSort(&tab[0], j);
-    return (tab);
+  //  return (tab);
 }

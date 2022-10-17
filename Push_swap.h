@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/13 18:03:45 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 12:51:18 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ int ft_push_swap (char** argv, t_list **a, t_list **b);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 int	checker_if_list_sort (t_list *a);
 void bubbleSort(int *tab, int n);
+int ft_big_sort(t_list **a, t_list **b, int j);
 
 #endif
