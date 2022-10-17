@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/17 18:02:34 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 19:16:59 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,8 @@ void    fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas
     i = 1;
     if (tmp_b->cost_a > 0 || tmp_b->cost_b > 0)
         i = -1;
-    // if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)//je ne comptabilise pas le cout du pta donc quand le cout est a 0 pour les 2 cote le while ne le prend pas en compte
-    //         pta(a,b);
+    if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)//je ne comptabilise pas le cout du pta donc quand le cout est a 0 pour les 2 cote le while ne le prend pas en compte
+        return(pta(a,b));
     while (tmp_b->cost_a != 0 || tmp_b->cost_b != 0)
     {
         if (tmp_b->cost_b == 0)
