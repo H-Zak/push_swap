@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/17 15:06:18 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 15:15:54 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ int ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de 
 {
     int *tab;
     int i;
+    int elu;
     
+    elu = 0;
     i = 0;
     //tout push dans b sauf trois (peut etre des exception ou une optimisation a faire)
     tab = malloc (j * sizeof(int));
@@ -56,7 +58,8 @@ int ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de 
         // target_pos(a, b);
         // cost_a(a, b);
         // cost_b(a, b);
-        // fait_le_mouv(cout_global(a, b), a, b);
+        // elu = cout_global(a, b);
+        // fait_le_mouv(elu, a, b);
     }
     //une fois quon sait le quelle bouger, faire le mouvement, recalculer les positions et les targets
     free(tab);
