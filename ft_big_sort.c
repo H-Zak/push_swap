@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/17 16:33:33 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 16:52:42 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,10 +192,10 @@ void cost_b(t_list **a, t_list **b)//differencier le cas ou cest vers le bas ou 
     tmp_b = (*b);
     while(tmp_b)
     {
-        if (tmp_b->target_pos >= mediane)
+        if (tmp_b->pos >= mediane)
             tmp_b->cost_b = tmp_b->pos - taille;
         else
-            tmp_b->cost_b = tmp_b->target_pos;
+            tmp_b->cost_b = tmp_b->pos;
         tmp_b = tmp_b->next;        
     }
    // if ((*b)->target_pos == mediane)
