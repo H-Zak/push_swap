@@ -13,3 +13,5 @@ prochain test avec 8 chiffres pour tester la mediane
 cd ; rm -rf test ; git clone git@github.com:Zheylkoss/push_swap.git test ; cd test ; git checkout test ; make 
 
 git add . ; git commit -m “test” ; git push
+
+4 1 2 3 ne fonctione pas ! a check
