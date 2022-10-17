@@ -6,33 +6,205 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/13 18:37:03 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 12:07:14 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-int	*trie (t_list *a, t_list *b, int j, int *tab);
-pos(t_list **a, t_list **b);
+void     cost_a(t_list **a, t_list **b);
+void    trie (t_list *a, t_list *b, int j, int *tab);
+void    pos (t_list **a, t_list **b);
+void    put_index(t_list **a, int *tab, int j);
+void     target_pos(t_list **a, t_list **b);
+void     cost_b(t_list **a, t_list **b);
+int    cout_global (t_list **a, t_list **b);
+void    fait_le_mouv(int i, t_list **a, t_list **b);
 
-
+//coder les pieges (si la suite est strictement decroissante)
 // faire tp, cost a et cost b
+//trouver la suite la plus longue 
+//pour le Tp on doit trouver ou il se plasse environ si son index est 4 et qu'en face il y a 2 et un 6 on choisis de le mettre au dessus du 6 (pk pas faire en fonction du cout )
+// a la fin peut etre creer un **tab qui enregistrera tous les writes pour ensuite comparer si on peut remplacer 2 actions par une seule
+//utiliser la mediane pour le cout B
+// celui qui prend le moins de cout pour se tp 
+//ne pas oublier le cout du pta mais c'est le cas pour tous donc pas besoin de le prendre en compte
 
 int ft_big_sort(t_list **a, t_list **b, int j, int *tab)
 {
     int *tab;
     
+    //tout push dans b sauf trois (peut etre des exception ou une optimisation a faire)
     tab = malloc (j * sizeof(int));
     // if (tab == NULL)
 	    // 	return(NULL);
     //donne les valeurs aux tableay
-    trie_index(a, b, j, &tab[0]);
-    put_index_pos(a, &tab[0], j);
-    pos(a, b);
-    //free(tab)
+    trie(a, b, j, &tab[0]);
+    put_index(a, &tab[0], j);
+    //push dans b, choisir la bonne methode
+    while((*b))
+    {
+        pos(a, b);
+        target_pos(a, b);
+        cost_a(a, b);
+        cost_b(a, b);
+        fait_le_mouv(cout_global(a, b), a, b);
+    }
+    //une fois quon sait le quelle bouger, faire le mouvement, recalculer les positions et les targets
+    free(tab);
+    return (0);
 }
 
-int pos(t_list **a, t_list **b)
+void    fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas une temporaire pour economiser deux lignes
+{
+    t_list *tmp_b;
+    int i;
+
+    tmp_b = (*b);
+    while (tmp_b->pos != elu)
+        tmp_b = tmp_b->next;
+    i = 1;
+    if (tmp_b->cost_a < 0 || tmp_b->cost_b < 0)
+        i = -1;
+    while (tmp_b->cost_a != 0 && tmp_b->cost_b != 0)
+    {
+        if (tmp_b->cost_b == 0)
+            pta(a,b);
+        if (tmp_b->cost_a < 0 && tmp_b->cost_b < 0)
+            rrr(a, b);
+        if (tmp_b->cost_a > 0 && tmp_b->cost_b > 0)
+            rr(a , b)
+        if (tmp_b->cost_a < 0 && tmp_b->cost_b == 0)
+            rra(a, b);
+        if (tmp_b->cost_b < 0 && tmp_b->cost_a == 0)
+            rrb(a, b);
+        if (tmp_b->cost_a > 0 && tmp_b->cost_b == 0)
+            ra(a , b)
+        if (tmp_b->cost_b > 0 && tmp_b->cost_a == 0)
+            rb(a, b);
+        tmp_b->cost_a = tmp_b->cost_a + i;
+        tmp_b->cost_b = tmp_b->cost_b + i;
+    }
+}
+
+void cost_a(t_list **a, t_list **b)//differencier le cas ou cest vers le bas ou vers le haut 
+{
+    int taille;
+    int mediane;
+    t_list  *tmp_b;
+    
+    taille = ft_lstsize((*a));
+    mediane = taille / 2;
+    tmp_b = (*b);
+   // if ((*b)->target_pos == mediane)
+        //si cout de b negatif alors faire negativement et inversement
+    while(tmp_b)
+    {
+        if (tmp_b->target_pos >= mediane)
+            tmp_b->cost_a = tmp_b->target_pos - taille;//negatif
+        else
+            tmp_b->cost_a = tmp_b->target_pos;
+        tmp_b = tmp_b->next;
+        
+    }
+}
+
+int cout_reel (int  cost_a, int cost_b)
+{
+    int cout;
+    
+    if (cost_a < 0 && cost_b < 0)
+    {
+        if (cost_a < cost_b)
+            return (cost_a * -1)
+        else
+            return (cost_b * -1)
+    }
+    else if (cost_a > 0 && cost_b > 0)
+    {
+        if (cost_a > cost_b)
+            return (cost_a)
+        else
+            return (cost_b)
+    }
+    else
+    {
+        if(cost_a =< 0)
+            cout = (cost_a * -1) + cost_b;
+        else if (cost_b =< 0)
+            cout = cost_a + (cost_b * -1)
+        return (cout);
+    }
+}
+
+int    cout_global (t_list **a, t_list **b) //prendre en compte le cas ou les deux sont negatif
+{
+    t_list  *tmp_b;
+    int taille;
+    int cout_1;
+    int cout_2;
+    int elu;
+    
+    tmp_b = (*b);
+    i = 0;
+    taille = ft_lstsize(b);
+    cout_1 = cout_reel(tmp_b->cost_a, tmp_b->cost_b);
+    tmp_b = tmp_b->next;
+    while(tmp_b)
+    {
+        cout 2 = cout_reel(tmp_b->cost_a, tmp_b->cost_b);
+        if (cout_2 < cout_1)
+        {
+            cout_1 = cout_2;
+            elu = tmp_b->pos;
+        }
+        tmp_b = tmp_b->next;
+    }
+    return(elu); //pour savoir lequelle va etre bouger
+    
+}
+
+
+void cost_b(t_list **a, t_list **b)//differencier le cas ou cest vers le bas ou vers le haut 
+{
+    int taille;
+    int mediane;
+    t_list *tmp_b;
+    
+    taille = ft_lstsize((*b));
+    mediane = taille / 2;
+    tmp_b = (*b);
+    while(tmp_b)
+    {
+        if (tmp_b->target_pos >= mediane)
+            tmp_b->cost_b = tmp_b->pos - taille;
+        else
+            tmp_b->cost_b = tmp_b->target_pos;
+        tmp_b = tmp_b->next;        
+    }
+   // if ((*b)->target_pos == mediane)
+        //si cout de b negatif alors faire negativement et inversement
+}
+
+
+void target_pos(t_list **a, t_list **b) // probleme tmp_a doit revenir au debut
+{
+    t_list  *tmp_a;
+    t_list  *tmp_b;
+
+    tmp_b = (*b);
+    while(tmp_b)
+    {
+        tmp_a = (*a);// est ce que ca resout le probleme ?? donne la tete de serie ou pas sinon devoir coder prev et revenir avant ou faire un tableau a chaque fois
+        while(tmp_b->index > tmp_a->index)
+            tmp_a = tmp_a->next;
+        tmp_b->target_pos = tmp_a->pos;
+        tmp_b = tmp_b->next;
+    }
+}
+
+
+void pos(t_list **a, t_list **b)
 {
     t_list  *tmp_a;
     t_list  *tmp_b;
@@ -69,11 +241,11 @@ void put_index(t_list **a, int *tab, int j)
             i++;
         tmp->index = i;
         tmp = tmp->next;
-        a = 1;
+        i = 1;
     }
 }
 
-int	*trie(t_list *a, t_list *b, int j, int *tab)
+void	trie(t_list *a, t_list *b, int j, int *tab)
 {
 	int *tab;
 	int	i;

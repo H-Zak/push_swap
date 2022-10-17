@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/13 18:06:00 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 12:07:07 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,7 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 			else if (j == 5 || j == 4)
 				size_5(a, b, j);
 			else
-			{
 				ft_big_sort(a ,b, j);//appelle de la fonction qui trie, avec l'algo, la mise en place de l'index, de la pos et etc
-			}
 		}
 	}
 	else
@@ -61,6 +59,7 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 	// 	ft_lstdelone(a, free);
 	// 	(*a) = (*a)->next;
 	// }
+	return (0);
 }
 
 int	list_check (char **argv, char **tab, t_list **a)
@@ -186,6 +185,11 @@ void	free_tabchar(char **tab)
 	free(tab);
 }
 
+void test(t_list *a)
+{
+	a->content = 1;	
+}
+
 int	main (int argc, char** argv) //commencer par faire la size et la fonction size renverra vers la fonction de trie efficace donc : 3, 5 ou plus
 {
 	t_list	*a;
@@ -193,7 +197,8 @@ int	main (int argc, char** argv) //commencer par faire la size et la fonction si
 
 	a = NULL;
 	b = NULL;
-	ft_push_swap(argv, &a, &b);
+	//ft_push_swap(argv, &a, &b);
+	test(a);
 	print_list(a);
 	return (0);
 }
