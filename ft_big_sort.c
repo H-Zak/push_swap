@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/17 15:26:42 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 15:39:02 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,7 @@ int    cout_global (t_list **a, t_list **b) //prendre en compte le cas ou les de
     int elu;
     
     tmp_b = (*b);
+    elu = 0;
   //  i = 0;
     taille = ft_lstsize((*b));
     cout_1 = cout_reel(tmp_b->cost_a, tmp_b->cost_b);
