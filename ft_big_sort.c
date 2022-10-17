@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/17 12:54:51 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/17 12:57:25 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,13 +75,13 @@ void    fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas
         if (tmp_b->cost_a > 0 && tmp_b->cost_b > 0)
             rr(a , b);
         if (tmp_b->cost_a < 0 && tmp_b->cost_b == 0)
-            rra(a, b);
+            rra(a);
         if (tmp_b->cost_b < 0 && tmp_b->cost_a == 0)
-            rrb(a, b);
+            rrb(b);
         if (tmp_b->cost_a > 0 && tmp_b->cost_b == 0)
-            ra(a , b);
+            ra(a);
         if (tmp_b->cost_b > 0 && tmp_b->cost_a == 0)
-            rb(a, b);
+            rb(b);
         tmp_b->cost_a = tmp_b->cost_a + i;
         tmp_b->cost_b = tmp_b->cost_b + i;
     }
@@ -129,9 +129,9 @@ int cout_reel (int  cost_a, int cost_b)
     }
     else
     {
-        if(cost_a =< 0)
+        if(cost_a <= 0)
             cout = (cost_a * -1) + cost_b;
-        else if (cost_b =< 0)
+        else if (cost_b <= 0)
             cout = cost_a + (cost_b * -1);
         return (cout);
     }
@@ -146,7 +146,7 @@ int    cout_global (t_list **a, t_list **b) //prendre en compte le cas ou les de
     int elu;
     
     tmp_b = (*b);
-    i = 0;
+  //  i = 0;
     taille = ft_lstsize((*b));
     cout_1 = cout_reel(tmp_b->cost_a, tmp_b->cost_b);
     tmp_b = tmp_b->next;
