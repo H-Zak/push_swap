@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/18 16:38:19 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/18 16:51:29 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -308,7 +308,7 @@ void    target_pos (t_list **a, t_list **b)
             j++;
         if (j == max)//viser la position la plus petit
             j = 0;
-        if (j == 0)
+        else if (j == 0)
             j = i - 1;
         tmp_a = (*a);
         while (tab[j] != tmp_a->index)
