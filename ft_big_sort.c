@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/18 17:09:25 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/18 17:16:46 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,9 +165,9 @@ void cost_a(t_list **a, t_list **b)//differencier le cas ou cest vers le bas ou 
         //si cout de b negatif alors faire negativement et inversement
     while(tmp_b)
     {
-        if (tmp_b->target_pos == (taille - 1))
-            tmp_b->cost_a = 0;
-        else if (tmp_b->target_pos > mediane) // ou >=
+        // if (tmp_b->target_pos == (taille - 1))
+        //     tmp_b->cost_a = 0;
+        if (tmp_b->target_pos > mediane) // ou >=
             tmp_b->cost_a = tmp_b->target_pos - taille;//negatif
         else
             tmp_b->cost_a = tmp_b->target_pos;
