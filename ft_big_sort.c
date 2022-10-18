@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/18 15:18:02 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/18 15:43:23 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -283,6 +283,7 @@ void    target_pos (t_list **a, t_list **b)
     int i;
     int j;
     int *tab;
+    int max;
 
     tmp_b = (*b);
     tmp_a = (*a);
@@ -296,12 +297,15 @@ void    target_pos (t_list **a, t_list **b)
         j++;
         tmp_a = tmp_a->next;
     }
+    max = j;
     bubbleSort(&tab[0], i);
     while (tmp_b)
     {
         j = 0;
-        while(tab[j] < tmp_b->index)
+        while(tab[j] && (tab[j] < tmp_b->index)) //table de j existe 
             j++;
+        if (j == max)
+            j = j - 1;
         tmp_a = (*a);
         while (tab[j] != tmp_a->index)
             tmp_a = tmp_a->next;
