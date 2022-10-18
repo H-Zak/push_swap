@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/18 14:34:22 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/18 15:18:02 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void     target_pos(t_list **a, t_list **b);
 void     cost_b(t_list **a, t_list **b);
 int    cout_global (t_list **a, t_list **b);
 void    fait_le_mouv(int i, t_list **a, t_list **b);
+void    the_finish (t_list **a, t_list **b, int *tab);
 
 //coder les pieges (si la suite est strictement decroissante)
 // faire tp, cost a et cost b
@@ -63,9 +64,43 @@ int ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de 
         fait_le_mouv(elu, a, b);
         i++;
     }
-    //une fois quon sait le quelle bouger, faire le mouvement, recalculer les positions et les targets
+    //une fois la boucle finis tout est trie mais peut etre pas avec le premier index en haut
+    the_finish(a, b, &tab[0]);
     free(tab);
     return (0);
+}
+
+void    the_finish (t_list **a, t_list **b, int *tab)
+{
+    t_list *tmp_a;
+    t_list *tmp_b;
+    int i;
+    int taille;
+
+    pos(a,b);
+    i = 0;
+    tmp_a = (*a);
+    tmp_b = (*b);
+    while (tab[0] != tmp_a->content)
+        tmp_a = tmp_a->next;
+    taille = ft_lstsize((*a)) / 2;
+    if (tmp_a->pos > taille)
+    {
+        while(tmp_a->pos != 0)
+        {
+            rra(a);
+            pos(a,b);
+        }
+    }
+    else
+    {
+        while(tmp_a->pos != 0)
+        {
+            ra(a);
+            pos(a,b);
+        }
+    }
+    
 }
 
 void    fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas une temporaire pour economiser deux lignes
@@ -221,7 +256,7 @@ void cost_b(t_list **a, t_list **b)//differencier le cas ou cest vers le bas ou 
         //si cout de b negatif alors faire negativement et inversement
 }
 
-
+/*
 void target_pos(t_list **a, t_list **b) // probleme tmp_a doit revenir au debut
 {
     t_list  *tmp_a;
@@ -239,7 +274,43 @@ void target_pos(t_list **a, t_list **b) // probleme tmp_a doit revenir au debut
         else
             tmp_b->target_pos = tmp_a->pos - 1;
         tmp_b = tmp_b->next;
+    }*/
+
+void    target_pos (t_list **a, t_list **b)
+{
+    t_list  *tmp_a;
+    t_list  *tmp_b;
+    int i;
+    int j;
+    int *tab;
+
+    tmp_b = (*b);
+    tmp_a = (*a);
+    i = ft_lstsize((*a));
+    tab = malloc (i * sizeof(int));
+    //securite malloc
+    j = 0;
+    while (tmp_a)
+    {
+        tab[j] = tmp_a->index; //mettre directement dans l'ordre les index ?
+        j++;
+        tmp_a = tmp_a->next;
     }
+    bubbleSort(&tab[0], i);
+    while (tmp_b)
+    {
+        j = 0;
+        while(tab[j] < tmp_b->index)
+            j++;
+        tmp_a = (*a);
+        while (tab[j] != tmp_a->index)
+            tmp_a = tmp_a->next;
+        tmp_b->target_pos = tmp_a->pos; //trouver a quel index il correspond et ensuite donne sa pos a b
+        tmp_b = tmp_b->next;
+    }
+    //free(tab);
+    
+        
 }
 
 
