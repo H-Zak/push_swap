@@ -17,3 +17,6 @@ git add . ; git commit -m “test” ; git push
 4 1 2 3 ne fonctione pas ! a check
 
 check targte pos et mouv
+5 2 4 3 6 1
+
+a   b

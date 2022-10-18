@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/17 21:49:11 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/18 14:19:15 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,10 @@ int ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de 
 void    fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas une temporaire pour economiser deux lignes
 {
     t_list *tmp_b;
-    int i;
 
     tmp_b = (*b);
     while (tmp_b->pos != elu)
         tmp_b = tmp_b->next;
-    i = 1;
-    if (tmp_b->cost_a > 0 || tmp_b->cost_b > 0)
-        i = -1;
     if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)//je ne comptabilise pas le cout du pta donc quand le cout est a 0 pour les 2 cote le while ne le prend pas en compte
         return(pta(a,b));
     while (tmp_b->cost_a != 0 || tmp_b->cost_b != 0)
@@ -86,21 +82,38 @@ void    fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas
         if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)
             pta(a,b);
         if (tmp_b->cost_a < 0 && tmp_b->cost_b < 0)
+        {
             rrr(a, b);
-        else if (tmp_b->cost_a > 0 && tmp_b->cost_b > 0)
-            rr(a , b);
-        if (tmp_b->cost_a > 0 && tmp_b->cost_b == 0)
-            rra(a);
-        if (tmp_b->cost_b < 0 && tmp_b->cost_a == 0)
-            rrb(b);
+            tmp_b->cost_a = tmp_b->cost_a + 1;
+            tmp_b->cost_b = tmp_b->cost_b + 1;
+            
+        }
         if (tmp_b->cost_a < 0 && tmp_b->cost_b == 0)
+        {
+            rra(a);
+            tmp_b->cost_a = tmp_b->cost_a + 1;
+        }
+        if (tmp_b->cost_b < 0 && tmp_b->cost_a == 0)
+        {
+            rrb(b);
+            tmp_b->cost_b = tmp_b->cost_b + 1;
+        }
+        if (tmp_b->cost_a > 0 && tmp_b->cost_b > 0)
+        {
+            rr(a , b);
+            tmp_b->cost_a = tmp_b->cost_a - 1;
+            tmp_b->cost_b = tmp_b->cost_b - 1;
+        }
+        if (tmp_b->cost_a > 0 && tmp_b->cost_b == 0)
+        {
             ra(a);
+            tmp_b->cost_a = tmp_b->cost_a - 1;   
+        }
         if (tmp_b->cost_b > 0 && tmp_b->cost_a == 0)
+        {
             rb(b);
-        if(tmp_b->cost_a != 0)
-            tmp_b->cost_a = tmp_b->cost_a + i;
-        if(tmp_b->cost_b != 0)
-            tmp_b->cost_b = tmp_b->cost_b + i;
+            tmp_b->cost_b = tmp_b->cost_b - 1;
+        }
     }
 }
 
