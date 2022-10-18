@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/17 20:01:06 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/18 19:45:35 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 {
 	int	j;
 	char **tab;
-//If no parameters are specified, the program must not display anything and give the prompt back.
+
 	tab = NULL;
 	if (list_check(argv, tab, a) == 0)
 	{
@@ -43,12 +43,17 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 		else
 		{
 			j = ft_lstsize(*a);
-			if (j == 3)
+			if (j == 2)
+			{
+				if((*a)->content > (*a)->next->content)
+					sa(a);
+			}
+			else if (j == 3)
 				size_3(a);
 			else if (j == 5 || j == 4)
 				size_5(a, b, j);
 			else
-				ft_big_sort(a ,b, j);//appelle de la fonction qui trie, avec l'algo, la mise en place de l'index, de la pos et etc
+				ft_big_sort(a ,b, j);
 		}
 	}
 	else
@@ -104,7 +109,7 @@ int	check_doublons_int(t_list *a, char **tab) //ca ne modifie pas le pointeur ca
 	return (free(tabtest),0);
 }
 
-int do_it_chainlist(char** argv, char** tab, t_list **a) //est ce que je dois envoyer **a pour que ca fonctionne ????
+int do_it_chainlist(char** argv, char** tab, t_list **a)
 {
 	int	j;
 	int	i;
@@ -197,6 +202,8 @@ int	main (int argc, char** argv) //commencer par faire la size et la fonction si
 
 	a = NULL;
 	b = NULL;
+	if (argc == 1 || argc == 2) //If no parameters are specified, the program must not display anything and give the prompt back.
+		return (0);
 	ft_push_swap(argv, &a, &b);
 	//test(a);
 	//print_list(a);

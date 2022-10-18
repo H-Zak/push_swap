@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/18 17:16:46 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/18 19:43:52 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,8 @@ void    fait_le_mouv(int i, t_list **a, t_list **b);
 void    the_finish (t_list **a, t_list **b, int *tab);
 
 //coder les pieges (si la suite est strictement decroissante)
-// faire tp, cost a et cost b
 //trouver la suite la plus longue 
-//pour le Tp on doit trouver ou il se plasse environ si son index est 4 et qu'en face il y a 2 et un 6 on choisis de le mettre au dessus du 6 (pk pas faire en fonction du cout )
 // a la fin peut etre creer un **tab qui enregistrera tous les writes pour ensuite comparer si on peut remplacer 2 actions par une seule
-//utiliser la mediane pour le cout B
-// celui qui prend le moins de cout pour se tp 
 //ne pas oublier le cout du pta mais c'est le cas pour tous donc pas besoin de le prendre en compte
 
 int ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de faire une seule fois le trie pour tous les cas de trie 3,5 et plus
@@ -39,7 +35,6 @@ int ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de 
     
     elu = 0;
     i = 0;
-    //tout push dans b sauf trois (peut etre des exception ou une optimisation a faire)
     tab = malloc (j * sizeof(int));
     // if (tab == NULL)
 	    // 	return(NULL);
@@ -76,31 +71,25 @@ void    the_finish (t_list **a, t_list **b, int *tab)
     t_list *tmp_b;
     int i;
     int taille;
+    int comp;
 
     pos(a,b);
     i = 0;
+    comp = 0;
     tmp_a = (*a);
     tmp_b = (*b);
     while (tab[0] != tmp_a->content)
         tmp_a = tmp_a->next;
     taille = ft_lstsize((*a)) / 2;
-    if (tmp_a->pos > taille)
+    comp = tmp_a->pos; 
+    while(tmp_a->pos != 0)
     {
-        while(tmp_a->pos != 0)
-        {
+        if (comp > taille)
             rra(a);
-            pos(a,b);
-        }
-    }
-    else
-    {
-        while(tmp_a->pos != 0)
-        {
+        else
             ra(a);
-            pos(a,b);
-        }
+        pos(a,b);
     }
-    
 }
 
 void    fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas une temporaire pour economiser deux lignes
@@ -110,7 +99,7 @@ void    fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas
     tmp_b = (*b);
     while (tmp_b->pos != elu)
         tmp_b = tmp_b->next;
-    if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)//je ne comptabilise pas le cout du pta donc quand le cout est a 0 pour les 2 cote le while ne le prend pas en compte
+    if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)//je ne comptabilise pas le cout du pta donc quand le cout est a 0 pour les 2 cote le while ne le prend pas en compte, possible de le mettre apres le while
         return(pta(a,b));
     while (tmp_b->cost_a != 0 || tmp_b->cost_b != 0)
     {
@@ -119,7 +108,6 @@ void    fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas
             rrr(a, b);
             tmp_b->cost_a = tmp_b->cost_a + 1;
             tmp_b->cost_b = tmp_b->cost_b + 1;
-            
         }
         if (tmp_b->cost_a < 0 && tmp_b->cost_b == 0)
         {
@@ -233,7 +221,6 @@ int    cout_global (t_list **a, t_list **b) //prendre en compte le cas ou les de
         tmp_b = tmp_b->next;
     }
     return(elu); //pour savoir lequelle va etre bouger
-    
 }
 
 
@@ -301,6 +288,7 @@ void    target_pos (t_list **a, t_list **b)
     }
     max = j;
     bubbleSort(&tab[0], i);
+    //mettre le while dans une autre fonction
     while (tmp_b)
     {
         j = 0;
@@ -317,8 +305,6 @@ void    target_pos (t_list **a, t_list **b)
         tmp_b = tmp_b->next;
     }
     //free(tab);
-    
-        
 }
 
 
