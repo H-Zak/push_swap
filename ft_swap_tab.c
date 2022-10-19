@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/17 20:01:06 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/19 18:32:45 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 {
 	int	j;
 	char **tab;
-//If no parameters are specified, the program must not display anything and give the prompt back.
+
 	tab = NULL;
 	if (list_check(argv, tab, a) == 0)
 	{
@@ -54,11 +54,14 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 	else
 		printf("Error\n");
 	//free chainlist
-	// while(a)
-	// {
-	// 	ft_lstdelone(a, free);
-	// 	(*a) = (*a)->next;
-	// }
+	tmp = a;
+	while(tmp)
+	{
+		tmp = a->next;
+		free(a);
+		a = tmp;
+	}
+	a = NULL;
 	return (0);
 }
 
