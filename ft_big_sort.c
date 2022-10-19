@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/18 20:15:28 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/19 14:32:20 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,7 @@ void    fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas
         {
             rb(b);
             tmp_b->cost_b = tmp_b->cost_b - 1;
-            ra(a);
+            rra(a);
             tmp_b->cost_a = tmp_b->cost_a + 1;
         }
         if(tmp_b->cost_b < 0 && tmp_b->cost_a > 0)//peut le mettre dans un autre if ou utiliser que des else if sauf pour le dernier
