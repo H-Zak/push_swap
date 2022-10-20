@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 16:02:07 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 17:37:26 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	pos (t_list **a, t_list **b);
 void	put_index(t_list **a, int *tab, int j);
 void	target_pos(t_list **a, t_list **b);
 void	fait_le_mouv(int i, t_list **a, t_list **b);
+void	target_pos_2 (t_list *tmp_b, t_list *tmp_a, t_list **a, int *tab, int j);
 
 void	fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas une temporaire pour economiser deux lignes
 {
@@ -103,6 +104,15 @@ void    target_pos (t_list **a, t_list **b)
 	max = j;
 	bubbleSort(&tab[0], i);
 	//mettre le while dans une autre fonction
+	target_pos_2(tmp_b, tmp_a, a, tab, j);
+	free(tab);
+}
+
+void	target_pos_2 (t_list *tmp_b, t_list *tmp_a, t_list **a, int *tab, int j)
+{
+	int	max;
+
+	max = j;
 	while (tmp_b)
 	{
 		j = 0;
@@ -118,7 +128,7 @@ void    target_pos (t_list **a, t_list **b)
 		tmp_b->target_pos = tmp_a->pos; //trouver a quel index il correspond et ensuite donne sa pos a b
 		tmp_b = tmp_b->next;
 	}
-	//free(tab);
+	
 }
 
 

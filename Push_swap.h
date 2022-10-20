@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 16:31:46 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 16:37:43 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@
 typedef struct s_list
 {
 	long	content;
-    int		cost_a;
-    int		cost_b;
-    int		index;
-    int		pos;
-    int		target_pos;
-    struct	s_list	*next;
+	int		cost_a;
+	int		cost_b;
+	int		index;
+	int		pos;
+	int		target_pos;
+	struct	s_list	*next;
 	struct	s_list	*prev; //check not use yet
 }			t_list;
 
@@ -67,11 +67,11 @@ void	pos(t_list **a, t_list **b);
 void	put_index(t_list **a, int *tab, int j);
 void	target_pos(t_list **a, t_list **b);
 void	fait_le_mouv(int i, t_list **a, t_list **b);
-int     check_list (char** argv, char**tab);
-int	    check (char** tab);
-int	    do_it_chainlist(char** argv, char** tab, t_list **a);// mettre un return en cas d'erreur
-int	    check_doublons_int(t_list *a, char **tab);
-int	    list_check (char **argv, char **tab, t_list **a);
+int     check_list(char **argv, char **tab);
+int		check (char** tab);
+int		do_it_chainlist(char **argv, char **tab, t_list **a);// mettre un return en cas d'erreur
+int		check_doublons_int(t_list *a, char **tab);
+int		list_check(char **argv, char **tab, t_list **a);
 void	free_tabchar(char **tab);
 
 #endif
