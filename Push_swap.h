@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 15:32:48 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 15:47:20 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ size_t	ft_strlen(const char *str);
 char	**ft_split(char const *s, char c);
 t_list	*ft_lstnew(int content);
 long    ft_atol(const char *nptr);
-int	ft_atoi(const char *nptr);
+int     ft_atoi(const char *nptr);
 void	ft_lastadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ptb (t_list **a, t_list **b);
@@ -51,22 +51,21 @@ void    sa(t_list **a);
 void    sb(t_list **b);
 void    ss(t_list **a, t_list **b);
 int	    stack_size(t_list *a);
-void	ft_sort_int_tab(int *tab, int size);
-int	ft_lstsize(t_list *lst);
-int size_3 (t_list **a);
+int     ft_lstsize(t_list *lst);
+int     size_3 (t_list **a);
 void	size_5 (t_list **a, t_list **b, int j);
-int ft_push_swap (char** argv, t_list **a, t_list **b);
+int     ft_push_swap (char** argv, t_list **a, t_list **b);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
-int	checker_if_list_sort (t_list *a);
-void bubbleSort(int *tab, int n);
-int ft_big_sort(t_list **a, t_list **b, int j);
-void     cost_b(t_list **a, t_list **b);
-int    cout_global (t_list **a, t_list **b);
-void     cost_a(t_list **a, t_list **b);
-int cout_reel (int  cost_a, int cost_b);
+int     checker_if_list_sort (t_list *a);
+void    bubbleSort(int *tab, int n);
+int     ft_big_sort(t_list **a, t_list **b, int j);
+void    cost_b(t_list **a, t_list **b);
+int     cout_global (t_list **a, t_list **b);
+void    cost_a(t_list **a, t_list **b);
+int     cout_reel (int  cost_a, int cost_b);
 void    pos (t_list **a, t_list **b);
 void    put_index(t_list **a, int *tab, int j);
-void     target_pos(t_list **a, t_list **b);
+void    target_pos(t_list **a, t_list **b);
 void    fait_le_mouv(int i, t_list **a, t_list **b);
 
 #endif

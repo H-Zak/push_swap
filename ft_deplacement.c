@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 15:32:43 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 15:43:45 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,26 +78,6 @@ void    fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas
             pta(a,b);
     }
 }
-
-/*
-void target_pos(t_list **a, t_list **b) // probleme tmp_a doit revenir au debut
-{
-    t_list  *tmp_a;
-    t_list  *tmp_b;
-
-    tmp_b = (*b);
-    tmp_a = (*a);
-    while(tmp_b)
-    {
-        tmp_a = (*a);// est ce que ca resout le probleme ?? donne la tete de serie ou pas sinon devoir coder prev et revenir avant ou faire un tableau a chaque fois
-        while(tmp_a->next && (tmp_b->index > tmp_a->index))
-            tmp_a = tmp_a->next;
-        if (tmp_b->index < tmp_a->index)
-            tmp_b->target_pos = tmp_a->pos;
-        else
-            tmp_b->target_pos = tmp_a->pos - 1;
-        tmp_b = tmp_b->next;
-    }*/
 
 void    target_pos (t_list **a, t_list **b)
 {

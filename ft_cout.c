@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:28:58 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 15:30:56 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 15:44:37 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ int    cout_global (t_list **a, t_list **b) //prendre en compte le cas ou les de
     
     tmp_b = (*b);
     elu = 0;
-  //  i = 0;
     taille = ft_lstsize((*b));
     cout_1 = cout_reel(tmp_b->cost_a, tmp_b->cost_b);
     tmp_b = tmp_b->next;
@@ -97,11 +96,11 @@ int    cout_global (t_list **a, t_list **b) //prendre en compte le cas ou les de
         }
         tmp_b = tmp_b->next;
     }
-    return(elu); //pour savoir lequelle va etre bouger
+    return(elu);
 }
 
 
-void cost_b(t_list **a, t_list **b)//differencier le cas ou cest vers le bas ou vers le haut 
+void cost_b(t_list **a, t_list **b)
 {
     int taille;
     int mediane;
@@ -118,6 +117,4 @@ void cost_b(t_list **a, t_list **b)//differencier le cas ou cest vers le bas ou 
             tmp_b->cost_b = tmp_b->pos;
         tmp_b = tmp_b->next;        
     }
-   // if ((*b)->target_pos == mediane)
-        //si cout de b negatif alors faire negativement et inversement
 }

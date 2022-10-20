@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 15:40:33 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/09 18:50:48 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 15:45:56 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	rra (t_list **a)
 }
 
 // chaque nombre perd une place et le dernier devient le premier 
-void	rrb(t_list **b)// recevoir ** (pour avoir l'adresse du pointeur et donc modifier veritablement sa valeur)
+void	rrb(t_list **b)
 {
 	t_list *tmp;
 
