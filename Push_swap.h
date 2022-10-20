@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 16:37:43 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 18:37:26 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ typedef struct s_list
 	int		pos;
 	int		target_pos;
 	struct	s_list	*next;
-	struct	s_list	*prev; //check not use yet
 }			t_list;
 
 size_t	ft_strlen(const char *str);

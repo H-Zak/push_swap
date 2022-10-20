@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/20 16:02:34 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 18:36:39 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,9 +140,3 @@ void	bubbleSort(int *tab, int n)
 		i++;
 	}
 }
-//     for (i = 0; i < n - 1; i++)
- 
-//         // Last i elements are already in place
-//         for (j = 0; j < n - i - 1; j++)
-//             if (arr[j] > arr[j + 1])
-//                 swap(&arr[j], &arr[j + 1]);

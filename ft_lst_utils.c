@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 15:08:37 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/20 16:02:41 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 18:38:37 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_lastadd_back(t_list **lst, t_list *new)
 		while (last->next != NULL)
 			last = last->next;
 		last->next = new;
-		new->prev = last; //check
 	}
 }
 
@@ -43,8 +42,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	if (lst == NULL || new == NULL)
 		return ;
 	new->next = *lst;
-	new->prev = NULL;
-	(*lst)->prev = new;//check
 	*lst = new;
 }
 
@@ -57,6 +54,5 @@ t_list	*ft_lstnew(int content)
 		return (NULL);
 	first->content = content;
 	first->next = NULL;
-	first->prev = NULL; // check
 	return (first);
 }
