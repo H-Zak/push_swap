@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 18:12:59 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 18:16:30 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ void	fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas un
 			tmp_b->cost_a = tmp_b->cost_a + 1;
 			tmp_b->cost_b = tmp_b->cost_b + 1;
 		}
-		if (tmp_b->cost_a < 0 && tmp_b->cost_b >= 0)// 2eme if etait ==
+		if (tmp_b->cost_a < 0 && tmp_b->cost_b == 0)
 		{
 			rra(a);
 			tmp_b->cost_a = tmp_b->cost_a + 1;
 		}
-		if (tmp_b->cost_b < 0 && tmp_b->cost_a >= 0)//deuxieme if etait ==
+		if (tmp_b->cost_b < 0 && tmp_b->cost_a == 0)
 		{
 			rrb(b);
 			tmp_b->cost_b = tmp_b->cost_b + 1;
@@ -51,30 +51,30 @@ void	fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas un
 			tmp_b->cost_a = tmp_b->cost_a - 1;
 			tmp_b->cost_b = tmp_b->cost_b - 1;
 		}
-		if (tmp_b->cost_a > 0 && tmp_b->cost_b <= 0)
+		if (tmp_b->cost_a > 0 && tmp_b->cost_b == 0)
 		{
 			ra(a);
 			tmp_b->cost_a = tmp_b->cost_a - 1;   
 		}
-		if (tmp_b->cost_b > 0 && tmp_b->cost_a <= 0)//2eme condition etait ==
+		if (tmp_b->cost_b > 0 && tmp_b->cost_a == 0)
 		{
 			rb(b);
 			tmp_b->cost_b = tmp_b->cost_b - 1;
 		}
-		// if (tmp_b->cost_b > 0 && tmp_b->cost_a < 0)//on peut le mettre dans un autre if
-		// {
-		// 	rb(b);
-		// 	tmp_b->cost_b = tmp_b->cost_b - 1;
-		// 	rra(a);
-		// 	tmp_b->cost_a = tmp_b->cost_a + 1;
-		// }
-		// if(tmp_b->cost_b < 0 && tmp_b->cost_a > 0)//peut le mettre dans un autre if ou utiliser que des else if sauf pour le dernier
-		// {
-		// 	rrb(b);
-		// 	tmp_b->cost_b = tmp_b->cost_b + 1;
-		// 	ra(a);
-		// 	tmp_b->cost_a = tmp_b->cost_a - 1;
-		// }
+		if (tmp_b->cost_b > 0 && tmp_b->cost_a < 0)//on peut le mettre dans un autre if
+		{
+			rb(b);
+			tmp_b->cost_b = tmp_b->cost_b - 1;
+			rra(a);
+			tmp_b->cost_a = tmp_b->cost_a + 1;
+		}
+		if(tmp_b->cost_b < 0 && tmp_b->cost_a > 0)//peut le mettre dans un autre if ou utiliser que des else if sauf pour le dernier
+		{
+			rrb(b);
+			tmp_b->cost_b = tmp_b->cost_b + 1;
+			ra(a);
+			tmp_b->cost_a = tmp_b->cost_a - 1;
+		}
 		if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)
 			pta(a,b);
 	}
