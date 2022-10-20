@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 17:37:26 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 17:40:24 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,8 @@ void    target_pos (t_list **a, t_list **b)
 	max = j;
 	bubbleSort(&tab[0], i);
 	//mettre le while dans une autre fonction
-	target_pos_2(tmp_b, tmp_a, a, tab, j);
-	free(tab);
+	target_pos_2(&tmp_b, &tmp_a, a, &tab[0], j);
+	//free(tab);
 }
 
 void	target_pos_2 (t_list *tmp_b, t_list *tmp_a, t_list **a, int *tab, int j)
