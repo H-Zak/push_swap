@@ -10,7 +10,7 @@ PUSH DANS B
 test actuelle 1 7 2 6 3 4 5
 prochain test avec 8 chiffres pour tester la mediane
 
-cd ; rm -rf test ; git clone git@github.com:Zheylkoss/push_swap.git test ; cd test ; git checkout test ; make 
+cd ; rm -rf test ; git clone git@github.com:Zheylkoss/push_swap.git test ; cd test ; git checkout opti ; make 
 
 git add . ; git commit -m “test” ; git push
 
@@ -23,3 +23,5 @@ a   b
 
 possibilite d'optimise : par exemple si on enchaine 2 rra dans une taille de 3 on peut juste faire un seul ra 
 https://www.calculatorsoup.com/calculators/statistics/random-number-generator.php
+je suis dans opti ?
+52785 13912 76861 -7681 43998 93434 2688 99657 15386 660 ne fonctionne pas
