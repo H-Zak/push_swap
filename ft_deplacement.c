@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 18:20:12 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 18:32:29 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	put_index(t_list **a, int *tab, int j);
 void	target_pos(t_list **a, t_list **b);
 void	fait_le_mouv(int i, t_list **a, t_list **b);
 void	target_pos_2 (t_list **a, t_list **b, int *tab, int j, int max);
+void	mouv_condition(t_list **a, t_list **b, int elu);
 
 void	fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas une temporaire pour economiser deux lignes
 {
@@ -29,28 +30,7 @@ void	fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas un
 		return(pta(a,b));
 	while (tmp_b->cost_a != 0 || tmp_b->cost_b != 0)
 	{
-		if (tmp_b->cost_a < 0 && tmp_b->cost_b < 0)
-		{
-			rrr(a, b);
-			tmp_b->cost_a = tmp_b->cost_a + 1;
-			tmp_b->cost_b = tmp_b->cost_b + 1;
-		}
-		if (tmp_b->cost_a < 0 && tmp_b->cost_b >= 0)
-		{
-			rra(a);
-			tmp_b->cost_a = tmp_b->cost_a + 1;
-		}
-		if (tmp_b->cost_b < 0 && tmp_b->cost_a >= 0)
-		{
-			rrb(b);
-			tmp_b->cost_b = tmp_b->cost_b + 1;
-		}
-		if (tmp_b->cost_a > 0 && tmp_b->cost_b > 0)
-		{
-			rr(a , b);
-			tmp_b->cost_a = tmp_b->cost_a - 1;
-			tmp_b->cost_b = tmp_b->cost_b - 1;
-		}
+		mouv_condition(a, b, elu);
 		if (tmp_b->cost_a > 0 && tmp_b->cost_b <= 0)
 		{
 			ra(a);
@@ -61,22 +41,39 @@ void	fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas un
 			rb(b);
 			tmp_b->cost_b = tmp_b->cost_b - 1;
 		}
-		// if (tmp_b->cost_b > 0 && tmp_b->cost_a < 0)//on peut le mettre dans un autre if
-		// {
-		// 	rb(b);
-		// 	tmp_b->cost_b = tmp_b->cost_b - 1;
-		// 	rra(a);
-		// 	tmp_b->cost_a = tmp_b->cost_a + 1;
-		// }
-		// if(tmp_b->cost_b < 0 && tmp_b->cost_a > 0)//peut le mettre dans un autre if ou utiliser que des else if sauf pour le dernier
-		// {
-		// 	rrb(b);
-		// 	tmp_b->cost_b = tmp_b->cost_b + 1;
-		// 	ra(a);
-		// 	tmp_b->cost_a = tmp_b->cost_a - 1;
-		// }
 		if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)
 			pta(a,b);
+	}
+}
+
+void mouv_condition(t_list **a, t_list **b, int elu)
+{
+	t_list *tmp_b;
+
+	tmp_b = (*b);
+	while (tmp_b->pos != elu)
+		tmp_b = tmp_b->next;
+	if (tmp_b->cost_a < 0 && tmp_b->cost_b < 0)
+	{
+		rrr(a, b);
+		tmp_b->cost_a = tmp_b->cost_a + 1;
+		tmp_b->cost_b = tmp_b->cost_b + 1;
+	}
+	if (tmp_b->cost_a < 0 && tmp_b->cost_b >= 0)
+	{
+		rra(a);
+		tmp_b->cost_a = tmp_b->cost_a + 1;
+	}
+	if (tmp_b->cost_b < 0 && tmp_b->cost_a >= 0)
+	{
+		rrb(b);
+		tmp_b->cost_b = tmp_b->cost_b + 1;
+	}
+	if (tmp_b->cost_a > 0 && tmp_b->cost_b > 0)
+	{
+		rr(a , b);
+		tmp_b->cost_a = tmp_b->cost_a - 1;
+		tmp_b->cost_b = tmp_b->cost_b - 1;
 	}
 }
 
