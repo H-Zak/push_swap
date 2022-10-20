@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRC =   ft_little_sort.c ft_split.c ft_lst_utils.c push.c ft_utils.c rotate.c ft_swap_tab.c reverse_rotate.c swap.c ft_big_sort.c ft_cout.c ft_deplacement.c
+SRC =   ft_little_sort.c ft_split.c ft_lst_utils.c push.c ft_utils.c rotate.c ft_swap_tab.c reverse_rotate.c swap.c ft_big_sort.c ft_cout.c ft_deplacement.c ft_check.c
 		
 OBJ = ${SRC:.c=.o}
 

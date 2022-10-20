@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 16:11:42 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 16:30:32 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,10 @@ void	pos(t_list **a, t_list **b);
 void	put_index(t_list **a, int *tab, int j);
 void	target_pos(t_list **a, t_list **b);
 void	fait_le_mouv(int i, t_list **a, t_list **b);
+int     check_list (char** argv, char**tab);
+int	    check (char** tab);
+int	    do_it_chainlist(char** argv, char** tab, t_list **a);// mettre un return en cas d'erreur
+int	    check_doublons_int(t_list *a, char **tab);
+int	    list_check (char **argv, char **tab, t_list **a);
 
 #endif
