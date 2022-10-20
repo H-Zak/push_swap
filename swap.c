@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:37:37 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/12 11:18:12 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 19:02:02 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@ void    sa(t_list **a)
     (*a) = second;
     (*a)->next = tmp;
 }
-//que faire si il n'y a que un seul nombre dans la list :
-// if (a->next == NULL)
-//     printf("Error");
 
 void    sb(t_list **b)
 {
@@ -39,7 +36,6 @@ void    sb(t_list **b)
     (*b)->next = (*b)->next->next;
     (*b) = second;
     (*b)->next = tmp;
- //   return (second);
 }
 
 void    ss(t_list **a, t_list **b)

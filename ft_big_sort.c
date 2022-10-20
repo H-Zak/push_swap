@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 18:42:48 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 19:17:37 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,17 @@ int ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de 
     i = 0;
     tab = malloc (j * sizeof(int));
     if (tab == NULL)
-	    return(-1);//a traiter !!!
+	    return (free(tab), -1);//a traiter !!!
     trie((*a), (*b), j, &tab[0]);
     put_index(a, &tab[0], j);
-    while(i < (j - 3))
+    while (i < (j - 3))
     {
         ptb(a, b);
         i++;
     }
     size_3(a);
     i = 0;
-    while((i < (j - 3)))//while((*b))
+    while ((i < (j - 3)))
     {
         pos(a, b);
         target_pos(a, b);
@@ -72,7 +72,7 @@ void    the_finish (t_list **a, t_list **b, int *tab)
         tmp_a = tmp_a->next;
     taille = ft_lstsize((*a)) / 2;
     comp = tmp_a->pos; 
-    while(tmp_a->pos != 0)
+    while (tmp_a->pos != 0)
     {
         if (comp > taille)
             rra(a);

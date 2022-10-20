@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/20 16:32:02 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 19:20:15 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_push_swap (char** argv, t_list **a, t_list **b);
 void	free_tabchar(char **tab);
-void	which_sort(t_list **a, t_list **b, int j);
+int	which_sort(t_list **a, t_list **b, int j);
 
 void	print_list(t_list *a)
 {
@@ -37,7 +37,10 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 		if (checker_if_list_sort(*a) == 0)
 			return(0);//pas besoin de return il faut qu'il aille free a la fin ou mettre une fonction qui free
 		else
-			which_sort(a, b, j);
+		{
+			if (which_sort(a, b, j) == -1)
+				return (-1);
+		}
 	}
 	else
 		printf("Error\n");
@@ -50,16 +53,12 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 		free(a);
 		a = tmp;
 	}
+	a = NULL;
 	*/
-	// while(a)
-	// {
-	// 	ft_lstdelone(a, free);
-	// 	(*a) = (*a)->next;
-	// }
 	return (0);
 }
 
-void	which_sort(t_list **a, t_list **b, int j)
+int	which_sort(t_list **a, t_list **b, int j)
 {
 	j = ft_lstsize(*a);
 			if (j == 2)
@@ -72,7 +71,11 @@ void	which_sort(t_list **a, t_list **b, int j)
 			else if (j == 5 || j == 4)
 				size_5(a, b, j);
 			else
-				ft_big_sort(a ,b, j);
+			{
+				if (ft_big_sort(a ,b, j) == -1)
+					return(-1);
+			}
+	return (0);
 }
 
 void	free_tabchar(char **tab)
