@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 18:16:30 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 18:17:45 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas un
 	tmp_b = (*b);
 	while (tmp_b->pos != elu)
 		tmp_b = tmp_b->next;
-	if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)
+	if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)//je ne comptabilise pas le cout du pta donc quand le cout est a 0 pour les 2 cote le while ne le prend pas en compte, possible de le mettre apres le while
 		return(pta(a,b));
 	while (tmp_b->cost_a != 0 || tmp_b->cost_b != 0)
 	{
@@ -105,7 +105,8 @@ void    target_pos (t_list **a, t_list **b)
 	bubbleSort(&tab[0], i);
 	//mettre le while dans une autre fonction
 	target_pos_2(a, b, tab, j, max);
-	free(tab);
+	
+	//free(tab);
 }
 
 void	target_pos_2 (t_list **a, t_list **b, int *tab, int j, int max)
@@ -119,16 +120,16 @@ void	target_pos_2 (t_list **a, t_list **b, int *tab, int j, int max)
 	while (tmp_b)
 	{
 		j = 0;
-		while(tab[j] && (tab[j] < tmp_b->index)) 
+		while(tab[j] && (tab[j] < tmp_b->index)) //table de j existe 
 			j++;
-		if (j == max)
+		if (j == max)//viser la position la plus petit
 			j = 0;
 		if (tmp_b->index == 1)
 			j = 0;
 		tmp_a = (*a);
 		while (tab[j] != tmp_a->index)
 			tmp_a = tmp_a->next;
-		tmp_b->target_pos = tmp_a->pos;
+		tmp_b->target_pos = tmp_a->pos; //trouver a quel index il correspond et ensuite donne sa pos a b
 		tmp_b = tmp_b->next;
 	}
 }
