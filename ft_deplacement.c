@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 17:43:35 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 17:44:19 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,9 +124,9 @@ void	target_pos_2 (t_list **tmp_b, t_list **tmp_a, t_list **a, int *tab, int j)
 			j = 0;
 		(*tmp_a) = (*a);
 		while (tab[j] != (*tmp_a)->index)
-			tmp_a = (*tmp_a)->next;
+			(*tmp_a) = (*tmp_a)->next;
 		(*tmp_b)->target_pos = (*tmp_a)->pos; //trouver a quel index il correspond et ensuite donne sa pos a b
-		tmp_b = (*tmp_b)->next;
+		(*tmp_b) = (*tmp_b)->next;
 	}
 	
 }
