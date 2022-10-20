@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 18:32:29 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 18:46:45 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,8 @@ void    target_pos (t_list **a, t_list **b)
 	tmp_a = (*a);
 	i = ft_lstsize((*a));
 	tab = malloc (i * sizeof(int));
-	//securite malloc
+	// if (tab == NULL)
+	// 	return(-1);
 	j = 0;
 	while (tmp_a)
 	{

@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:28:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 16:42:20 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 18:44:48 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,8 @@ int	check_doublons_int(t_list *a, char **tab)
 
 	i = ft_lstsize(a);
 	tabtest = malloc (i * sizeof(int));
+	if (tabtest == NULL)
+		return(-1); //gerer cette erreur 
 	i = 0;
 	while(a)
 	{

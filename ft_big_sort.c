@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 15:52:05 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 18:42:48 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,10 @@ int ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de 
     elu = 0;
     i = 0;
     tab = malloc (j * sizeof(int));
-    // if (tab == NULL)
-	    // 	return(NULL);
-    //donne les valeurs aux tableay
+    if (tab == NULL)
+	    return(-1);//a traiter !!!
     trie((*a), (*b), j, &tab[0]);
     put_index(a, &tab[0], j);
-    //push dans b, choisir la bonne methode
     while(i < (j - 3))
     {
         ptb(a, b);
@@ -52,7 +50,6 @@ int ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de 
         fait_le_mouv(elu, a, b);
         i++;
     }
-    //une fois la boucle finis tout est trie mais peut etre pas avec le premier index en haut
     the_finish(a, b, &tab[0]);
     free(tab);
     return (0);

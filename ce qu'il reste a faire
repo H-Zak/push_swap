@@ -25,3 +25,10 @@ possibilite d'optimise : par exemple si on enchaine 2 rra dans une taille de 3 o
 https://www.calculatorsoup.com/calculators/statistics/random-number-generator.php
 je suis dans opti ?
 52785 13912 76861 -7681 43998 93434 2688 99657 15386 660 ne fonctionne pas
+
+SECURITE DE MALLOC :
+ft_check.c;		int	check_doublons_int(t_list *a, char **tab); 				ligne 110
+ft_big_sort.c;		int ft_big_sort(t_list **a, t_list **b, int j);        ligne 33
+ft_deplacement;			ft_target_pos;										ligne 94
+ft_litllte sort.c		size_5												ligne 66
+ft_lst_utils.c			t_list	*ft_lstnew(int content)						ligne54
