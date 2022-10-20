@@ -6,20 +6,20 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/19 19:11:45 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 16:03:40 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-int ft_push_swap (char** argv, t_list **a, t_list **b);
-int	check_list (char** argv, char**tab);
-int	check (char** tab);
-int	do_it(char** argv, char** tab, t_list *a, t_list *b);
-int do_it_chainlist(char** argv, char** tab, t_list **a);// mettre un return en cas d'erreur
-int check_doublons_int(t_list *a, char **tab);
+int		ft_push_swap (char** argv, t_list **a, t_list **b);
+int		check_list (char** argv, char**tab);
+int		check (char** tab);
+int		do_it(char** argv, char** tab, t_list *a, t_list *b);
+int		do_it_chainlist(char** argv, char** tab, t_list **a);// mettre un return en cas d'erreur
+int		check_doublons_int(t_list *a, char **tab);
 void	free_tabchar(char **tab);
-int	list_check (char **argv, char **tab, t_list **a);
+int		list_check (char **argv, char **tab, t_list **a);
 
 void	print_list(t_list *a)
 {

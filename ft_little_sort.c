@@ -6,14 +6,14 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/18 19:20:48 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 16:02:34 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-void swap(int* xp, int* yp);
-void bubbleSort(int *tab, int n);
+void	swap(int* xp, int* yp);
+void	bubbleSort(int *tab, int n);
 void	size_5_2(int *tab, t_list **a, t_list **b, int i, int j);
 
 int	checker_if_list_sort (t_list *a)
@@ -34,7 +34,7 @@ int	checker_if_list_sort (t_list *a)
 	}
 }
 
-int size_3 (t_list **a) //reduire ne mettant le if sur plusieur ligne demander a samy
+int	size_3 (t_list **a) //reduire ne mettant le if sur plusieur ligne demander a samy
 {
 	if ((*a)->content < (*a)->next->content && (*a)->content < (*a)->next->next->content && (*a)->next->content > (*a)->next->next->content)
 	{
@@ -114,7 +114,7 @@ void	size_5_2(int *tab, t_list **a, t_list **b, int i, int j)
 	}
 }
 
-void swap(int* xp, int* yp)
+void	swap(int* xp, int* yp)
 {
     int temp = *xp;
     *xp = *yp;
@@ -122,7 +122,7 @@ void swap(int* xp, int* yp)
 }
  
 // A function to implement bubble sort
-void bubbleSort(int *tab, int n)
+void	bubbleSort(int *tab, int n)
 {
     int i;
 	int j;
