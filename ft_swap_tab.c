@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/20 16:03:40 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 16:22:33 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int		do_it_chainlist(char** argv, char** tab, t_list **a);// mettre un return en
 int		check_doublons_int(t_list *a, char **tab);
 void	free_tabchar(char **tab);
 int		list_check (char **argv, char **tab, t_list **a);
+void	which_sort(t_list **a, t_list **b, int j);
 
 void	print_list(t_list *a)
 {
@@ -34,6 +35,7 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 {
 	int	j;
 	char **tab;
+	t_list	*tmp;
 
 	tab = NULL;
 	if (list_check(argv, tab, a) == 0)
@@ -41,8 +43,29 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 		if (checker_if_list_sort(*a) == 0)
 			return(0);//pas besoin de return il faut qu'il aille free a la fin ou mettre une fonction qui free
 		else
-		{
-			j = ft_lstsize(*a);
+			which_sort(a, b, j);
+	}
+	else
+		printf("Error\n");
+	//free chainlist
+	tmp = (*a);
+	while(tmp)
+	{
+		tmp = (*a)->next;
+		free(a);
+		a = tmp;
+	}
+	// while(a)
+	// {
+	// 	ft_lstdelone(a, free);
+	// 	(*a) = (*a)->next;
+	// }
+	return (0);
+}
+
+void	which_sort(t_list **a, t_list **b, int j)
+{
+	j = ft_lstsize(*a);
 			if (j == 2)
 			{
 				if((*a)->content > (*a)->next->content)
@@ -54,26 +77,6 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 				size_5(a, b, j);
 			else
 				ft_big_sort(a ,b, j);
-		}
-	}
-	else
-		printf("Error\n");
-	//free chainlist
-	// tmp = a;
-	// while(tmp)
-	// {
-	// 	tmp = a->next;
-	// 	free(a);
-	// 	a = tmp;
-	// }
-
-	
-	// while(a)
-	// {
-	// 	ft_lstdelone(a, free);
-	// 	(*a) = (*a)->next;
-	// }
-	return (0);
 }
 
 int	list_check (char **argv, char **tab, t_list **a)

@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 15:59:59 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 16:11:42 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@
 
 typedef struct s_list
 {
-    long    content;
-    int     cost_a;
-    int     cost_b;
-    int     index;
-    int     pos;
-    int     target_pos;
+	long	content;
+    int		cost_a;
+    int		cost_b;
+    int		index;
+    int		pos;
+    int		target_pos;
     struct	s_list	*next;
 	struct	s_list	*prev; //check not use yet
 }			t_list;
@@ -54,7 +54,7 @@ int		stack_size(t_list *a);
 int		ft_lstsize(t_list *lst);
 int		size_3(t_list **a);
 void	size_5(t_list **a, t_list **b, int j);
-int		ft_push_swap(char** argv, t_list **a, t_list **b);
+int		ft_push_swap(char **argv, t_list **a, t_list **b);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 int		checker_if_list_sort(t_list *a);
 void	bubbleSort(int *tab, int n);
@@ -62,7 +62,7 @@ int		ft_big_sort(t_list **a, t_list **b, int j);
 void	cost_b(t_list **a, t_list **b);
 int		cout_global(t_list **a, t_list **b);
 void	cost_a(t_list **a, t_list **b);
-int		cout_reel(int  cost_a, int cost_b);
+int		cout_reel(int cost_a, int cost_b);
 void	pos(t_list **a, t_list **b);
 void	put_index(t_list **a, int *tab, int j);
 void	target_pos(t_list **a, t_list **b);
