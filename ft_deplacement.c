@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 18:46:45 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 19:32:06 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	pos (t_list **a, t_list **b);
 void	put_index(t_list **a, int *tab, int j);
-void	target_pos(t_list **a, t_list **b);
+int		target_pos(t_list **a, t_list **b);
 void	fait_le_mouv(int i, t_list **a, t_list **b);
 void	target_pos_2 (t_list **a, t_list **b, int *tab, int j, int max);
 void	mouv_condition(t_list **a, t_list **b, int elu);
@@ -77,7 +77,7 @@ void mouv_condition(t_list **a, t_list **b, int elu)
 	}
 }
 
-void    target_pos (t_list **a, t_list **b)
+int    target_pos (t_list **a, t_list **b)
 {
 	t_list  *tmp_a;
 	t_list  *tmp_b;
@@ -90,8 +90,8 @@ void    target_pos (t_list **a, t_list **b)
 	tmp_a = (*a);
 	i = ft_lstsize((*a));
 	tab = malloc (i * sizeof(int));
-	// if (tab == NULL)
-	// 	return(-1);
+	if (tab == NULL)
+		return (free(tab), -1);
 	j = 0;
 	while (tmp_a)
 	{
@@ -105,6 +105,7 @@ void    target_pos (t_list **a, t_list **b)
 	target_pos_2(a, b, tab, j, max);
 	
 	//free(tab);
+	return (0);
 }
 
 void	target_pos_2 (t_list **a, t_list **b, int *tab, int j, int max)

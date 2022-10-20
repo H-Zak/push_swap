@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 19:17:37 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 19:47:35 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ int ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de 
     while ((i < (j - 3)))
     {
         pos(a, b);
-        target_pos(a, b);
+        if (target_pos(a, b) == -1)
+            return(1); //est ce que je dois faire un if tout se passe bien et la fonction return (0)
         cost_a(a, b);
         cost_b(a, b);
         elu = cout_global(a, b);

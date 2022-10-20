@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/20 18:36:39 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 19:48:04 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,15 @@ int	size_3 (t_list **a) //reduire ne mettant le if sur plusieur ligne demander a
 	return (0);	
 }
 
-void	size_5 (t_list **a, t_list **b, int j)
+int	size_5 (t_list **a, t_list **b, int j)
 {
 	int *tab;
 	int	i;
 	t_list *tmp;
 	
 	tab = malloc (j * sizeof(int));
-	// if (tab == NULL)
-	// 	return(NULL);
+	if (tab == NULL)
+	 	return (free(tab), 1);
 	i = 0;
 	tmp = (*a);
 	while (i < j)
@@ -83,7 +83,8 @@ void	size_5 (t_list **a, t_list **b, int j)
 	ra(a);
 	if (j == 5)
 		ra(a);
-	//free(tab);
+	free(tab);
+	return (0);
 }
 
 void	size_5_2(int *tab, t_list **a, t_list **b, int i, int j)

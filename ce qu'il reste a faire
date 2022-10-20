@@ -28,8 +28,12 @@ je suis dans opti ?
 
 SECURITE DE MALLOC :
 ft_check.c;		int	check_doublons_int(t_list *a, char **tab); 				ligne 110
-ft_big_sort.c;		int ft_big_sort(t_list **a, t_list **b, int j);        ligne 33
+ft_big_sort.c;		int ft_big_sort(t_list **a, t_list **b, int j);        ligne 33					ok
 ft_deplacement;			ft_target_pos;										ligne 94
 ft_litllte sort.c		size_5												ligne 66
 ft_lst_utils.c			t_list	*ft_lstnew(int content)						ligne54
 ne pas oublier de free ne pas juste faire un return
+
+
+verifier quoi faire si le malloc du split deconne
+ou le lst new 

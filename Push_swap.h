@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 18:37:26 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 19:34:13 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ss(t_list **a, t_list **b);
 int		stack_size(t_list *a);
 int		ft_lstsize(t_list *lst);
 int		size_3(t_list **a);
-void	size_5(t_list **a, t_list **b, int j);
+int	size_5(t_list **a, t_list **b, int j);
 int		ft_push_swap(char **argv, t_list **a, t_list **b);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 int		checker_if_list_sort(t_list *a);
@@ -64,7 +64,7 @@ void	cost_a(t_list **a, t_list **b);
 int		cout_reel(int cost_a, int cost_b);
 void	pos(t_list **a, t_list **b);
 void	put_index(t_list **a, int *tab, int j);
-void	target_pos(t_list **a, t_list **b);
+int		target_pos(t_list **a, t_list **b);
 void	fait_le_mouv(int i, t_list **a, t_list **b);
 int     check_list(char **argv, char **tab);
 int		check (char** tab);

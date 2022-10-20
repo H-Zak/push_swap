@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:28:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 19:08:26 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 19:52:00 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ int		list_check (char **argv, char **tab, t_list **a);
 //je recois un tab et que j'utilise puis free et re utilise apres, il est utiliser pour plusieurs split
 int	list_check (char **argv, char **tab, t_list **a)
 {
-	if(check_list(argv, tab) == 1)
-		return(1);
-	else if(do_it_chainlist(argv, tab, a) == 1)//free chainlist
-		return(1);
-	else if(check_doublons_int(*a, tab) == 1)//free la chainlist
-		return(1);
+	if (check_list(argv, tab) == 1)
+		return (1);
+	else if (do_it_chainlist(argv, tab, a) == 1)//free chainlist
+		return (1);
+	else if (check_doublons_int(*a, tab) == 1)//free la chainlist
+		return (1);
 	else
-		return(0);
+		return (0);
 }
 
 int	check_list (char** argv, char** tab)
@@ -41,11 +41,13 @@ int	check_list (char** argv, char** tab)
 	while (argv[j])
 	{
 		tab = ft_split(argv[j], ' ');
+		if (tab[0] == NULL || tab == NULL)
+			return (1);
 		if (check(tab) == 1)
 			return (1);
 		j++;
 	}
-	return (2);
+	return (0);
 }
 
 int	check (char** tab)
@@ -84,11 +86,15 @@ int do_it_chainlist(char** argv, char** tab, t_list **a)
 	while (argv[i])
 	{
 		tab = ft_split(argv[i], ' ');
+		if (tab[0] == NULL || tab == NULL)
+			return (1);
 		while (tab[j])
 		{
 			if(ft_atol(tab[j]) != ft_atoi(tab[j]))
 				return(1);
 			ft_lastadd_back(a, ft_lstnew(ft_atol(tab[j])));
+			if (a == NULL)
+				return (1);
 			free(tab[j]);
 			j++;
 		}
@@ -107,7 +113,7 @@ int	check_doublons_int(t_list *a, char **tab)
 	i = ft_lstsize(a);
 	tabtest = malloc (i * sizeof(int));
 	if (tabtest == NULL)
-		return(free(tabtest), -1); //gerer cette erreur 
+		return(free(tabtest), 1); //gerer cette erreur 
 	i = 0;
 	while(a)
 	{

@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/20 19:20:15 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 19:50:47 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,16 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 	if (list_check(argv, tab, a) == 0)
 	{
 		if (checker_if_list_sort(*a) == 0)
-			return(0);//pas besoin de return il faut qu'il aille free a la fin ou mettre une fonction qui free
+			return (0);//pas besoin de return il faut qu'il aille free a la fin ou mettre une fonction qui free
 		else
 		{
-			if (which_sort(a, b, j) == -1)
-				return (-1);
+			if (which_sort(a, b, j) == 1)
+				return (1);
 		}
 	}
 	else
 		printf("Error\n");
 	//free chainlist
-	/*
 	tmp = (*a);
 	while(tmp)
 	{
@@ -54,27 +53,29 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 		a = tmp;
 	}
 	a = NULL;
-	*/
 	return (0);
 }
 
 int	which_sort(t_list **a, t_list **b, int j)
 {
 	j = ft_lstsize(*a);
-			if (j == 2)
-			{
-				if((*a)->content > (*a)->next->content)
-					sa(a);
-			}
-			else if (j == 3)
-				size_3(a);
-			else if (j == 5 || j == 4)
-				size_5(a, b, j);
-			else
-			{
-				if (ft_big_sort(a ,b, j) == -1)
-					return(-1);
-			}
+	if (j == 2)
+	{
+		if((*a)->content > (*a)->next->content)
+			sa(a);
+	}
+	else if (j == 3)
+		size_3(a);
+	else if (j == 5 || j == 4)
+	{
+		if (size_5(a, b, j) == 1)
+				return (1);	
+	}
+	else
+	{
+		if (ft_big_sort(a ,b, j) == 1)
+			return(1);
+	}
 	return (0);
 }
 
@@ -100,8 +101,10 @@ int	main (int argc, char** argv)
 	b = NULL;
 	if (argc == 1 || argc == 2) //If no parameters are specified, the program must not display anything and give the prompt back.
 		return (0);
-	ft_push_swap(argv, &a, &b);
+	if (ft_push_swap(argv, &a, &b) == 0)
+		return (0);
+	else
+		return(1);
 	//test(a);
 	//print_list(a);
-	return (0);
 }
