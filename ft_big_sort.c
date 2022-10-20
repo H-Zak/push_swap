@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 15:32:40 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 15:52:05 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,8 @@ void    the_finish (t_list **a, t_list **b, int *tab)
     }
 }
 
-void	trie(t_list *a, t_list *b, int j, int *tab)//pourquoi j'avais redeclarer tab, pas besois de return tab si j'ai enovoyer l'adresse ?
+void	trie(t_list *a, t_list *b, int j, int *tab)
 {
-//	int *tab;
 	int	i;
 	t_list *tmp;
 	
@@ -100,5 +99,4 @@ void	trie(t_list *a, t_list *b, int j, int *tab)//pourquoi j'avais redeclarer ta
 		i++;
 	}
 	bubbleSort(&tab[0], j);
-  //  return (tab);
 }
