@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/20 16:30:01 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 16:32:02 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 	else
 		printf("Error\n");
 	//free chainlist
+	/*
 	tmp = (*a);
 	while(tmp)
 	{
@@ -49,6 +50,7 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 		free(a);
 		a = tmp;
 	}
+	*/
 	// while(a)
 	// {
 	// 	ft_lstdelone(a, free);

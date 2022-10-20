@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 16:30:32 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/20 16:31:46 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ int	    check (char** tab);
 int	    do_it_chainlist(char** argv, char** tab, t_list **a);// mettre un return en cas d'erreur
 int	    check_doublons_int(t_list *a, char **tab);
 int	    list_check (char **argv, char **tab, t_list **a);
+void	free_tabchar(char **tab);
 
 #endif
