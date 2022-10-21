@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:28:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 18:36:23 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:43:24 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,33 +37,33 @@ int	check_list(char **argv, char **tab)
 	return (0);
 }
 
-int	check(char **tab)
+int	check(char **t)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	while (tab[i])
+	while (t[i])
 	{
-		while (tab[i][j])
+		while (t[i][j])
 		{
-			if (tab[i][j] == 45 && (47 < tab[i][j + 1] && tab[i][j + 1] < 58))
+			if (t[i][j] == 45 && (47 < t[i][j + 1] && t[i][j + 1] < 58))
 				j++;
-			else if (tab[i][j] == 43 && (47 < tab[i][j + 1] && tab[i][j + 1] < 58))
+			else if (t[i][j] == 43 && (47 < t[i][j + 1] && t[i][j + 1] < 58))
 				j++;
-			else if (47 < tab[i][j] && tab[i][j] < 58)
+			else if (47 < t[i][j] && t[i][j] < 58)
 				j++;
 			else
-				return (free_tabchar(tab), 1);
+				return (free_tabchar(t), 1);
 		}
 		j = 0;
 		i++;
 	}
-	return (free_tabchar(tab), 2);
+	return (free_tabchar(t), 2);
 }
 
-int do_it_chainlist(char **argv, char **tab, t_list **a)
+int	do_it_chainlist(char **argv, char **tab, t_list **a)
 {
 	int	j;
 	int	i;

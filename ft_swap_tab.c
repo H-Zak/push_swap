@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 18:29:26 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:40:37 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	which_sort(t_list **a, t_list **b, int j)
 	j = ft_lstsize(*a);
 	if (j == 2)
 	{
-		if((*a)->content > (*a)->next->content)
+		if ((*a)->content > (*a)->next->content)
 			sa(a);
 	}
 	else if (j == 3)
@@ -63,19 +63,19 @@ int	which_sort(t_list **a, t_list **b, int j)
 	else if (j == 5 || j == 4)
 	{
 		if (size_5(a, b, j))
-			return(1);
+			return (1);
 	}
 	else
 	{
-		if (ft_big_sort(a ,b, j) == 1)
-			return(1);
+		if (ft_big_sort(a , b, j) == 1)
+			return (1);
 	}
 	return (0);
 }
 
 void	free_tabchar(char **tab)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (tab[i])
@@ -86,7 +86,7 @@ void	free_tabchar(char **tab)
 	free(tab);
 }
 
-int	main(int argc, char** argv)
+int	main(int argc, char **argv)
 {
 	t_list	*a;
 	t_list	*b;

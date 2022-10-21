@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 14:48:25 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 18:31:26 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:41:30 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	rb(t_list **b)
 	(*b) = second;
 }
 
-
 void	rr(t_list **a, t_list **b)
 {
 	t_list	*tmp;
@@ -51,12 +50,11 @@ void	rr(t_list **a, t_list **b)
 	write (1, "rr\n", 3);
 	tmp = (*a);
 	second = (*a)->next;
-	while((*a)->next != NULL)
+	while ((*a)->next != NULL)
 		(*a) = (*a)->next;
 	(*a)->next = tmp;
 	(*a)->next->next = NULL;
 	(*a) = second;
-	
 	tmp = (*b);
 	second = (*b)->next;
 	while ((*b)->next != NULL)
