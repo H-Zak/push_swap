@@ -6,15 +6,15 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 18:29:48 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 19:23:30 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-void	trie(t_list *a, t_list *b, int j, int *tab);
+void	trie(t_list *a, int j, int *tab);
 void	the_finish(t_list **a, t_list **b, int *tab);
-int		the_boucle(t_list **a, t_list **b, int j, int *tab);
+int		the_boucle(t_list **a, t_list **b, int j);
 
 int	ft_big_sort(t_list **a, t_list **b, int j)
 {
@@ -25,7 +25,7 @@ int	ft_big_sort(t_list **a, t_list **b, int j)
 	tab = malloc (j * sizeof(int));
 	if (tab == NULL)
 		return (free(tab), 1);
-	trie((*a), (*b), j, &tab[0]);
+	trie((*a), j, &tab[0]);
 	put_index(a, &tab[0], j);
 	while (i < (j - 3))
 	{
@@ -34,14 +34,14 @@ int	ft_big_sort(t_list **a, t_list **b, int j)
 	}
 	size_3(a);
 	i = 0;
-	if (the_boucle(a, b, j, tab) == 1)
+	if (the_boucle(a, b, j) == 1)
 		return (free(tab), 1);
 	the_finish(a, b, &tab[0]);
 	free(tab);
 	return (0);
 }
 
-int	the_boucle(t_list **a, t_list **b, int j, int *tab)
+int	the_boucle(t_list **a, t_list **b, int j)
 {
 	int	elu;
 	int	i;
@@ -65,16 +65,12 @@ int	the_boucle(t_list **a, t_list **b, int j, int *tab)
 void	the_finish(t_list **a, t_list **b, int *tab)
 {
 	t_list	*tmp_a;
-	t_list	*tmp_b;
-	int		i;
 	int		taille;
 	int		comp;
 
 	pos(a, b);
-	i = 0;
 	comp = 0;
 	tmp_a = (*a);
-	tmp_b = (*b);
 	while (tab[0] != tmp_a->content)
 		tmp_a = tmp_a->next;
 	taille = ft_lstsize((*a)) / 2;
@@ -89,7 +85,7 @@ void	the_finish(t_list **a, t_list **b, int *tab)
 	}
 }
 
-void	trie(t_list *a, t_list *b, int j, int *tab)
+void	trie(t_list *a, int j, int *tab)
 {
 	int		i;
 	t_list	*tmp;
