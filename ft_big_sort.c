@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 19:23:30 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 19:26:19 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ int	the_boucle(t_list **a, t_list **b, int j)
 		if (target_pos(a, b) == 1)
 			return (1);
 		cost_a(a, b);
-		cost_b(a, b);
-		elu = cout_global(a, b);
+		cost_b(b);
+		elu = cout_global(b);
 		fait_le_mouv(elu, a, b);
 		i++;
 	}

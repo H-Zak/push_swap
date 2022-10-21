@@ -6,14 +6,14 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:28:58 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 18:30:17 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 19:26:06 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-void	cost_b(t_list **a, t_list **b);
-int		cout_global(t_list **a, t_list **b);
+void	cost_b(t_list **b);
+int		cout_global(t_list **b);
 void	cost_a(t_list **a, t_list **b);
 int		cout_reel(int cost_a, int cost_b);
 
@@ -64,10 +64,9 @@ int	cout_reel(int cost_a, int cost_b)
 	}
 }
 
-int	cout_global(t_list **a, t_list **b)
+int	cout_global(t_list **b)
 {
 	t_list	*tmp_b;
-	int		taille;
 	int		cout_1;
 	int		cout_2;
 	int		elu;
@@ -93,7 +92,7 @@ int	cout_global(t_list **a, t_list **b)
 	return (elu);
 }
 
-void	cost_b(t_list **a, t_list **b)
+void	cost_b(t_list **b)
 {
 	int		taille;
 	int		mediane;

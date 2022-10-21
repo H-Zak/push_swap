@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 18:36:59 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 19:26:12 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 int		checker_if_list_sort(t_list *a);
 void	bubblesort(int *tab, int n);
 int		ft_big_sort(t_list **a, t_list **b, int j);
-void	cost_b(t_list **a, t_list **b);
-int		cout_global(t_list **a, t_list **b);
+void	cost_b(t_list **b);
+int		cout_global(t_list **b);
 void	cost_a(t_list **a, t_list **b);
 int		cout_reel(int cost_a, int cost_b);
 void	pos(t_list **a, t_list **b);
