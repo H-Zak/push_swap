@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 18:57:36 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 19:01:24 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,7 @@ int	list_check(char **argv, char **tab, t_list **a)
 	else if (do_it_chainlist(argv, tab, a) == 1)
 		return (1);
 	else if (check_doublons_int(*a, tab) == 1)
-	{
-		free_tabchar(tab);
 		return (1);
-	}
 	else
 		return (0);
 }
