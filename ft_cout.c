@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:28:58 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 17:14:33 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 17:58:30 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	cost_a(t_list **a, t_list **b)
 
 int	cout_reel(int cost_a, int cost_b)
 {
-	int cout;
+	int	cout;
 
 	if (cost_a < 0 && cost_b < 0)
 	{
@@ -71,7 +71,7 @@ int	cout_global(t_list **a, t_list **b)
 	int		cout_1;
 	int		cout_2;
 	int		elu;
-	
+
 	tmp_b = (*b);
 	elu = 0;
 	cout_1 = cout_reel(tmp_b->cost_a, tmp_b->cost_b);
@@ -108,6 +108,6 @@ void	cost_b(t_list **a, t_list **b)
 			tmp_b->cost_b = tmp_b->pos - taille;
 		else
 			tmp_b->cost_b = tmp_b->pos;
-		tmp_b = tmp_b->next;  
+		tmp_b = tmp_b->next;
 	}
 }

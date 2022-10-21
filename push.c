@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 17:11:37 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 16:51:53 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:09:09 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	pta(t_list **a, t_list **b) // le premier de b devient le premier de a
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	write (1, "pa\n", 3);
 	// if (a == NULL)
@@ -37,7 +37,7 @@ void	pta(t_list **a, t_list **b) // le premier de b devient le premier de a
 
 void	ptb(t_list **a, t_list **b) // le premier de a devient le premier de b
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	write (1, "pb\n", 3);
 	// if (b == NULL)

@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 17:18:12 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 17:59:28 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,19 @@ void	fait_le_mouv(int elu, t_list **a, t_list **b)
 	while (tmp_b->pos != elu)
 		tmp_b = tmp_b->next;
 	if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)
-		return (pta(a,b));
+		return (pta(a, b));
 	while (tmp_b->cost_a != 0 || tmp_b->cost_b != 0)
 	{
 		mouv_condition(a, b, elu);
 		mouv_cond_2(a, b, elu);
 		if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)
-			pta(a,b);
+			pta(a, b);
 	}
 }
 
 void	mouv_cond_2(t_list **a, t_list **b, int elu)
 {	
-	t_list *tmp_b;
+	t_list	*tmp_b;
 
 	tmp_b = (*b);
 	while (tmp_b->pos != elu)
@@ -55,7 +55,7 @@ void	mouv_cond_2(t_list **a, t_list **b, int elu)
 	}
 	if (tmp_b->cost_a > 0 && tmp_b->cost_b > 0)
 	{
-		rr(a , b);
+		rr(a, b);
 		tmp_b->cost_a = tmp_b->cost_a - 1;
 		tmp_b->cost_b = tmp_b->cost_b - 1;
 	}
@@ -63,7 +63,7 @@ void	mouv_cond_2(t_list **a, t_list **b, int elu)
 
 void	mouv_condition(t_list **a, t_list **b, int elu)
 {
-	t_list *tmp_b;
+	t_list	*tmp_b;
 
 	tmp_b = (*b);
 	while (tmp_b->pos != elu)

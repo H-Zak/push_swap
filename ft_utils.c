@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 15:14:32 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 16:51:23 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:08:15 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ long	ft_atol(const char *nptr)
 
 int	ft_atoi(const char *nptr)
 {
-	int i;
-	int j;
-	int num;
+	int	i;
+	int	j;
+	int	num;
 
 	i = 0;
 	j = 1;

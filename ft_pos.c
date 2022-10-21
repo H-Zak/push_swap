@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:31:46 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 16:50:10 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:10:04 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 int		target_pos(t_list **a, t_list **b);
 void	target_pos_2 (t_list **a, t_list **b, int *tab, int j, int max);
-void	pos (t_list **a, t_list **b);
-
+void	pos(t_list **a, t_list **b);
 
 int	target_pos(t_list **a, t_list **b)
 {
-	t_list  *tmp_a;
-	t_list  *tmp_b;
-	int i;
-	int j;
-	int *tab;
-	int max;
+	t_list	*tmp_a;
+	t_list	*tmp_b;
+	int		i;
+	int		j;
+	int		*tab;
+	int		max;
 
 	tmp_b = (*b);
 	tmp_a = (*a);
@@ -48,8 +47,8 @@ int	target_pos(t_list **a, t_list **b)
 
 void	target_pos_2(t_list **a, t_list **b, int *tab, int j, int max)
 {
-	t_list  *tmp_a;
-	t_list  *tmp_b;
+	t_list	*tmp_a;
+	t_list	*tmp_b;
 
 	tmp_b = (*b);
 	tmp_a = (*a);
@@ -72,8 +71,8 @@ void	target_pos_2(t_list **a, t_list **b, int *tab, int j, int max)
 
 void	pos(t_list **a, t_list **b)
 {
-	t_list  *tmp_a;
-	t_list  *tmp_b;
+	t_list	*tmp_a;
+	t_list	*tmp_b;
 	int		i;
 	
 	i = 0;

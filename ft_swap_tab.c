@@ -6,16 +6,16 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 16:51:04 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:05:40 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-int		ft_push_swap (char** argv, t_list **a, t_list **b);
+int		ft_push_swap(char **argv, t_list **a, t_list **b);
 void	free_tabchar(char **tab);
 int		which_sort(t_list **a, t_list **b, int j);
-int	list_check(char **argv, char **tab, t_list **a);
+int		list_check(char **argv, char **tab, t_list **a);
 
 void	print_list(t_list *a)
 {
@@ -25,17 +25,18 @@ void	print_list(t_list *a)
 		a = a->next;
 	}
 }
+
 // amelioration : utiliser un check_list en moins, ne pas faire split a chaque fois (donc utiliser ***tab ?), free apres split (faire une fonction free ?)
-int ft_push_swap(char** argv, t_list **a, t_list **b)
+int	ft_push_swap(char **argv, t_list **a, t_list **b)
 {
-	int	j;
-	char **tab;
+	int		j;
+	char	**tab;
 
 	tab = NULL;
 	if (list_check(argv, tab, a) == 0)
 	{
 		if (checker_if_list_sort(*a) == 0)
-			return(0);//pas besoin de return il faut qu'il aille free a la fin ou mettre une fonction qui free
+			return (0);//pas besoin de return il faut qu'il aille free a la fin ou mettre une fonction qui free
 		else
 		{
 			if (which_sort(a, b, j) == 1)
@@ -116,7 +117,7 @@ int	main(int argc, char** argv)
 	t_list	*a;
 	t_list	*b;
 	t_list	*tmp;
-	int	j;
+	int		j;
 
 	a = NULL;
 	b = NULL;
@@ -127,7 +128,7 @@ int	main(int argc, char** argv)
 		write(1, "Error malloc\n", 13);
 	//mettre le free chainlist ici ou dans la fonction push_swap
 	tmp = a;
-	while(tmp)
+	while (tmp)
 	{
 		tmp = a->next;
 		free(a);

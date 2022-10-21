@@ -6,24 +6,26 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:35:10 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 16:51:15 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:02:19 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-void	swap(int* xp, int* yp)
+void	swap(int *xp, int *yp)
 {
-    int temp = *xp;
-    *xp = *yp;
-    *yp = temp;
+    int	temp;
+
+	temp = *xp;
+	*xp = *yp;
+	*yp = temp;
 }
- 
+
 // A function to implement bubble sort
 void	bubbleSort(int *tab, int n)
 {
-    int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < (n - 1))

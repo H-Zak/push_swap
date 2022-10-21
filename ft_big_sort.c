@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 16:57:10 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 17:57:16 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de 
 
 int	the_boucle(t_list **a, t_list **b, int j, int *tab)
 {
-	int elu;
+	int	elu;
 	int	i;
 
 	i = 0;
@@ -69,13 +69,13 @@ int	the_boucle(t_list **a, t_list **b, int j, int *tab)
 
 void	the_finish(t_list **a, t_list **b, int *tab)
 {
-	t_list *tmp_a;
-	t_list *tmp_b;
-	int i;
-	int taille;
-	int comp;
+	t_list	*tmp_a;
+	t_list	*tmp_b;
+	int		i;
+	int		taille;
+	int		comp;
 
-	pos(a,b);
+	pos(a, b);
 	i = 0;
 	comp = 0;
 	tmp_a = (*a);
@@ -83,21 +83,21 @@ void	the_finish(t_list **a, t_list **b, int *tab)
 	while (tab[0] != tmp_a->content)
 		tmp_a = tmp_a->next;
 	taille = ft_lstsize((*a)) / 2;
-	comp = tmp_a->pos; 
+	comp = tmp_a->pos;
 	while (tmp_a->pos != 0)
 	{
 		if (comp > taille)
 			rra(a);
 		else
 			ra(a);
-		pos(a,b);
+		pos(a, b);
 	}
 }
 
 void	trie(t_list *a, t_list *b, int j, int *tab)
 {
-	int	i;
-	t_list *tmp;
+	int		i;
+	t_list	*tmp;
 	
 	i = 0;
 	tmp = a;
