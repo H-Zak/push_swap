@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 15:52:53 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 15:55:38 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,24 +29,23 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 {
 	int	j;
 	char **tab;
-	//t_list	*tmp;
+	t_list	*tmp;
 
 	tab = NULL;
 	if (list_check(argv, tab, a) == 0)
 	{
 		if (checker_if_list_sort(*a) == 0)
-			return (0);//pas besoin de return il faut qu'il aille free a la fin ou mettre une fonction qui free
+			return(0);//pas besoin de return il faut qu'il aille free a la fin ou mettre une fonction qui free
 		else
 		{
 			if (which_sort(a, b, j) == 1)
-				return (1);//mettre ici l'erreur de malloc car on a besoin de free la chainlist donc pas de return ou alors mettre la boucle qui free la chainlist dans le main
+				return (1);
 		}
 	}
 	else
-		write(1, "Error\n", 6);
-	//free chainlist, possible de le mettre dans le main
-	/*
-	tmp = (*a);
+		printf("Error\n");
+	//free chainlist
+	/*tmp = (*a);
 	while(tmp)
 	{
 		tmp = (*a)->next;
@@ -97,24 +96,15 @@ int	main (int argc, char** argv)
 {
 	t_list	*a;
 	t_list	*b;
-	t_list	*tmp;
-	int	j;
 
 	a = NULL;
 	b = NULL;
 	if (argc == 1 || argc == 2) //If no parameters are specified, the program must not display anything and give the prompt back.
 		return (0);
-	j = ft_push_swap(argv, &a, &b);
-	if (j == 1)
-		write(1, "Error malloc\n", 13);
-	tmp = a;
-	while(tmp)
-	{
-		tmp = a->next;
-		free(a);
-		a = tmp;
-	}
-	a = NULL;
+	if (ft_push_swap(argv, &a, &b) == 0)
+		return (0);
+	else
+		return(1);
 	//test(a);
 	//print_list(a);
 }
