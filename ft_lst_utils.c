@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 15:08:37 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 18:10:09 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:20:22 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,6 @@ void	ft_lastadd_back(t_list **lst, t_list *new)
 		last->next = new;
 	}
 }
-
-// void	ft_lstdelone(t_list *lst, void (*del)(void *))
-// {
-// 	if (lst == NULL || del == NULL)
-// 		return ;
-// 	del(lst->content);
-// 	free(lst);
-// }
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {

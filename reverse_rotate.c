@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 15:40:33 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 18:10:41 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:18:29 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	rra(t_list **a)
 		
 }
 
-// chaque nombre perd une place et le dernier devient le premier 
 void	rrb(t_list **b)
 {
 	t_list	*tmp;
@@ -42,10 +41,6 @@ void	rrb(t_list **b)
 	(*b) = tmp;
 	
 }
-
-	// if (a->next == NULL)
-	// 	a = tmp;
-	// free(tmp); //ou del
 	
 void	rrr(t_list **a, t_list **b)
 {

@@ -6,19 +6,17 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:28:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 17:57:45 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:23:15 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
 int		check(char **tab);
-int		do_it_chainlist(char **argv, char **tab, t_list **a);// mettre un return en cas d'erreur
+int		do_it_chainlist(char **argv, char **tab, t_list **a);
 int		check_doublons_int(t_list *a, char **tab);
 int		list_check(char **argv, char **tab, t_list **a);
-void	boucle(t_list *a, int *tabtest, int i); //une fonction en trop dans ce fichier
-
-//je recois un tab et que j'utilise puis free et re utilise apres, il est utiliser pour plusieurs split
+void	boucle(t_list *a, int *tabtest, int i);
 
 int	check_list(char **argv, char **tab)
 {
@@ -83,7 +81,7 @@ int do_it_chainlist(char **argv, char **tab, t_list **a)
 				return (1);
 			ft_lastadd_back(a, ft_lstnew(ft_atol(tab[j])));
 			if (a == NULL)
-				return (1);
+				return (free_tabchar(tab), 1);
 			free(tab[j]);
 			j++;
 		}
@@ -102,7 +100,7 @@ int	check_doublons_int(t_list *a, char **tab)
 	i = ft_lstsize(a);
 	tabtest = malloc (i * sizeof(int));
 	if (tabtest == NULL)
-		return (free(tabtest), 1); //gerer cette erreur 
+		return (free(tabtest), 1); 
 	i = 0;
 	boucle(a, &tabtest[0], i);
 	while (tabtest[i])

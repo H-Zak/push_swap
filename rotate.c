@@ -6,13 +6,13 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 14:48:25 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 18:07:25 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:18:19 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-void	ra(t_list **a) //chacun nombre gagne une place et le premier devient le dernier
+void	ra(t_list **a)
 {
 	t_list	*tmp;
 	t_list	*second;

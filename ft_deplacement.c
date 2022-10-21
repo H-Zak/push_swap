@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 17:59:28 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:20:59 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	fait_le_mouv(int i, t_list **a, t_list **b);
 void	mouv_condition(t_list **a, t_list **b, int elu);
 void	mouv_cond_2(t_list **a, t_list **b, int elu);
 
-//utiliser (*b) et non pas une temporaire pour economiser deux lignes
 void	fait_le_mouv(int elu, t_list **a, t_list **b)
 {
 	t_list	*tmp_b;

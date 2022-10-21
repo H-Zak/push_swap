@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 18:15:08 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:23:44 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,7 @@ void	trie(t_list *a, t_list *b, int j, int *tab);
 void	the_finish(t_list **a, t_list **b, int *tab);
 int		the_boucle(t_list **a, t_list **b, int j, int *tab);
 
-//coder les pieges (si la suite est strictement decroissante)
-//trouver la suite la plus longue 
-// a la fin peut etre creer un **tab qui enregistrera tous les writes pour ensuite comparer si on peut remplacer 2 actions par une seule
-//ne pas oublier le cout du pta mais c'est le cas pour tous donc pas besoin de le prendre en compte
-
-int	ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de faire une seule fois le trie pour tous les cas de trie 3,5 et plus
+int	ft_big_sort(t_list **a, t_list **b, int j)
 {
 	int	*tab;
 	int	i;
@@ -29,7 +24,7 @@ int	ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de 
 	i = 0;
 	tab = malloc (j * sizeof(int));
 	if (tab == NULL)
-		return (free(tab), 1);//a traiter !!!
+		return (free(tab), 1);
 	trie((*a), (*b), j, &tab[0]);
 	put_index(a, &tab[0], j);
 	while (i < (j - 3))
@@ -57,7 +52,7 @@ int	the_boucle(t_list **a, t_list **b, int j, int *tab)
 	{
 		pos(a, b);
 		if (target_pos(a, b) == 1)
-			return (1); //est ce que je dois faire un if tout se passe bien et la fonction return (0); est ce que cela marche si je free dans cette fonction
+			return (1);
 		cost_a(a, b);
 		cost_b(a, b);
 		elu = cout_global(a, b);

@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 18:05:40 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:19:57 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	print_list(t_list *a)
 	}
 }
 
-// amelioration : utiliser un check_list en moins, ne pas faire split a chaque fois (donc utiliser ***tab ?), free apres split (faire une fonction free ?)
 int	ft_push_swap(char **argv, t_list **a, t_list **b)
 {
 	int		j;
@@ -36,7 +35,7 @@ int	ft_push_swap(char **argv, t_list **a, t_list **b)
 	if (list_check(argv, tab, a) == 0)
 	{
 		if (checker_if_list_sort(*a) == 0)
-			return (0);//pas besoin de return il faut qu'il aille free a la fin ou mettre une fonction qui free
+			return (0);
 		else
 		{
 			if (which_sort(a, b, j) == 1)
@@ -52,9 +51,9 @@ int	list_check(char **argv, char **tab, t_list **a)
 {
 	if (check_list(argv, tab) == 1)
 		return (1);
-	else if (do_it_chainlist(argv, tab, a) == 1)//free chainlist
+	else if (do_it_chainlist(argv, tab, a) == 1)
 		return (1);
-	else if (check_doublons_int(*a, tab) == 1)//free la chainlist
+	else if (check_doublons_int(*a, tab) == 1)
 		return (1);
 	else
 		return (0);
@@ -96,22 +95,6 @@ void	free_tabchar(char **tab)
 	free(tab);
 }
 
-// int	main (int argc, char** argv)
-// {
-// 	t_list	*a;
-// 	t_list	*b;
-
-// 	a = NULL;
-// 	b = NULL;
-// 	if (argc == 1 || argc == 2) //If no parameters are specified, the program must not display anything and give the prompt back.
-// 		return (0);
-// 	if (ft_push_swap(argv, &a, &b) == 0)
-// 		return (0);
-// 	else
-// 		return(-1);
-// 	//test(a);
-// 	//print_list(a);
-// }
 int	main(int argc, char** argv)
 {
 	t_list	*a;
@@ -121,12 +104,11 @@ int	main(int argc, char** argv)
 
 	a = NULL;
 	b = NULL;
-	if (argc == 1 || argc == 2) //If no parameters are specified, the program must not display anything and give the prompt back.
+	if (argc == 1 || argc == 2)
 		return (0);
 	j = ft_push_swap(argv, &a, &b);
 	if (j == 1)
 		write(1, "Error malloc\n", 13);
-	//mettre le free chainlist ici ou dans la fonction push_swap
 	tmp = a;
 	while (tmp)
 	{

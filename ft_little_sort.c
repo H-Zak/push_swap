@@ -6,13 +6,12 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 18:15:40 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:20:42 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-//trop de fonction dans ce fichier, creer un fichier "utils_little_sort.c"
 void	swap(int *xp, int *yp);
 void	size_5_2(int *tab, t_list **a, t_list **b, int j);
 void	size_5_3(t_list **a, t_list **b, int j);
@@ -24,15 +23,9 @@ int	checker_if_list_sort(t_list *a)
 		a = a->next;
 	}
 	if (a->next == NULL)
-	{
-		//printf("c'est deja trie");
 		return (0);
-	}
 	else
-	{
-		//printf("c'est pas trie");
 		return (1);
-	}
 }
 
 int	size_3(t_list **a)//reduire ne mettant le if sur plusieur ligne demander a samy

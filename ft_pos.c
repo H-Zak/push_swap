@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:31:46 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 18:15:52 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:20:12 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	target_pos(t_list **a, t_list **b)
 	j = 0;
 	while (tmp_a)
 	{
-		tab[j] = tmp_a->index; //mettre directement dans l'ordre les index ?
+		tab[j] = tmp_a->index;
 		j++;
 		tmp_a = tmp_a->next;
 	}
@@ -55,16 +55,16 @@ void	target_pos_2(t_list **a, t_list **b, int *tab, int j, int max)
 	while (tmp_b)
 	{
 		j = 0;
-		while (tab[j] && (tab[j] < tmp_b->index)) //table de j existe 
+		while (tab[j] && (tab[j] < tmp_b->index))
 			j++;
-		if (j >= max)//viser la position la plus petit
+		if (j >= max)
 			j = 0;
 		if (tmp_b->index == 1)
 			j = 0;
 		tmp_a = (*a);
 		while (tab[j] != tmp_a->index)
 			tmp_a = tmp_a->next;
-		tmp_b->target_pos = tmp_a->pos; //trouver a quel index il correspond et ensuite donne sa pos a b
+		tmp_b->target_pos = tmp_a->pos;
 		tmp_b = tmp_b->next;
 	}
 }
