@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:28:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 19:09:54 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 19:30:24 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 int		check(char **tab);
 int		do_it_chainlist(char **argv, char **tab, t_list **a);
-int		check_doublons_int(t_list *a, char **tab);
+int		check_doublons_int(t_list *a);
 int		list_check(char **argv, char **tab, t_list **a);
 void	boucle(t_list *a, int *tabtest, int i);
 
 int	check_list(char **argv, char **tab)
 {
-	int	i;
 	int	j;
 
-	i = 0;
 	j = 1;
 	while (argv[j])
 	{
@@ -83,7 +81,7 @@ int	do_it_chainlist(char **argv, char **tab, t_list **a)
 			if (a == NULL)
 				return (free_tabchar(tab), 1);
 			free(tab[j]);
-			tab[j] == NULL;
+			tab[j] = NULL;
 			j++;
 		}
 		j = 0;
@@ -92,7 +90,7 @@ int	do_it_chainlist(char **argv, char **tab, t_list **a)
 	return (0);
 }
 
-int	check_doublons_int(t_list *a, char **tab)
+int	check_doublons_int(t_list *a)
 {
 	int	i;
 	int	j;
