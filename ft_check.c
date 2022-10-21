@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:28:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 19:01:13 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 19:06:03 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ int	do_it_chainlist(char **argv, char **tab, t_list **a)
 			if (a == NULL)
 				return (free_tabchar(tab), 1);
 			free(tab[j]);
+			tab[j] == NULL;
 			j++;
 		}
 		j = 0;
