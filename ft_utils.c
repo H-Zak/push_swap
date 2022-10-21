@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 15:14:32 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/20 16:03:56 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 15:47:52 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,18 +63,6 @@ int	ft_atoi(const char *nptr)
 	}
 	return (num * j);
 }
-
-// int	stack_size(t_list *a) //je pourrais possiblement en avoir besoin
-// {
-// 	int	size;
-// 	size = 0;
-// 	while (a && a->next)
-// 	{
-// 		size++;
-// 		a = a->next;
-// 	}
-// 	return (size);
-// }
 
 int	ft_lstsize(t_list *lst)
 {

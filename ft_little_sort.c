@@ -6,12 +6,13 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 15:30:40 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 15:32:40 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
+//trop de fonction dans ce fichier, creer un fichier "utils_little_sort.c"
 void	swap(int* xp, int* yp);
 void	bubbleSort(int *tab, int n);
 void	size_5_2(int *tab, t_list **a, t_list **b, int i, int j);
@@ -56,7 +57,7 @@ int	size_3 (t_list **a) //reduire ne mettant le if sur plusieur ligne demander a
 	return (0);	
 }
 
-int	size_5 (t_list **a, t_list **b, int j)//fonction trop longue
+int	size_5 (t_list **a, t_list **b, int j)
 {
 	int *tab;
 	int	i;
