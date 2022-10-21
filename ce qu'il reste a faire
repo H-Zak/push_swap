@@ -36,4 +36,5 @@ ne pas oublier de free ne pas juste faire un return
 
 
 verifier quoi faire si le malloc du split deconne
-ou le lst new 
+ou le lst new
+verifier que tout ce free en cas d'erreur de malloc

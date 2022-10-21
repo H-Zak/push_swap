@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 19:47:35 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 14:48:40 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void    trie (t_list *a, t_list *b, int j, int *tab);
 void    the_finish (t_list **a, t_list **b, int *tab);
+void    the_boucle (t_list **a, t_list **b, int i, int j, int *tab);
 
 //coder les pieges (si la suite est strictement decroissante)
 //trouver la suite la plus longue 
@@ -24,13 +25,11 @@ int ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de 
 {
     int *tab;
     int i;
-    int elu;
     
-    elu = 0;
     i = 0;
     tab = malloc (j * sizeof(int));
     if (tab == NULL)
-	    return (free(tab), -1);//a traiter !!!
+	    return (free(tab), 1);//a traiter !!!
     trie((*a), (*b), j, &tab[0]);
     put_index(a, &tab[0], j);
     while (i < (j - 3))
@@ -40,19 +39,29 @@ int ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de 
     }
     size_3(a);
     i = 0;
+    if (the_booucle(a, b, i, j, tab) == 1)
+        return (free(tab), 1);
+    the_finish(a, b, &tab[0]);
+    free(tab);
+    return (0);
+}
+
+void    the_boucle (t_list **a, t_list **b, int i, int j, int *tab)
+{
+    int elu;
+
+    elu= 0;
     while ((i < (j - 3)))
     {
         pos(a, b);
-        if (target_pos(a, b) == -1)
-            return(1); //est ce que je dois faire un if tout se passe bien et la fonction return (0)
+        if (target_pos(a, b) == 1)
+            return (1); //est ce que je dois faire un if tout se passe bien et la fonction return (0); est ce que cela marche si je free dans cette fonction
         cost_a(a, b);
         cost_b(a, b);
         elu = cout_global(a, b);
         fait_le_mouv(elu, a, b);
         i++;
     }
-    the_finish(a, b, &tab[0]);
-    free(tab);
     return (0);
 }
 
