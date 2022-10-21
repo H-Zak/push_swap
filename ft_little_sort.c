@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 17:52:22 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 17:53:25 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void	size_5_2(int *tab, t_list **a, t_list **b, int j)
 					break ;
 				ra(a);
 			}
-			i--;
+			j--;
 			ptb(a, b);
 		}
 	}
