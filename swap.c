@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:37:37 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 18:30:01 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 19:20:48 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,13 @@ void	sb(t_list **b)
 
 void	ss(t_list **a, t_list **b)
 {
-	t_list	*tmp;
 	t_list	*second;
 
 	write (1, "ss\n", 3);
-	tmp = (*a);
 	second = (*a)->next;
 	(*a)->next = (*a)->next->next;
 	(*a)->next->next = second;
 	(*a) = second;
-	tmp = (*b);
 	second = (*b)->next;
 	(*b)->next = (*b)->next->next;
 	(*b)->next->next = second;
