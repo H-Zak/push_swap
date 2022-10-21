@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 15:28:54 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 15:30:40 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	swap(int* xp, int* yp);
 void	bubbleSort(int *tab, int n);
 void	size_5_2(int *tab, t_list **a, t_list **b, int i, int j);
+void size_5_3(t_list **a, t_list **b, int j);
 
 int	checker_if_list_sort (t_list *a)
 {
@@ -77,16 +78,20 @@ int	size_5 (t_list **a, t_list **b, int j)//fonction trop longue
 	size_3(a);
 	if (j == 5 && (*b)->content < (*b)->next->content)
 		sb(b);
+	size_5_3(a, b, j);
+	free(tab);
+	return (0);
+}
+
+void size_5_3(t_list **a, t_list **b, int j)
+{
 	pta(a, b);
 	if (j == 5)
 		pta(a, b);
 	ra(a);
 	if (j == 5)
 		ra(a);
-	free(tab);
-	return (0);
 }
-
 void	size_5_2(int *tab, t_list **a, t_list **b, int i, int j)
 {
 	if (j == 5)
