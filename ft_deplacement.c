@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 15:25:16 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 16:06:15 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ void	target_pos_2 (t_list **a, t_list **b, int *tab, int j, int max)
 		j = 0;
 		while(tab[j] && (tab[j] < tmp_b->index)) //table de j existe 
 			j++;
-		if (j == max)//viser la position la plus petit
+		if (j >= max)//viser la position la plus petit
 			j = 0;
 		if (tmp_b->index == 1)
 			j = 0;
