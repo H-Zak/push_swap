@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:28:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/20 19:52:00 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 15:09:39 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int		check (char** tab);
 int		do_it_chainlist(char** argv, char** tab, t_list **a);// mettre un return en cas d'erreur
 int		check_doublons_int(t_list *a, char **tab);
 int		list_check (char **argv, char **tab, t_list **a);
+void boucle(t_list *a, int *tabtest, int i); //une fonction en trop dans ce fichier
 
 //je recois un tab et que j'utilise puis free et re utilise apres, il est utiliser pour plusieurs split
 int	list_check (char **argv, char **tab, t_list **a)
@@ -115,13 +116,7 @@ int	check_doublons_int(t_list *a, char **tab)
 	if (tabtest == NULL)
 		return(free(tabtest), 1); //gerer cette erreur 
 	i = 0;
-	while(a)
-	{
-		tabtest[i] = a->content;
-		a = a->next;
-		i++;
-	}
-	i = 0;
+	boucle(a, &tabtest[0], i);
 	while (tabtest[i])
 	{
 		j = i + 1;
@@ -134,4 +129,15 @@ int	check_doublons_int(t_list *a, char **tab)
 		i = i + 1;
 	}
 	return (free(tabtest),0);
+}
+
+void boucle(t_list *a, int *tabtest, int i)
+{
+	while(a)
+	{
+		tabtest[i] = a->content;
+		a = a->next;
+		i++;
+	}
+	
 }
