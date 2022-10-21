@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/20 19:48:04 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 15:28:00 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	size_3 (t_list **a) //reduire ne mettant le if sur plusieur ligne demander a
 	return (0);	
 }
 
-int	size_5 (t_list **a, t_list **b, int j)
+int	size_5 (t_list **a, t_list **b, int j)//fonction trop longue
 {
 	int *tab;
 	int	i;
@@ -77,14 +77,18 @@ int	size_5 (t_list **a, t_list **b, int j)
 	size_3(a);
 	if (j == 5 && (*b)->content < (*b)->next->content)
 		sb(b);
+	free(tab);
+	return (0);
+}
+
+void	size_5_3(t_list **a, t_list **b, int j)
+{
 	pta(a, b);
 	if (j == 5)
 		pta(a, b);
 	ra(a);
 	if (j == 5)
 		ra(a);
-	free(tab);
-	return (0);
 }
 
 void	size_5_2(int *tab, t_list **a, t_list **b, int i, int j)

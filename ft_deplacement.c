@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 15:23:41 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 15:25:16 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		target_pos(t_list **a, t_list **b);
 void	fait_le_mouv(int i, t_list **a, t_list **b);
 void	target_pos_2 (t_list **a, t_list **b, int *tab, int j, int max);
 void	mouv_condition(t_list **a, t_list **b, int elu);
-void	mouv_condition_2(t_list **a, t_list **b, int elu);
+void	mouv_condition_2(t_list **a, t_list **b, int elu);//trop de fonction dans ce fichier
 
 void	fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas une temporaire pour economiser deux lignes
 {
@@ -113,10 +113,8 @@ int    target_pos (t_list **a, t_list **b)
 	}
 	max = j;
 	bubbleSort(&tab[0], i);
-	//mettre le while dans une autre fonction
 	target_pos_2(a, b, tab, j, max);
-	
-	//free(tab);
+	free(tab);
 	return (0);
 }
 
