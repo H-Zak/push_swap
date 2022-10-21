@@ -4,7 +4,7 @@ SRC =   ft_little_sort.c ft_split.c ft_lst_utils.c push.c ft_utils.c rotate.c ft
 		
 OBJ = ${SRC:.c=.o}
 
-FLAGS = -g3
+FLAGS = -Wall -Werror -Wextra -g3
 
 ${NAME} : ${OBJ}
 	$(CC) ${FLAGS} $(OBJ) -o ${NAME}
