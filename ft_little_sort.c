@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 18:48:59 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:50:28 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ int	checker_if_list_sort(t_list *a)
 		return (1);
 }
 
-int	size_3(t_list **a)//reduire ne mettant le if sur plusieur ligne demander a samy
+int	size_3(t_list **a)
 {
 	int	aa;
 	int	b;
 	int	c;
-	
+
 	aa = (*a)->content;
 	b = (*a)->next->content;
 	c = (*a)->next->next->content;

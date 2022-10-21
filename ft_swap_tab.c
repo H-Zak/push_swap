@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 18:40:37 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:50:53 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	which_sort(t_list **a, t_list **b, int j)
 	}
 	else
 	{
-		if (ft_big_sort(a , b, j) == 1)
+		if (ft_big_sort(a, b, j) == 1)
 			return (1);
 	}
 	return (0);
