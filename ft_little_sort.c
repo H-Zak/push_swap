@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 15:32:40 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 16:35:56 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,29 +121,3 @@ void	size_5_2(int *tab, t_list **a, t_list **b, int i, int j)
 	}
 }
 
-void	swap(int* xp, int* yp)
-{
-    int temp = *xp;
-    *xp = *yp;
-    *yp = temp;
-}
- 
-// A function to implement bubble sort
-void	bubbleSort(int *tab, int n)
-{
-    int i;
-	int j;
-
-	i = 0;
-	while(i < (n - 1))
-	{
-		j = 0;
-		while (j < (n - i - 1))
-		{
-			if (tab[j] > tab[j + 1])
-				swap(&tab[j], &tab[j + 1]);
-			j++;
-		}
-		i++;
-	}
-}

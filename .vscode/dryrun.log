@@ -1,9 +1,9 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/zakariyahamdouchi/dernierpushswap/push_swap'
 gcc -g3 -c ft_little_sort.c -o ft_little_sort.o
- 
 gcc -g3 -c ft_split.c -o ft_split.o
 gcc -g3 -c ft_lst_utils.c -o ft_lst_utils.o
+ 
 gcc -g3 -c push.c -o push.o
 gcc -g3 -c ft_utils.c -o ft_utils.o
 gcc -g3 -c rotate.c -o rotate.o
@@ -12,12 +12,17 @@ gcc -g3 -c reverse_rotate.c -o reverse_rotate.o
 gcc -g3 -c swap.c -o swap.o
  
 gcc -g3 -c ft_big_sort.c -o ft_big_sort.o
+ 
 gcc -g3 -c ft_cout.c -o ft_cout.o
+ 
 gcc -g3 -c ft_deplacement.c -o ft_deplacement.o
+ 
 gcc -g3 -c ft_check.c -o ft_check.o
  
 gcc -g3 -c ft_pos.c -o ft_pos.o
-cc -g3 ft_little_sort.o ft_split.o ft_lst_utils.o push.o ft_utils.o rotate.o ft_swap_tab.o reverse_rotate.o swap.o ft_big_sort.o ft_cout.o ft_deplacement.o ft_check.o ft_pos.o -o push_swap
+ 
+gcc -g3 -c ft_utils_little_sort.c -o ft_utils_little_sort.o
+cc -g3 ft_little_sort.o ft_split.o ft_lst_utils.o push.o ft_utils.o rotate.o ft_swap_tab.o reverse_rotate.o swap.o ft_big_sort.o ft_cout.o ft_deplacement.o ft_check.o ft_pos.o ft_utils_little_sort.o -o push_swap
  
 make: Leaving directory `/Users/zakariyahamdouchi/dernierpushswap/push_swap'
  
