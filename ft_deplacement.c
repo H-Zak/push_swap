@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 16:33:13 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 16:47:59 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas un
 	while (tmp_b->pos != elu)
 		tmp_b = tmp_b->next;
 	if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)//je ne comptabilise pas le cout du pta donc quand le cout est a 0 pour les 2 cote le while ne le prend pas en compte, possible de le mettre apres le while
-		return(pta(a,b));
+		return (pta(a,b));
 	while (tmp_b->cost_a != 0 || tmp_b->cost_b != 0)
 	{
 		mouv_condition(a, b, elu);
@@ -35,7 +35,7 @@ void	fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas un
 	}
 }
 
-void mouv_condition_2(t_list **a, t_list **b, int elu)
+void	mouv_condition_2(t_list **a, t_list **b, int elu)
 {	
 	t_list *tmp_b;
 
@@ -61,7 +61,7 @@ void mouv_condition_2(t_list **a, t_list **b, int elu)
 	
 }
 
-void mouv_condition(t_list **a, t_list **b, int elu)
+void	mouv_condition(t_list **a, t_list **b, int elu)
 {
 	t_list *tmp_b;
 
@@ -88,14 +88,14 @@ void mouv_condition(t_list **a, t_list **b, int elu)
 
 void	put_index(t_list **a, int *tab, int j)
 {
-	int i;
+	int		i;
 	t_list  *tmp;
 
 	i = 1;
 	tmp = (*a);
-	while(tmp)
+	while (tmp)
 	{
-		while(tmp->content != tab[i - 1])
+		while (tmp->content != tab[i - 1])
 			i++;
 		tmp->index = i;
 		tmp = tmp->next;

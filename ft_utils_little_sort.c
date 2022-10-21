@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:35:10 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 16:36:02 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 16:51:15 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	bubbleSort(int *tab, int n)
 	int j;
 
 	i = 0;
-	while(i < (n - 1))
+	while (i < (n - 1))
 	{
 		j = 0;
 		while (j < (n - i - 1))

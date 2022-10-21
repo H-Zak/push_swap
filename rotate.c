@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 14:48:25 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/09 18:49:26 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 16:52:13 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void    rb(t_list **b)
 }
 
 
-void	rr (t_list **a, t_list **b)
+void	rr(t_list **a, t_list **b)
 {
 	t_list	*tmp;
 	t_list	*second;

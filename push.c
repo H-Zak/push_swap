@@ -6,13 +6,13 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 17:11:37 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/14 16:02:34 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 16:51:53 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-void	pta (t_list **a, t_list **b) // le premier de b devient le premier de a
+void	pta(t_list **a, t_list **b) // le premier de b devient le premier de a
 {
 	t_list *tmp;
 
@@ -35,7 +35,7 @@ void	pta (t_list **a, t_list **b) // le premier de b devient le premier de a
 	// }
 }
 
-void	ptb (t_list **a, t_list **b) // le premier de a devient le premier de b
+void	ptb(t_list **a, t_list **b) // le premier de a devient le premier de b
 {
 	t_list *tmp;
 

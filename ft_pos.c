@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:31:46 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 16:33:18 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 16:50:10 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	target_pos_2 (t_list **a, t_list **b, int *tab, int j, int max);
 void	pos (t_list **a, t_list **b);
 
 
-int    target_pos (t_list **a, t_list **b)
+int	target_pos(t_list **a, t_list **b)
 {
 	t_list  *tmp_a;
 	t_list  *tmp_b;
@@ -46,18 +46,17 @@ int    target_pos (t_list **a, t_list **b)
 	return (0);
 }
 
-void	target_pos_2 (t_list **a, t_list **b, int *tab, int j, int max)
+void	target_pos_2(t_list **a, t_list **b, int *tab, int j, int max)
 {
 	t_list  *tmp_a;
 	t_list  *tmp_b;
 
 	tmp_b = (*b);
 	tmp_a = (*a);
-	
 	while (tmp_b)
 	{
 		j = 0;
-		while(tab[j] && (tab[j] < tmp_b->index)) //table de j existe 
+		while (tab[j] && (tab[j] < tmp_b->index)) //table de j existe 
 			j++;
 		if (j >= max)//viser la position la plus petit
 			j = 0;
@@ -75,7 +74,7 @@ void	pos(t_list **a, t_list **b)
 {
 	t_list  *tmp_a;
 	t_list  *tmp_b;
-	int i;
+	int		i;
 	
 	i = 0;
 	tmp_a = (*a);

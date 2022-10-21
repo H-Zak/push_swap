@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 16:35:56 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 16:48:48 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 void	swap(int* xp, int* yp);
 void	bubbleSort(int *tab, int n);
 void	size_5_2(int *tab, t_list **a, t_list **b, int i, int j);
-void size_5_3(t_list **a, t_list **b, int j);
+void	size_5_3(t_list **a, t_list **b, int j);
 
-int	checker_if_list_sort (t_list *a)
+int	checker_if_list_sort(t_list *a)
 {
-	while(a->next != NULL && a->content < a->next->content)
+	while (a->next != NULL && a->content < a->next->content)
 	{
 		a = a->next;
 	}
@@ -36,7 +36,7 @@ int	checker_if_list_sort (t_list *a)
 	}
 }
 
-int	size_3 (t_list **a) //reduire ne mettant le if sur plusieur ligne demander a samy
+int	size_3 (t_list **a)//reduire ne mettant le if sur plusieur ligne demander a samy
 {
 	if ((*a)->content < (*a)->next->content && (*a)->content < (*a)->next->next->content && (*a)->next->content > (*a)->next->next->content)
 	{
@@ -57,11 +57,11 @@ int	size_3 (t_list **a) //reduire ne mettant le if sur plusieur ligne demander a
 	return (0);	
 }
 
-int	size_5 (t_list **a, t_list **b, int j)
+int	size_5(t_list **a, t_list **b, int j)
 {
-	int *tab;
-	int	i;
-	t_list *tmp;
+	int		*tab;
+	int		i;
+	t_list	*tmp;
 	
 	tab = malloc (j * sizeof(int));
 	if (tab == NULL)
@@ -84,7 +84,7 @@ int	size_5 (t_list **a, t_list **b, int j)
 	return (0);
 }
 
-void size_5_3(t_list **a, t_list **b, int j)
+void	size_5_3(t_list **a, t_list **b, int j)
 {
 	pta(a, b);
 	if (j == 5)
@@ -93,6 +93,7 @@ void size_5_3(t_list **a, t_list **b, int j)
 	if (j == 5)
 		ra(a);
 }
+
 void	size_5_2(int *tab, t_list **a, t_list **b, int i, int j)
 {
 	if (j == 5)

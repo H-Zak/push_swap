@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 16:28:33 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 16:51:04 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_push_swap (char** argv, t_list **a, t_list **b);
 void	free_tabchar(char **tab);
-int	which_sort(t_list **a, t_list **b, int j);
+int		which_sort(t_list **a, t_list **b, int j);
 
 void	print_list(t_list *a)
 {
@@ -25,7 +25,7 @@ void	print_list(t_list *a)
 	}
 }
 // amelioration : utiliser un check_list en moins, ne pas faire split a chaque fois (donc utiliser ***tab ?), free apres split (faire une fonction free ?)
-int ft_push_swap (char** argv, t_list **a, t_list **b)
+int ft_push_swap(char** argv, t_list **a, t_list **b)
 {
 	int	j;
 	char **tab;
@@ -46,7 +46,7 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 	return (0);
 }
 
-int	list_check (char **argv, char **tab, t_list **a)
+int	list_check(char **argv, char **tab, t_list **a)
 {
 	if (check_list(argv, tab) == 1)
 		return (1);
@@ -86,7 +86,7 @@ void	free_tabchar(char **tab)
 	int i;
 
 	i = 0;
-	while(tab[i])
+	while (tab[i])
 	{
 		free(tab[i]);
 		i++;
@@ -110,7 +110,7 @@ void	free_tabchar(char **tab)
 // 	//test(a);
 // 	//print_list(a);
 // }
-int	main (int argc, char** argv)
+int	main(int argc, char** argv)
 {
 	t_list	*a;
 	t_list	*b;

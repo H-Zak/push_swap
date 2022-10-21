@@ -6,13 +6,13 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 15:40:33 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/20 15:45:56 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 16:52:00 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-void	rra (t_list **a)
+void	rra(t_list **a)
 {
 	t_list *tmp;
 
