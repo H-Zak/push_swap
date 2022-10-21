@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:31:46 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 18:10:04 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:15:52 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	target_pos(t_list **a, t_list **b)
 		tmp_a = tmp_a->next;
 	}
 	max = j;
-	bubbleSort(&tab[0], i);
+	bubblesort(&tab[0], i);
 	target_pos_2(a, b, tab, j, max);
 	free(tab);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:35:10 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 18:02:19 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:14:37 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	swap(int *xp, int *yp)
 {
-    int	temp;
+	int	temp;
 
 	temp = *xp;
 	*xp = *yp;
@@ -22,7 +22,7 @@ void	swap(int *xp, int *yp)
 }
 
 // A function to implement bubble sort
-void	bubbleSort(int *tab, int n)
+void	bubblesort(int *tab, int n)
 {
 	int	i;
 	int	j;

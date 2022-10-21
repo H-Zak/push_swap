@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 17:53:25 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:15:40 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 //trop de fonction dans ce fichier, creer un fichier "utils_little_sort.c"
 void	swap(int *xp, int *yp);
-void	bubbleSort(int *tab, int n);
 void	size_5_2(int *tab, t_list **a, t_list **b, int j);
 void	size_5_3(t_list **a, t_list **b, int j);
 
@@ -74,7 +73,7 @@ int	size_5(t_list **a, t_list **b, int j)
 		tmp = tmp->next;
 		i++;
 	}
-	bubbleSort(&tab[0], j);
+	bubblesort(&tab[0], j);
 	size_5_2(tab, a, b, j);
 	size_3(a);
 	if (j == 5 && (*b)->content < (*b)->next->content)

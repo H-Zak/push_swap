@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 17:57:16 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:15:08 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,5 @@ void	trie(t_list *a, t_list *b, int j, int *tab)
 		tmp = tmp->next;
 		i++;
 	}
-	bubbleSort(&tab[0], j);
+	bubblesort(&tab[0], j);
 }
