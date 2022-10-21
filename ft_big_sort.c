@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 14:59:50 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 16:16:50 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int    the_boucle (t_list **a, t_list **b, int i, int j, int *tab)
 {
     int elu;
 
-    elu= 0;
+    elu = 0;
     while ((i < (j - 3)))
     {
         pos(a, b);

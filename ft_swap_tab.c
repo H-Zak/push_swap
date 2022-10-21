@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 16:10:51 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 16:17:29 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 {
 	int	j;
 	char **tab;
-	//t_list	*tmp;
 
 	tab = NULL;
 	if (list_check(argv, tab, a) == 0)
@@ -44,15 +43,6 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 	}
 	else
 		write(1, "Error\n", 6);
-	//free chainlist
-	// tmp = (*a);
-	// while(tmp)
-	// {
-	// 	tmp = (*a)->next;
-	// 	free(a);
-	// 	a = tmp;
-	// }
-	// a = NULL;
 	return (0);
 }
 
@@ -122,6 +112,7 @@ int	main (int argc, char** argv)
 	j = ft_push_swap(argv, &a, &b);
 	if (j == 1)
 		write(1, "Error malloc\n", 13);
+	//mettre le free chainlist ici ou dans la fonction push_swap
 	tmp = a;
 	while(tmp)
 	{
