@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:28:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 15:09:39 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 16:28:17 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,6 @@ int		list_check (char **argv, char **tab, t_list **a);
 void boucle(t_list *a, int *tabtest, int i); //une fonction en trop dans ce fichier
 
 //je recois un tab et que j'utilise puis free et re utilise apres, il est utiliser pour plusieurs split
-int	list_check (char **argv, char **tab, t_list **a)
-{
-	if (check_list(argv, tab) == 1)
-		return (1);
-	else if (do_it_chainlist(argv, tab, a) == 1)//free chainlist
-		return (1);
-	else if (check_doublons_int(*a, tab) == 1)//free la chainlist
-		return (1);
-	else
-		return (0);
-}
 
 int	check_list (char** argv, char** tab)
 {
