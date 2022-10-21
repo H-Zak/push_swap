@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 15:59:25 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 16:10:51 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 {
 	int	j;
 	char **tab;
-	t_list	*tmp;
+	//t_list	*tmp;
 
 	tab = NULL;
 	if (list_check(argv, tab, a) == 0)
@@ -39,11 +39,11 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 		else
 		{
 			if (which_sort(a, b, j) == 1)
-				return (-1);
+				return (1);
 		}
 	}
 	else
-		printf("Error\n");
+		write(1, "Error\n", 6);
 	//free chainlist
 	// tmp = (*a);
 	// while(tmp)
@@ -92,19 +92,45 @@ void	free_tabchar(char **tab)
 	free(tab);
 }
 
+// int	main (int argc, char** argv)
+// {
+// 	t_list	*a;
+// 	t_list	*b;
+
+// 	a = NULL;
+// 	b = NULL;
+// 	if (argc == 1 || argc == 2) //If no parameters are specified, the program must not display anything and give the prompt back.
+// 		return (0);
+// 	if (ft_push_swap(argv, &a, &b) == 0)
+// 		return (0);
+// 	else
+// 		return(-1);
+// 	//test(a);
+// 	//print_list(a);
+// }
 int	main (int argc, char** argv)
 {
 	t_list	*a;
 	t_list	*b;
+	t_list	*tmp;
+	int	j;
 
 	a = NULL;
 	b = NULL;
 	if (argc == 1 || argc == 2) //If no parameters are specified, the program must not display anything and give the prompt back.
 		return (0);
-	if (ft_push_swap(argv, &a, &b) == 0)
-		return (0);
-	else
-		return(-1);
+	j = ft_push_swap(argv, &a, &b);
+	if (j == 1)
+		write(1, "Error malloc\n", 13);
+	tmp = a;
+	while(tmp)
+	{
+		tmp = a->next;
+		free(a);
+		a = tmp;
+	}
+	a = NULL;
 	//test(a);
 	//print_list(a);
+	return (0);
 }
