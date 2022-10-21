@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 14:48:40 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 14:59:50 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void    trie (t_list *a, t_list *b, int j, int *tab);
 void    the_finish (t_list **a, t_list **b, int *tab);
-void    the_boucle (t_list **a, t_list **b, int i, int j, int *tab);
+int    the_boucle (t_list **a, t_list **b, int i, int j, int *tab);
 
 //coder les pieges (si la suite est strictement decroissante)
 //trouver la suite la plus longue 
@@ -39,14 +39,14 @@ int ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de 
     }
     size_3(a);
     i = 0;
-    if (the_booucle(a, b, i, j, tab) == 1)
+    if (the_boucle(a, b, i, j, tab) == 1)
         return (free(tab), 1);
     the_finish(a, b, &tab[0]);
     free(tab);
     return (0);
 }
 
-void    the_boucle (t_list **a, t_list **b, int i, int j, int *tab)
+int    the_boucle (t_list **a, t_list **b, int i, int j, int *tab)
 {
     int elu;
 
