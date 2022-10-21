@@ -6,13 +6,13 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 18:20:59 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 19:27:27 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-void	put_index(t_list **a, int *tab, int j);
+void	put_index(t_list **a, int *tab);
 void	fait_le_mouv(int i, t_list **a, t_list **b);
 void	mouv_condition(t_list **a, t_list **b, int elu);
 void	mouv_cond_2(t_list **a, t_list **b, int elu);
@@ -85,7 +85,7 @@ void	mouv_condition(t_list **a, t_list **b, int elu)
 	}
 }
 
-void	put_index(t_list **a, int *tab, int j)
+void	put_index(t_list **a, int *tab)
 {
 	int		i;
 	t_list	*tmp;

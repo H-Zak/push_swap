@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 19:26:19 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 19:27:48 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_big_sort(t_list **a, t_list **b, int j)
 	if (tab == NULL)
 		return (free(tab), 1);
 	trie((*a), j, &tab[0]);
-	put_index(a, &tab[0], j);
+	put_index(a, &tab[0]);
 	while (i < (j - 3))
 	{
 		ptb(a, b);

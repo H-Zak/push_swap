@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 19:26:12 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 19:27:37 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int		cout_global(t_list **b);
 void	cost_a(t_list **a, t_list **b);
 int		cout_reel(int cost_a, int cost_b);
 void	pos(t_list **a, t_list **b);
-void	put_index(t_list **a, int *tab, int j);
+void	put_index(t_list **a, int *tab);
 int		target_pos(t_list **a, t_list **b);
 void	fait_le_mouv(int i, t_list **a, t_list **b);
 int		check_list(char **argv, char **tab);
