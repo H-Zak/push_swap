@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 15:55:38 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 15:59:25 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,20 @@ int ft_push_swap (char** argv, t_list **a, t_list **b)
 		else
 		{
 			if (which_sort(a, b, j) == 1)
-				return (1);
+				return (-1);
 		}
 	}
 	else
 		printf("Error\n");
 	//free chainlist
-	/*tmp = (*a);
-	while(tmp)
-	{
-		tmp = (*a)->next;
-		free(a);
-		a = tmp;
-	}
-	a = NULL;*/
+	// tmp = (*a);
+	// while(tmp)
+	// {
+	// 	tmp = (*a)->next;
+	// 	free(a);
+	// 	a = tmp;
+	// }
+	// a = NULL;
 	return (0);
 }
 
@@ -68,8 +68,8 @@ int	which_sort(t_list **a, t_list **b, int j)
 		size_3(a);
 	else if (j == 5 || j == 4)
 	{
-		if (size_5(a, b, j) == 1)
-				return (1);	
+		if (size_5(a, b, j))
+			return(1);
 	}
 	else
 	{
@@ -104,7 +104,7 @@ int	main (int argc, char** argv)
 	if (ft_push_swap(argv, &a, &b) == 0)
 		return (0);
 	else
-		return(1);
+		return(-1);
 	//test(a);
 	//print_list(a);
 }
