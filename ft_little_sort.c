@@ -6,16 +6,16 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 16:48:48 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 17:52:22 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
 //trop de fonction dans ce fichier, creer un fichier "utils_little_sort.c"
-void	swap(int* xp, int* yp);
+void	swap(int *xp, int *yp);
 void	bubbleSort(int *tab, int n);
-void	size_5_2(int *tab, t_list **a, t_list **b, int i, int j);
+void	size_5_2(int *tab, t_list **a, t_list **b, int j);
 void	size_5_3(t_list **a, t_list **b, int j);
 
 int	checker_if_list_sort(t_list *a)
@@ -27,7 +27,7 @@ int	checker_if_list_sort(t_list *a)
 	if (a->next == NULL)
 	{
 		//printf("c'est deja trie");
-		return(0);
+		return (0);
 	}
 	else
 	{
@@ -36,7 +36,7 @@ int	checker_if_list_sort(t_list *a)
 	}
 }
 
-int	size_3 (t_list **a)//reduire ne mettant le if sur plusieur ligne demander a samy
+int	size_3(t_list **a)//reduire ne mettant le if sur plusieur ligne demander a samy
 {
 	if ((*a)->content < (*a)->next->content && (*a)->content < (*a)->next->next->content && (*a)->next->content > (*a)->next->next->content)
 	{
@@ -54,7 +54,7 @@ int	size_3 (t_list **a)//reduire ne mettant le if sur plusieur ligne demander a 
 	}
 	if ((*a)->content > (*a)->next->content && (*a)->content > (*a)->next->next->content && (*a)->next->content < (*a)->next->next->content)
 		ra(a);
-	return (0);	
+	return (0);
 }
 
 int	size_5(t_list **a, t_list **b, int j)
@@ -62,10 +62,10 @@ int	size_5(t_list **a, t_list **b, int j)
 	int		*tab;
 	int		i;
 	t_list	*tmp;
-	
+
 	tab = malloc (j * sizeof(int));
 	if (tab == NULL)
-	 	return (free(tab), 1);
+		return (free(tab), 1);
 	i = 0;
 	tmp = (*a);
 	while (i < j)
@@ -75,7 +75,7 @@ int	size_5(t_list **a, t_list **b, int j)
 		i++;
 	}
 	bubbleSort(&tab[0], j);
-	size_5_2(tab, a, b, i, j);
+	size_5_2(tab, a, b, j);
 	size_3(a);
 	if (j == 5 && (*b)->content < (*b)->next->content)
 		sb(b);
@@ -94,16 +94,16 @@ void	size_5_3(t_list **a, t_list **b, int j)
 		ra(a);
 }
 
-void	size_5_2(int *tab, t_list **a, t_list **b, int i, int j)
+void	size_5_2(int *tab, t_list **a, t_list **b, int j)
 {
 	if (j == 5)
 	{
-		while (i > 3)
+		while (j > 3)
 		{
 			while (1)
 			{
 				if (tab[4] == (*a)->content || tab[3] == (*a)->content)
-					break;
+					break ;
 				ra(a);
 			}
 			i--;
@@ -115,10 +115,9 @@ void	size_5_2(int *tab, t_list **a, t_list **b, int i, int j)
 		while (1)
 		{
 			if (tab[3] == (*a)->content)
-				break;
+				break ;
 			ra(a);
 		}
 		ptb(a, b);
 	}
 }
-

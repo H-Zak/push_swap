@@ -6,23 +6,23 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:28:58 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 16:47:22 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 17:14:33 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
 void	cost_b(t_list **a, t_list **b);
-int		cout_global (t_list **a, t_list **b);
+int		cout_global(t_list **a, t_list **b);
 void	cost_a(t_list **a, t_list **b);
-int		cout_reel (int  cost_a, int cost_b);
+int		cout_reel(int cost_a, int cost_b);
 
 void	cost_a(t_list **a, t_list **b)
 {
-	int 	taille;
-	int 	mediane;
-	t_list  *tmp_b;
-	
+	int		taille;
+	int		mediane;
+	t_list	*tmp_b;
+
 	taille = ft_lstsize((*a));
 	mediane = taille / 2;
 	tmp_b = (*b);
@@ -33,14 +33,13 @@ void	cost_a(t_list **a, t_list **b)
 		else
 			tmp_b->cost_a = tmp_b->target_pos;
 		tmp_b = tmp_b->next;
-		
 	}
 }
 
-int cout_reel(int  cost_a, int cost_b)
+int	cout_reel(int cost_a, int cost_b)
 {
 	int cout;
-	
+
 	if (cost_a < 0 && cost_b < 0)
 	{
 		if (cost_a < cost_b)
@@ -65,10 +64,10 @@ int cout_reel(int  cost_a, int cost_b)
 	}
 }
 
-int    cout_global(t_list **a, t_list **b)
+int	cout_global(t_list **a, t_list **b)
 {
 	t_list	*tmp_b;
-	int 	taille;
+	int		taille;
 	int		cout_1;
 	int		cout_2;
 	int		elu;
@@ -94,12 +93,11 @@ int    cout_global(t_list **a, t_list **b)
 	return (elu);
 }
 
-
 void	cost_b(t_list **a, t_list **b)
 {
-	int taille;
-	int mediane;
-	t_list *tmp_b;
+	int		taille;
+	int		mediane;
+	t_list	*tmp_b;
 	
 	taille = ft_lstsize((*b));
 	mediane = taille / 2;
@@ -110,6 +108,6 @@ void	cost_b(t_list **a, t_list **b)
 			tmp_b->cost_b = tmp_b->pos - taille;
 		else
 			tmp_b->cost_b = tmp_b->pos;
-		tmp_b = tmp_b->next;        
+		tmp_b = tmp_b->next;  
 	}
 }

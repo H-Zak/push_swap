@@ -6,22 +6,21 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:28:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 16:46:13 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 17:11:16 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-int		check_list(char** argv, char**tab);
-int		check(char** tab);
-int		do_it_chainlist(char** argv, char** tab, t_list **a);// mettre un return en cas d'erreur
+int		check(char **tab);
+int		do_it_chainlist(char **argv, char **tab, t_list **a);// mettre un return en cas d'erreur
 int		check_doublons_int(t_list *a, char **tab);
 int		list_check(char **argv, char **tab, t_list **a);
 void	boucle(t_list *a, int *tabtest, int i); //une fonction en trop dans ce fichier
 
 //je recois un tab et que j'utilise puis free et re utilise apres, il est utiliser pour plusieurs split
 
-int	check_list(char** argv, char** tab)
+int	check_list(char **argv, char **tab)
 {
 	int	i;
 	int	j;
@@ -40,7 +39,7 @@ int	check_list(char** argv, char** tab)
 	return (0);
 }
 
-int	check(char** tab)
+int	check(char **tab)
 {
 	int	i;
 	int	j;
@@ -58,7 +57,7 @@ int	check(char** tab)
 			else if (47 < tab[i][j] && tab[i][j] < 58)
 				j++;
 			else
-				return(free_tabchar(tab),1);
+				return (free_tabchar(tab), 1);
 		}
 		j = 0;
 		i++;
@@ -66,7 +65,7 @@ int	check(char** tab)
 	return (free_tabchar(tab),2);
 }
 
-int do_it_chainlist(char** argv, char** tab, t_list **a)
+int do_it_chainlist(char **argv, char **tab, t_list **a)
 {
 	int	j;
 	int	i;
@@ -80,8 +79,8 @@ int do_it_chainlist(char** argv, char** tab, t_list **a)
 			return (1);
 		while (tab[j])
 		{
-			if(ft_atol(tab[j]) != ft_atoi(tab[j]))
-				return(1);
+			if (ft_atol(tab[j]) != ft_atoi(tab[j]))
+				return (1);
 			ft_lastadd_back(a, ft_lstnew(ft_atol(tab[j])));
 			if (a == NULL)
 				return (1);
@@ -89,7 +88,7 @@ int do_it_chainlist(char** argv, char** tab, t_list **a)
 			j++;
 		}
 		j = 0;
-		i++;	
+		i++;
 	}
 	return (0);
 }
@@ -98,7 +97,7 @@ int	check_doublons_int(t_list *a, char **tab)
 {
 	int	i;
 	int	j;
-	int *tabtest;
+	int	*tabtest;
 
 	i = ft_lstsize(a);
 	tabtest = malloc (i * sizeof(int));
@@ -117,7 +116,7 @@ int	check_doublons_int(t_list *a, char **tab)
 		}
 		i = i + 1;
 	}
-	return (free(tabtest),0);
+	return (free(tabtest), 0);
 }
 
 void	boucle(t_list *a, int *tabtest, int i)
@@ -128,5 +127,5 @@ void	boucle(t_list *a, int *tabtest, int i)
 		a = a->next;
 		i++;
 	}
-	
+
 }

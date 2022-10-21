@@ -15,6 +15,7 @@
 int		ft_push_swap (char** argv, t_list **a, t_list **b);
 void	free_tabchar(char **tab);
 int		which_sort(t_list **a, t_list **b, int j);
+int	list_check(char **argv, char **tab, t_list **a);
 
 void	print_list(t_list *a)
 {
