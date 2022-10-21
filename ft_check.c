@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:28:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 18:23:15 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:36:23 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	check(char **tab)
 		{
 			if (tab[i][j] == 45 && (47 < tab[i][j + 1] && tab[i][j + 1] < 58))
 				j++;
-			else if (tab[i][j] == '+' && (47 < tab[i][j + 1] && tab[i][j + 1] < 58))
+			else if (tab[i][j] == 43 && (47 < tab[i][j + 1] && tab[i][j + 1] < 58))
 				j++;
 			else if (47 < tab[i][j] && tab[i][j] < 58)
 				j++;
@@ -100,7 +100,7 @@ int	check_doublons_int(t_list *a, char **tab)
 	i = ft_lstsize(a);
 	tabtest = malloc (i * sizeof(int));
 	if (tabtest == NULL)
-		return (free(tabtest), 1); 
+		return (free(tabtest), 1);
 	i = 0;
 	boucle(a, &tabtest[0], i);
 	while (tabtest[i])

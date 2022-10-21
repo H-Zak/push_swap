@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 18:23:44 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:29:48 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	trie(t_list *a, t_list *b, int j, int *tab)
 {
 	int		i;
 	t_list	*tmp;
-	
+
 	i = 0;
 	tmp = a;
 	while (i < j)

@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 14:37:37 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 18:07:17 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:30:01 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void	ss(t_list **a, t_list **b)
 	(*a)->next = (*a)->next->next;
 	(*a)->next->next = second;
 	(*a) = second;
-	
 	tmp = (*b);
 	second = (*b)->next;
 	(*b)->next = (*b)->next->next;

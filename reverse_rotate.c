@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 15:40:33 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 18:18:29 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:28:53 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,21 @@ void	rra(t_list **a)
 	(*a)->next->next = tmp;
 	tmp = (*a)->next;
 	(*a)->next = NULL;
-	(*a) = tmp;	
-		
+	(*a) = tmp;		
 }
 
 void	rrb(t_list **b)
 {
 	t_list	*tmp;
 
-	write (1, "rrb\n", 4);	
+	write (1, "rrb\n", 4);
 	tmp = (*b);
-	while((*b)->next->next !=NULL)
+	while ((*b)->next->next !=NULL)
 		(*b) = (*b)->next;
 	(*b)->next->next = tmp;
 	tmp = (*b)->next;
 	(*b)->next = NULL;
 	(*b) = tmp;
-	
 }
 	
 void	rrr(t_list **a, t_list **b)
@@ -53,10 +51,9 @@ void	rrr(t_list **a, t_list **b)
 	(*a)->next->next = tmp;
 	tmp = (*a)->next;
 	(*a)->next = NULL;
-	(*a) = tmp;	
-
+	(*a) = tmp;
 	tmp = (*b);
-	while((*b)->next->next !=NULL)
+	while ((*b)->next->next !=NULL)
 		(*b) = (*b)->next;
 	(*b)->next->next = tmp;
 	tmp = (*b)->next;

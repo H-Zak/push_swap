@@ -6,14 +6,14 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:31:46 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 18:20:12 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:34:27 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
 int		target_pos(t_list **a, t_list **b);
-void	target_pos_2 (t_list **a, t_list **b, int *tab, int j, int max);
+void	target_pos_2(t_list **a, t_list **b, int *tab, int j);
 void	pos(t_list **a, t_list **b);
 
 int	target_pos(t_list **a, t_list **b)
@@ -23,7 +23,6 @@ int	target_pos(t_list **a, t_list **b)
 	int		i;
 	int		j;
 	int		*tab;
-	int		max;
 
 	tmp_b = (*b);
 	tmp_a = (*a);
@@ -38,18 +37,19 @@ int	target_pos(t_list **a, t_list **b)
 		j++;
 		tmp_a = tmp_a->next;
 	}
-	max = j;
 	bubblesort(&tab[0], i);
-	target_pos_2(a, b, tab, j, max);
+	target_pos_2(a, b, tab, j);
 	free(tab);
 	return (0);
 }
 
-void	target_pos_2(t_list **a, t_list **b, int *tab, int j, int max)
+void	target_pos_2(t_list **a, t_list **b, int *tab, int j)
 {
 	t_list	*tmp_a;
 	t_list	*tmp_b;
+	int		max;
 
+	max = j;
 	tmp_b = (*b);
 	tmp_a = (*a);
 	while (tmp_b)
@@ -74,7 +74,7 @@ void	pos(t_list **a, t_list **b)
 	t_list	*tmp_a;
 	t_list	*tmp_b;
 	int		i;
-	
+
 	i = 0;
 	tmp_a = (*a);
 	tmp_b = (*b);
@@ -90,5 +90,5 @@ void	pos(t_list **a, t_list **b)
 		tmp_b->pos = i;
 		tmp_b = tmp_b->next;
 		i++;
-	}    
+	}
 }

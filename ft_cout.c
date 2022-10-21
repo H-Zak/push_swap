@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:28:58 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 18:21:10 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:30:17 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	cost_b(t_list **a, t_list **b)
 	int		taille;
 	int		mediane;
 	t_list	*tmp_b;
-	
+
 	taille = ft_lstsize((*b));
 	mediane = taille / 2;
 	tmp_b = (*b);

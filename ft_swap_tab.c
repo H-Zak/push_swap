@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 18:19:57 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 18:29:26 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,6 @@ int		ft_push_swap(char **argv, t_list **a, t_list **b);
 void	free_tabchar(char **tab);
 int		which_sort(t_list **a, t_list **b, int j);
 int		list_check(char **argv, char **tab, t_list **a);
-
-void	print_list(t_list *a)
-{
-	while (a)
-	{
-		printf("%ld\n", a->content);
-		a = a->next;
-	}
-}
 
 int	ft_push_swap(char **argv, t_list **a, t_list **b)
 {
@@ -117,7 +108,5 @@ int	main(int argc, char** argv)
 		a = tmp;
 	}
 	a = NULL;
-	//test(a);
-	//print_list(a);
 	return (0);
 }

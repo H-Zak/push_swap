@@ -39,3 +39,4 @@ verifier quoi faire si le malloc du split deconne
 ou le lst new
 verifier que tout ce free en cas d'erreur de malloc
 utiliser son printf !???? ou juste mettre un write enfaite
+est ce que je gere bien avec "+" et "-"
