@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 15:17:54 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 15:19:26 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	fait_le_mouv(int elu, t_list **a, t_list **b) //utiliser (*b) et non pas un
 		return(pta(a,b));
 	while (tmp_b->cost_a != 0 || tmp_b->cost_b != 0)
 	{
-		mouv_condition(a, b, elu);
 		mouv_condition_2(a, b, elu);
+		mouv_condition(a, b, elu);
 	}
 }
 
