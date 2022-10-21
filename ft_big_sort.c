@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 16:56:07 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/21 16:57:10 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_big_sort(t_list **a, t_list **b, int j)//possibilite d'envoyer tab et de 
 	}
 	size_3(a);
 	i = 0;
-	if (the_boucle(a, b, i, j, tab) == 1)
+	if (the_boucle(a, b, j, tab) == 1)
 		return (free(tab), 1);
 	the_finish(a, b, &tab[0]);
 	free(tab);
