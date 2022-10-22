@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 19:30:46 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/22 14:44:48 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,12 @@ int	ft_push_swap(char **argv, t_list **a, t_list **b)
 
 int	list_check(char **argv, char **tab, t_list **a)
 {
+	int	i;
+
+	i = 1;
 	if (check_list(argv, tab) == 1)
 		return (1);
-	else if (do_it_chainlist(argv, tab, a) == 1)
+	else if (do_it_chainlist(argv, tab, a, i) == 1)
 		return (1);
 	else if (check_doublons_int(*a) == 1)
 		return (1);
@@ -52,7 +55,7 @@ int	list_check(char **argv, char **tab, t_list **a)
 int	which_sort(t_list **a, t_list **b)
 {
 	int	j;
-	
+
 	j = ft_lstsize(*a);
 	if (j == 2)
 	{

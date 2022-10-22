@@ -6,14 +6,14 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:28:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/22 14:12:19 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/22 14:45:03 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
 int		check(char **tab);
-int		do_it_chainlist(char **argv, char **tab, t_list **a);
+int		do_it_chainlist(char **argv, char **tab, t_list **a, int i);
 int		check_doublons_int(t_list *a);
 int		list_check(char **argv, char **tab, t_list **a);
 void	boucle(t_list *a, int *tabtest);
@@ -61,12 +61,10 @@ int	check(char **t)
 	return (free_tabchar(t), 2);
 }
 
-int	do_it_chainlist(char **argv, char **tab, t_list **a)
+int	do_it_chainlist(char **argv, char **tab, t_list **a, int i)
 {
 	int	j;
-	int	i;
 
-	i = 1;
 	j = 0;
 	while (argv[i])
 	{
