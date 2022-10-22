@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:28:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/22 13:51:39 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/22 14:12:19 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		check(char **tab);
 int		do_it_chainlist(char **argv, char **tab, t_list **a);
 int		check_doublons_int(t_list *a);
 int		list_check(char **argv, char **tab, t_list **a);
-void	boucle(t_list *a, int *tabtest, int i);
+void	boucle(t_list *a, int *tabtest);
 
 int	check_list(char **argv, char **tab)
 {
@@ -96,17 +96,18 @@ int	check_doublons_int(t_list *a)
 	int	i;
 	int	j;
 	int	*tabtest;
+	int	taille;
 
-	i = ft_lstsize(a);
-	tabtest = malloc (i * sizeof(int));
+	taille = ft_lstsize(a);
+	tabtest = malloc (taille * sizeof(int));
 	if (tabtest == NULL)
 		return (free(tabtest), 1);
+	boucle(a, &tabtest[0]);
 	i = 0;
-	boucle(a, &tabtest[0], i);
-	while (tabtest[i])
+	while (i < (taille - 1))
 	{
 		j = i + 1;
-		while (tabtest[j])
+		while (j < taille)
 		{
 			if (tabtest[i] == tabtest[j])
 				return (free(tabtest), 1);
@@ -117,8 +118,12 @@ int	check_doublons_int(t_list *a)
 	return (free(tabtest), 0);
 }
 
-void	boucle(t_list *a, int *tabtest, int i)
+//j'envoyer int i en plus avant dans boucle
+void	boucle(t_list *a, int *tabtest)
 {
+	int	i;
+
+	i = 0;
 	while (a)
 	{
 		tabtest[i] = a->content;
