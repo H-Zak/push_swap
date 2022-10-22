@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:31:46 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/22 14:34:08 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/22 14:35:57 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	target_pos_2(t_list **a, t_list **b, int *tab, int j)
 	while (tmp_b)
 	{
 		j = 0;
-		while (j <= max && (tab[j] < tmp_b->index))
+		while (j < max && (tab[j] < tmp_b->index))
 			j++;
 		if (j >= max)
 			j = 0;
