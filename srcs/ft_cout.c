@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cout.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbily <fbily@student.42.fr>                +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:28:58 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/23 18:43:10 by fbily            ###   ########.fr       */
+/*   Updated: 2022/10/23 19:07:06 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../includes/Push_swap.h"
 
 void	cost_b(t_list **b);
 int		cout_global(t_list **b);

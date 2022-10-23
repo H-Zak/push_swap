@@ -8,18 +8,18 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Sun Oct 23 18:40:06 2022
+# Make data base, printed on Sun Oct 23 19:03:46 2022
 
 # Variables
 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
- 
 # automatic
 ?F = $(notdir $?)
-# makefile (from `Makefile', line 17)
+ 
+# makefile (from `Makefile', line 21)
 OBJ = ${SRC:.c=.o}
-# makefile (from `Makefile', line 15)
+# makefile (from `Makefile', line 17)
 SRC = ft_little_sort.c ft_split.c ft_lst_utils.c push.c ft_utils.c rotate.c ft_swap_tab.c reverse_rotate.c swap.c ft_big_sort.c ft_cout.c ft_deplacement.c ft_check.c ft_pos.c ft_utils_little_sort.c
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
@@ -47,6 +47,8 @@ VSCODE_CWD = /
 PATH = /opt/homebrew/bin:/opt/homebrew/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/Apple/usr/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
+# makefile (from `Makefile', line 16)
+SRC_PATH = ./srcs/
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
@@ -57,6 +59,8 @@ SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.oF19w1Jdmk/Listeners
 %F = $(notdir $%)
 # environment
 DISPLAY = /private/tmp/com.apple.launchd.uEn1vP5q3P/org.xquartz:0
+# makefile (from `Makefile', line 22)
+OBJS = $(addprefix $(OBJ_PATH), $(OBJ))
 # environment
 PWD = /Users/zakariyahamdouchi/dernierpushswap/push_swap
 # environment
@@ -89,6 +93,8 @@ XPC_FLAGS = 0x0
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
+# makefile (from `Makefile', line 18)
+SRCS = $(addprefix ${SRC_PATH}, ${SRC})
 # environment
 SHLVL = 1
 # default
@@ -97,7 +103,7 @@ MAKE_VERSION := 3.81
 USER = zakariyahamdouchi
 # makefile
 .DEFAULT_GOAL := push_swap
-# makefile (from `Makefile', line 13)
+# makefile (from `Makefile', line 14)
 NAME = push_swap
 # environment
 LESS = -R
@@ -105,6 +111,8 @@ LESS = -R
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# makefile (from `Makefile', line 26)
+INC = -I./includes/
 # default
 .VARIABLES := 
 # environment
@@ -143,12 +151,17 @@ MAKEFILES :=
 PAGER = less
 # environment
 LC_ALL = C
+# makefile (from `Makefile', line 20)
+OBJ_PATH = obj/
 # automatic
+ 
 ^F = $(notdir $^)
+# makefile (from `Makefile', line 24)
+DEPS = $(addprefix ${OBJ_PATH}, ${SRC:.c=.d})
 # default
 SUFFIXES := 
-# makefile (from `Makefile', line 19)
-FLAGS = -Wall -Werror -Wextra -g3
+# makefile (from `Makefile', line 28)
+FLAGS = -Wall -Werror -Wextra -MMD -MP -g3
 # environment
 MAKELEVEL := 0
 # environment
@@ -156,8 +169,7 @@ LANG = C
 # environment
 VSCODE_PID = 1701
 # variable set hash-table stats:
- 
-# Load=71/1024=7%, Rehash=0, Collisions=4/103=4%
+# Load=77/1024=8%, Rehash=0, Collisions=15/115=13%
 
 # Pattern-specific Variable Values
 
@@ -165,48 +177,53 @@ VSCODE_PID = 1701
 
 # Directories
 
-# . (device 16777231, inode 7138488): 33 files, no impossibilities.
+# . (device 16777231, inode 7138488): 11 files, no impossibilities.
+# ./srcs (device 16777231, inode 7140628): 17 files, no impossibilities so far.
+# srcs (device 16777231, inode 7140628): 17 files, no impossibilities so far.
 
-# 33 files, no impossibilities in 1 directories.
+# 45 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
-%.o: %.c
-#  commands to execute (from `Makefile', line 25):
-	gcc ${FLAGS} -c $< -o $@
+obj/%.o: ./srcs/%.c
+#  commands to execute (from `Makefile', line 34):
+	@mkdir -p ${OBJ_PATH}
+	gcc ${FLAGS} ${INC} -o $@ -c $<
 	
 
 # 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
 
-# Not a target:
-ft_pos.c:
+obj/ft_pos.o: srcs/ft_pos.c
 #  Implicit rule search has been done.
-#  Last modified 2022-10-23 18:34:34
-#  File has been updated.
-#  Successfully updated.
+#  Implicit/static pattern stem: `ft_pos'
+#  File is an intermediate prerequisite.
+#  File does not exist.
+#  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-reverse_rotate.o: reverse_rotate.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `reverse_rotate'
-#  Last modified 2022-10-23 18:39:55
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	gcc ${FLAGS} -c $< -o $@
+#  commands to execute (from `Makefile', line 34):
+	@mkdir -p ${OBJ_PATH}
+	gcc ${FLAGS} ${INC} -o $@ -c $<
 	
 
 # Not a target:
-ft_cout.c:
+srcs/ft_pos.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-10-23 18:34:34
+#  Last modified 2022-10-23 18:08:22
 #  File has been updated.
 #  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+obj/ft_lst_utils.d:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -216,20 +233,21 @@ all: push_swap
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/3=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-ft_utils_little_sort.o: ft_utils_little_sort.c
+obj/ft_cout.o: srcs/ft_cout.c
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: `ft_utils_little_sort'
+#  Implicit/static pattern stem: `ft_cout'
 #  File is an intermediate prerequisite.
 #  File does not exist.
 #  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	gcc ${FLAGS} -c $< -o $@
+#  commands to execute (from `Makefile', line 34):
+	@mkdir -p ${OBJ_PATH}
+	gcc ${FLAGS} ${INC} -o $@ -c $<
 	
 
 .PHONY: all clean fclean re
@@ -237,79 +255,39 @@ ft_utils_little_sort.o: ft_utils_little_sort.c
 #  Modification time never checked.
 #  File has not been updated.
 
-ft_big_sort.o: ft_big_sort.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `ft_big_sort'
-#  Last modified 2022-10-23 18:39:55
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	gcc ${FLAGS} -c $< -o $@
-	
-
 # Not a target:
-swap.c:
+srcs/ft_cout.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-10-23 18:34:34
+#  Last modified 2022-10-23 18:43:10
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-.SECONDARY: ft_little_sort.o ft_split.o ft_lst_utils.o push.o ft_utils.o rotate.o ft_swap_tab.o reverse_rotate.o swap.o ft_big_sort.o ft_cout.o ft_deplacement.o ft_check.o ft_pos.o ft_utils_little_sort.o
+.SECONDARY: obj/ft_little_sort.o obj/ft_split.o obj/ft_lst_utils.o obj/push.o obj/ft_utils.o obj/rotate.o obj/ft_swap_tab.o obj/reverse_rotate.o obj/swap.o obj/ft_big_sort.o obj/ft_cout.o obj/ft_deplacement.o obj/ft_check.o obj/ft_pos.o obj/ft_utils_little_sort.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-ft_split.o: ft_split.c
+# Not a target:
+obj/ft_utils_little_sort.d:
+#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: `ft_split'
-#  Last modified 2022-10-23 18:39:55
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	gcc ${FLAGS} -c $< -o $@
-	
-
-rotate.o: rotate.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `rotate'
-#  Last modified 2022-10-23 18:39:55
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	gcc ${FLAGS} -c $< -o $@
-	
-
-ft_check.o: ft_check.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `ft_check'
-#  File is an intermediate prerequisite.
 #  File does not exist.
-#  File has not been updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	gcc ${FLAGS} -c $< -o $@
-	
-
-ft_swap_tab.o: ft_swap_tab.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `ft_swap_tab'
-#  Last modified 2022-10-23 18:39:55
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	gcc ${FLAGS} -c $< -o $@
-	
+
+# Not a target:
+obj/ft_big_sort.d:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 .SUFFIXES:
@@ -317,64 +295,114 @@ ft_swap_tab.o: ft_swap_tab.c
 #  Modification time never checked.
 #  File has not been updated.
 
-push.o: push.c
+# Not a target:
+obj/ft_split.d:
+#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: `push'
-#  Last modified 2022-10-23 18:39:55
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	gcc ${FLAGS} -c $< -o $@
-	
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-10-23 18:39:40
+#  Last modified 2022-10-23 19:03:12
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-ft_lst_utils.c:
+obj/ft_check.d:
+#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
-#  Last modified 2022-10-23 18:34:34
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
- 
-ft_utils.o: ft_utils.c
+# Not a target:
+obj/ft_swap_tab.d:
+#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: `ft_utils'
-#  Last modified 2022-10-23 18:39:55
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	gcc ${FLAGS} -c $< -o $@
+
+# Not a target:
+obj/swap.d:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+obj/reverse_rotate.d:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/ft_lst_utils.o: srcs/ft_lst_utils.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_lst_utils'
+#  File is an intermediate prerequisite.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	@mkdir -p ${OBJ_PATH}
+	gcc ${FLAGS} ${INC} -o $@ -c $<
 	
 
 # Not a target:
-reverse_rotate.c:
+srcs/ft_lst_utils.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-10-23 18:34:34
+#  Last modified 2022-10-23 18:08:22
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+ 
+
+# Not a target:
+srcs/ft_utils.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-23 18:08:22
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-ft_utils_little_sort.c:
+obj/ft_utils.d:
+#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
-#  Last modified 2022-10-23 18:34:34
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+obj/push.d:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -383,66 +411,77 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 33):
-	rm -f ${NAME}
+#  commands to execute (from `Makefile', line 43):
+	rm -rf ${NAME}
 	
 
-ft_little_sort.o: ft_little_sort.c
+obj/ft_utils_little_sort.o: srcs/ft_utils_little_sort.c
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: `ft_little_sort'
-#  Last modified 2022-10-23 18:39:55
-#  File has been updated.
-#  Successfully updated.
+#  Implicit/static pattern stem: `ft_utils_little_sort'
+#  File is an intermediate prerequisite.
+#  File does not exist.
+#  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	gcc ${FLAGS} -c $< -o $@
+#  commands to execute (from `Makefile', line 34):
+	@mkdir -p ${OBJ_PATH}
+	gcc ${FLAGS} ${INC} -o $@ -c $<
+	
+
+obj/ft_big_sort.o: srcs/ft_big_sort.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_big_sort'
+#  File is an intermediate prerequisite.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	@mkdir -p ${OBJ_PATH}
+	gcc ${FLAGS} ${INC} -o $@ -c $<
 	
 
 # Not a target:
-ft_big_sort.c:
+obj/rotate.d:
+#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
-#  Last modified 2022-10-23 18:34:34
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+srcs/ft_big_sort.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-23 18:08:22
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-ft_split.c:
+obj/ft_little_sort.d:
+#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
-#  Last modified 2022-10-23 18:36:40
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-# Not a target:
-rotate.c:
+obj/ft_split.o: srcs/ft_split.c
 #  Implicit rule search has been done.
-#  Last modified 2022-10-23 18:34:34
-#  File has been updated.
-#  Successfully updated.
+#  Implicit/static pattern stem: `ft_split'
+#  File is an intermediate prerequisite.
+#  File does not exist.
+#  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
-ft_check.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-10-23 18:35:53
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
-ft_swap_tab.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-10-23 18:34:34
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	@mkdir -p ${OBJ_PATH}
+	gcc ${FLAGS} ${INC} -o $@ -c $<
+	
 
 # Not a target:
 .DEFAULT:
@@ -450,26 +489,93 @@ ft_swap_tab.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-ft_deplacement.o: ft_deplacement.c
+# Not a target:
+srcs/ft_split.c:
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: `ft_deplacement'
+#  Last modified 2022-10-23 18:08:22
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/ft_check.o: srcs/ft_check.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_check'
 #  File is an intermediate prerequisite.
 #  File does not exist.
 #  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	gcc ${FLAGS} -c $< -o $@
+#  commands to execute (from `Makefile', line 34):
+	@mkdir -p ${OBJ_PATH}
+	gcc ${FLAGS} ${INC} -o $@ -c $<
+	
+
+obj/ft_swap_tab.o: srcs/ft_swap_tab.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_swap_tab'
+#  File is an intermediate prerequisite.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	@mkdir -p ${OBJ_PATH}
+	gcc ${FLAGS} ${INC} -o $@ -c $<
+	
+
+obj/swap.o: srcs/swap.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `swap'
+#  File is an intermediate prerequisite.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	@mkdir -p ${OBJ_PATH}
+	gcc ${FLAGS} ${INC} -o $@ -c $<
 	
 
 # Not a target:
-push.c:
+srcs/ft_check.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-10-23 18:34:34
+#  Last modified 2022-10-23 18:24:40
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+srcs/ft_swap_tab.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-23 18:08:22
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+srcs/swap.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-23 18:08:22
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/reverse_rotate.o: srcs/reverse_rotate.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `reverse_rotate'
+#  File is an intermediate prerequisite.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	@mkdir -p ${OBJ_PATH}
+	gcc ${FLAGS} ${INC} -o $@ -c $<
+	
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -477,132 +583,191 @@ re: fclean all
 #  File does not exist.
 #  File has not been updated.
 
-ft_pos.o: ft_pos.c
+# Not a target:
+srcs/reverse_rotate.c:
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: `ft_pos'
-#  File is an intermediate prerequisite.
-#  File does not exist.
-#  File has not been updated.
+#  Last modified 2022-10-23 18:08:22
+#  File has been updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	gcc ${FLAGS} -c $< -o $@
-	
+
+# Not a target:
+obj/ft_deplacement.d:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 30):
-	rm -f ${OBJ} 
+#  commands to execute (from `Makefile', line 40):
+	rm -rf ${OBJ_PATH}
 	
 
-# Not a target:
-ft_utils.c:
+obj/ft_utils.o: srcs/ft_utils.c
 #  Implicit rule search has been done.
-#  Last modified 2022-10-23 18:34:34
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-push_swap: ft_little_sort.o ft_split.o ft_lst_utils.o push.o ft_utils.o rotate.o ft_swap_tab.o reverse_rotate.o swap.o ft_big_sort.o ft_cout.o ft_deplacement.o ft_check.o ft_pos.o ft_utils_little_sort.o
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/3=0%
-#  commands to execute (from `Makefile', line 22):
-	$(CC) ${FLAGS} $(OBJ) -o ${NAME}
-	
-
-ft_cout.o: ft_cout.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `ft_cout'
+#  Implicit/static pattern stem: `ft_utils'
 #  File is an intermediate prerequisite.
 #  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := ft_cout.o
-# automatic
-# % := 
-# automatic
-# * := ft_cout
-# automatic
-# + := ft_cout.c
-# automatic
-# | := 
-# automatic
-# < := ft_cout.c
-# automatic
-# ^ := ft_cout.c
-# automatic
-# ? := ft_cout.c
+#  File has not been updated.
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/13=8%
-#  commands to execute (from `Makefile', line 25):
-	gcc ${FLAGS} -c $< -o $@
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	@mkdir -p ${OBJ_PATH}
+	gcc ${FLAGS} ${INC} -o $@ -c $<
 	
 
-swap.o: swap.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `swap'
-#  Last modified 2022-10-23 18:39:55
+push_swap: obj/ft_little_sort.o obj/ft_split.o obj/ft_lst_utils.o obj/push.o obj/ft_utils.o obj/rotate.o obj/ft_swap_tab.o obj/reverse_rotate.o obj/swap.o obj/ft_big_sort.o obj/ft_cout.o obj/ft_deplacement.o obj/ft_check.o obj/ft_pos.o obj/ft_utils_little_sort.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-10-23 19:03:15
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	gcc ${FLAGS} -c $< -o $@
+#  commands to execute (from `Makefile', line 31):
+	gcc ${FLAGS} $(OBJS) -o ${NAME}
 	
 
 # Not a target:
-ft_little_sort.c:
+obj/ft_pos.d:
+#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
-#  Last modified 2022-10-23 18:34:34
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
+obj/push.o: srcs/push.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `push'
+#  File is an intermediate prerequisite.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
  
+#  commands to execute (from `Makefile', line 34):
+	@mkdir -p ${OBJ_PATH}
+	gcc ${FLAGS} ${INC} -o $@ -c $<
+	
+
 # Not a target:
-ft_deplacement.c:
+srcs/push.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-10-23 18:34:34
+#  Last modified 2022-10-23 18:08:22
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-ft_lst_utils.o: ft_lst_utils.c
+# Not a target:
+obj/ft_cout.d:
+#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: `ft_lst_utils'
-#  Last modified 2022-10-23 18:39:55
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/rotate.o: srcs/rotate.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `rotate'
+#  File is an intermediate prerequisite.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	@mkdir -p ${OBJ_PATH}
+	gcc ${FLAGS} ${INC} -o $@ -c $<
+	
+
+# Not a target:
+srcs/rotate.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-23 18:08:22
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	gcc ${FLAGS} -c $< -o $@
+
+obj/ft_little_sort.o: srcs/ft_little_sort.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_little_sort'
+#  File is an intermediate prerequisite.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	@mkdir -p ${OBJ_PATH}
+	gcc ${FLAGS} ${INC} -o $@ -c $<
 	
+
+# Not a target:
+srcs/ft_little_sort.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-23 18:08:22
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+ 
+srcs/ft_utils_little_sort.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-10-23 18:08:22
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/ft_deplacement.o: srcs/ft_deplacement.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_deplacement'
+#  File is an intermediate prerequisite.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	@mkdir -p ${OBJ_PATH}
+	gcc ${FLAGS} ${INC} -o $@ -c $<
+	
+
+# Not a target:
+srcs/ft_deplacement.c:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2022-10-23 18:08:22
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # files hash-table stats:
-# Load=40/1024=4%, Rehash=0, Collisions=0/136=0%
+# Load=55/1024=5%, Rehash=0, Collisions=7/166=4%
 # VPATH Search Paths
 
 # No `vpath' search paths.
 
 # No general (`VPATH' variable) search path.
 
-# # of strings in strcache: 1
+# # of strings in strcache: 16
 # # of strcache buffers: 1
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
-# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+# strcache free: total = 3835 / max = 3835 / min = 3835 / avg = 3835
 
-# Finished Make data base on Sun Oct 23 18:40:06 2022
+# Finished Make data base on Sun Oct 23 19:03:46 2022
 
  

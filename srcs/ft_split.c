@@ -6,11 +6,11 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 18:08:27 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 19:05:04 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/23 19:08:19 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../includes/Push_swap.h"
 
 static int		count_1(char const *s, char c);
 static void		*count_2(char const *s, char c, char **tab, int nb_words);
@@ -141,20 +141,3 @@ static char	**c_vide(char const *s)
 	abc[1] = NULL;
 	return (abc);
 }
-/*
-int	main()
-{
-	char **tab;
-    int i;
-    
-    i = 0;
-    tab = ft_split("--1-2--", '-');
-    while (tab[i])
-    {
-		printf("%ld", ft_strlen(tab[i]));
-        printf("%s\n", tab[i]);
-        i++;
-    }
-	printf("%s", tab[i]);
-    return(0);
-}*/

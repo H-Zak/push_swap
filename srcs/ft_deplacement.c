@@ -6,11 +6,11 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 19:27:27 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/23 19:07:10 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../includes/Push_swap.h"
 
 void	put_index(t_list **a, int *tab);
 void	fait_le_mouv(int i, t_list **a, t_list **b);

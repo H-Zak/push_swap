@@ -6,11 +6,11 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:31:46 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/22 14:35:57 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/23 19:07:22 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../includes/Push_swap.h"
 
 int		target_pos(t_list **a, t_list **b);
 void	target_pos_2(t_list **a, t_list **b, int *tab, int j);

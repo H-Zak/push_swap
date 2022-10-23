@@ -6,11 +6,11 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 17:11:37 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 18:31:53 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/23 19:07:38 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../includes/Push_swap.h"
 
 void	pta(t_list **a, t_list **b)
 {

@@ -1,11 +1,5 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/zakariyahamdouchi/dernierpushswap/push_swap'
-gcc -Wall -Werror -Wextra -g3 -c ft_cout.c -o ft_cout.o
-gcc -Wall -Werror -Wextra -g3 -c ft_deplacement.c -o ft_deplacement.o
-gcc -Wall -Werror -Wextra -g3 -c ft_check.c -o ft_check.o
-gcc -Wall -Werror -Wextra -g3 -c ft_pos.c -o ft_pos.o
- 
-gcc -Wall -Werror -Wextra -g3 -c ft_utils_little_sort.c -o ft_utils_little_sort.o
-cc -Wall -Werror -Wextra -g3 ft_little_sort.o ft_split.o ft_lst_utils.o push.o ft_utils.o rotate.o ft_swap_tab.o reverse_rotate.o swap.o ft_big_sort.o ft_cout.o ft_deplacement.o ft_check.o ft_pos.o ft_utils_little_sort.o -o push_swap
+make: `push_swap' is up to date.
 make: Leaving directory `/Users/zakariyahamdouchi/dernierpushswap/push_swap'
  

@@ -6,11 +6,11 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 15:14:32 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/21 18:08:15 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/23 19:07:33 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../includes/Push_swap.h"
 
 long	ft_atol(const char *nptr)
 {

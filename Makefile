@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fbily <fbily@student.42.fr>                +#+  +:+       +#+         #
+#    By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/23 18:36:51 by fbily             #+#    #+#              #
-#    Updated: 2022/10/23 18:52:31 by fbily            ###   ########.fr        #
+#    Updated: 2022/10/23 19:03:12 by zakariyaham      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,6 @@ re : fclean all
 
 -include ${DEPS}
 
-.SECONDARY : $(OBJ)
+.SECONDARY : $(OBJS)
 
 .PHONY: all clean fclean re
