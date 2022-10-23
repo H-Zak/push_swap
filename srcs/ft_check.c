@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
+/*   By: fbily <fbily@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:28:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/22 14:45:03 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/23 18:24:41 by fbily            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	check_list(char **argv, char **tab)
 	{
 		tab = ft_split(argv[j], ' ');
 		if (tab[0] == NULL || tab == NULL)
-			return (1);
+			return (free_tabchar(tab), 1);
 		if (check(tab) == 1)
 			return (1);
 		j++;

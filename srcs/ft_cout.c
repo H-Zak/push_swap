@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cout.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
+/*   By: fbily <fbily@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:28:58 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/21 19:26:06 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/23 18:43:10 by fbily            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	cout_reel(int cost_a, int cost_b)
 {
 	int	cout;
 
+	cout = 0;
 	if (cost_a < 0 && cost_b < 0)
 	{
 		if (cost_a < cost_b)
