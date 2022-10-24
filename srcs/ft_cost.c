@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cost.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
+/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:28:58 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/24 17:14:06 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/24 17:19:15 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,10 @@ int	cost_global(t_list **b)
 	t_list	*tmp_b;
 	int		cost_1;
 	int		cost_2;
-	int		elu;
+	int		chosen;
 
 	tmp_b = (*b);
-	elu = 0;
+	chosen = 0;
 	cost_1 = cost_reel(tmp_b->cost_a, tmp_b->cost_b);
 	tmp_b = tmp_b->next;
 	while (tmp_b)
@@ -86,11 +86,11 @@ int	cost_global(t_list **b)
 		if (cost_2 < cost_1)
 		{
 			cost_1 = cost_2;
-			elu = tmp_b->pos;
+			chosen = tmp_b->pos;
 		}
 		tmp_b = tmp_b->next;
 	}
-	return (elu);
+	return (chosen);
 }
 
 void	cost_b(t_list **b)

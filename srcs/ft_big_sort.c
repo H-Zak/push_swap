@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_big_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
+/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/24 17:06:52 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/24 17:19:57 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ int	ft_big_sort(t_list **a, t_list **b, int j)
 
 int	the_boucle(t_list **a, t_list **b, int j)
 {
-	int	elu;
+	int	chosen;
 	int	i;
 
 	i = 0;
-	elu = 0;
+	chosen = 0;
 	while ((i < (j - 3)))
 	{
 		pos(a, b);
@@ -55,8 +55,8 @@ int	the_boucle(t_list **a, t_list **b, int j)
 			return (1);
 		cost_a(a, b);
 		cost_b(b);
-		elu = cout_global(b);
-		fait_le_mouv(elu, a, b);
+		chosen = cost_global(b);
+		do_the_mov(chosen, a, b);
 		i++;
 	}
 	return (0);

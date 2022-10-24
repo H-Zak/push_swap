@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_movement.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
+/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/24 17:14:12 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/24 17:19:28 by zhamdouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,33 @@
 
 void	put_index(t_list **a, int *tab);
 void	do_the_mov(int i, t_list **a, t_list **b);
-void	mov_condition(t_list **a, t_list **b, int elu);
-void	mov_cond_2(t_list **a, t_list **b, int elu);
+void	mov_condition(t_list **a, t_list **b, int chosen);
+void	mov_cond_2(t_list **a, t_list **b, int chosen);
 
-void	do_the_mov(int elu, t_list **a, t_list **b)
+void	do_the_mov(int chosen, t_list **a, t_list **b)
 {
 	t_list	*tmp_b;
 
 	tmp_b = (*b);
-	while (tmp_b->pos != elu)
+	while (tmp_b->pos != chosen)
 		tmp_b = tmp_b->next;
 	if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)
 		return (pta(a, b));
 	while (tmp_b->cost_a != 0 || tmp_b->cost_b != 0)
 	{
-		mov_condition(a, b, elu);
-		mov_cond_2(a, b, elu);
+		mov_condition(a, b, chosen);
+		mov_cond_2(a, b, chosen);
 		if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)
 			pta(a, b);
 	}
 }
 
-void	mov_cond_2(t_list **a, t_list **b, int elu)
+void	mov_cond_2(t_list **a, t_list **b, int chosen)
 {	
 	t_list	*tmp_b;
 
 	tmp_b = (*b);
-	while (tmp_b->pos != elu)
+	while (tmp_b->pos != chosen)
 		tmp_b = tmp_b->next;
 	if (tmp_b->cost_a > 0 && tmp_b->cost_b <= 0)
 	{
@@ -60,12 +60,12 @@ void	mov_cond_2(t_list **a, t_list **b, int elu)
 	}
 }
 
-void	mov_condition(t_list **a, t_list **b, int elu)
+void	mov_condition(t_list **a, t_list **b, int chosen)
 {
 	t_list	*tmp_b;
 
 	tmp_b = (*b);
-	while (tmp_b->pos != elu)
+	while (tmp_b->pos != chosen)
 		tmp_b = tmp_b->next;
 	if (tmp_b->cost_a < 0 && tmp_b->cost_b < 0)
 	{
