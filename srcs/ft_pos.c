@@ -6,15 +6,15 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:31:46 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/23 19:07:22 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/24 18:05:12 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
 
-int		target_pos(t_list **a, t_list **b);
-void	target_pos_2(t_list **a, t_list **b, int *tab, int j);
-void	pos(t_list **a, t_list **b);
+int			target_pos(t_list **a, t_list **b);
+static void	target_pos_2(t_list **a, t_list **b, int *tab, int j);
+void		pos(t_list **a, t_list **b);
 
 int	target_pos(t_list **a, t_list **b)
 {
@@ -41,7 +41,7 @@ int	target_pos(t_list **a, t_list **b)
 	return (0);
 }
 
-void	target_pos_2(t_list **a, t_list **b, int *tab, int j)
+static void	target_pos_2(t_list **a, t_list **b, int *tab, int j)
 {
 	t_list	*tmp_a;
 	t_list	*tmp_b;

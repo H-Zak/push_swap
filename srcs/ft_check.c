@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:28:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/24 17:07:58 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/24 18:03:32 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,18 +94,18 @@ int	check_doublons_int(t_list *a)
 	int	i;
 	int	j;
 	int	*tabtest;
-	int	taille;
+	int	size;
 
-	taille = ft_lstsize(a);
-	tabtest = malloc (taille * sizeof(int));
+	size = ft_lstsize(a);
+	tabtest = malloc (size * sizeof(int));
 	if (tabtest == NULL)
 		return (free(tabtest), 1);
 	loop(a, &tabtest[0]);
 	i = 0;
-	while (i < (taille - 1))
+	while (i < (size - 1))
 	{
 		j = i + 1;
-		while (j < taille)
+		while (j < size)
 		{
 			if (tabtest[i] == tabtest[j])
 				return (free(tabtest), 1);
@@ -116,8 +116,7 @@ int	check_doublons_int(t_list *a)
 	return (free(tabtest), 0);
 }
 
-//j'envoyer int i en plus avant dans loop
-void	loop(t_list *a, int *tabtest)
+static void	loop(t_list *a, int *tabtest)
 {
 	int	i;
 

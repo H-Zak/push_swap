@@ -6,15 +6,14 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/23 19:07:13 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/24 18:04:28 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
 
-void	swap(int *xp, int *yp);
-void	size_5_2(int *tab, t_list **a, t_list **b, int j);
-void	size_5_3(t_list **a, t_list **b, int j);
+static void	size_5_2(int *tab, t_list **a, t_list **b, int j);
+static void	size_5_3(t_list **a, t_list **b, int j);
 
 int	checker_if_list_sort(t_list *a)
 {
@@ -30,28 +29,28 @@ int	checker_if_list_sort(t_list *a)
 
 int	size_3(t_list **a)
 {
-	int	aa;
+	int	a_content;
 	int	b;
 	int	c;
 
-	aa = (*a)->content;
+	a_content = (*a)->content;
 	b = (*a)->next->content;
 	c = (*a)->next->next->content;
-	if (aa < b && aa < c && b > c)
+	if (a_content < b && a_content < c && b > c)
 	{
 		rra(a);
 		sa(a);
 	}
-	if (aa > b && aa < c && b < c)
+	if (a_content > b && a_content < c && b < c)
 		sa(a);
-	if (aa < b && aa > c && b > c)
+	if (a_content < b && a_content > c && b > c)
 		rra(a);
-	if (aa > b && aa > c && b > c)
+	if (a_content > b && a_content > c && b > c)
 	{
 		sa(a);
 		rra(a);
 	}
-	if (aa > b && aa > c && b < c)
+	if (a_content > b && a_content > c && b < c)
 		ra(a);
 	return (0);
 }
@@ -83,7 +82,7 @@ int	size_5(t_list **a, t_list **b, int j)
 	return (0);
 }
 
-void	size_5_3(t_list **a, t_list **b, int j)
+static void	size_5_3(t_list **a, t_list **b, int j)
 {
 	pta(a, b);
 	if (j == 5)
@@ -93,7 +92,7 @@ void	size_5_3(t_list **a, t_list **b, int j)
 		ra(a);
 }
 
-void	size_5_2(int *tab, t_list **a, t_list **b, int j)
+static void	size_5_2(int *tab, t_list **a, t_list **b, int j)
 {
 	if (j == 5)
 	{

@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 18:08:27 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/24 17:08:43 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/24 18:02:44 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int		count_1(char const *s, char c);
 static void		*count_2(char const *s, char c, char **tab, int nb_words);
 static void		fill(char **tab, char const *s, char c, int j);
-static char		**c_vide(char const *s);
+static char		**c_empty(char const *s);
 
 char	**ft_split(char const *s, char c)
 {
@@ -33,7 +33,7 @@ char	**ft_split(char const *s, char c)
 		return (tab);
 	}
 	if (c == 0)
-		return (tab = c_vide(s));
+		return (tab = c_empty(s));
 	nb_words = count_1(s, c);
 	tab = malloc (nb_words * sizeof(char *));
 	if (tab == NULL)
@@ -67,21 +67,21 @@ static void	*count_2(char const *s, char c, char **tab, int nb_words)
 {
 	int	j;
 	int	i;
-	int	compteur;
+	int	counter;
 
 	i = -1;
 	j = 0;
 	while (++i < (nb_words - 1))
 	{
-		compteur = 0;
+		counter = 0;
 		while (s[j] == c)
 			j++;
 		while (s[j] != c && s[j])
 		{
 			j++;
-			compteur++;
+			counter++;
 		}
-		tab[i] = malloc ((compteur + 1) * sizeof(char));
+		tab[i] = malloc ((counter + 1) * sizeof(char));
 		if (tab[i] == NULL)
 		{
 			while (--i >= 0)
@@ -118,18 +118,18 @@ static void	fill(char **tab, char const *s, char c, int nb_words)
 	tab[nb_words - 1] = NULL;
 }
 
-static char	**c_vide(char const *s)
+static char	**c_empty(char const *s)
 {
-	size_t		taille ;
+	size_t		size ;
 	int			i;
 	char		**abc;
 
 	i = 0;
-	taille = ft_strlen(s);
+	size = ft_strlen(s);
 	abc = malloc (2 * sizeof(char *));
 	if (abc == NULL)
 		return (NULL);
-	abc[0] = malloc ((taille + 1) * sizeof(char));
+	abc[0] = malloc ((size + 1) * sizeof(char));
 	if (abc[0] == NULL)
 		return (NULL);
 	while (s[i])

@@ -6,18 +6,18 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/24 17:05:40 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/24 18:05:24 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
 
-int		ft_push_swap(char **argv, t_list **a, t_list **b);
-void	free_tabchar(char **tab);
-int		which_sort(t_list **a, t_list **b);
-int		list_check(char **argv, char **tab, t_list **a);
+static int		ft_push_swap(char **argv, t_list **a, t_list **b);
+void			free_tabchar(char **tab);
+static int		which_sort(t_list **a, t_list **b);
+int				list_check(char **argv, char **tab, t_list **a);
 
-int	ft_push_swap(char **argv, t_list **a, t_list **b)
+static int	ft_push_swap(char **argv, t_list **a, t_list **b)
 {
 	char	**tab;
 
@@ -52,7 +52,7 @@ int	list_check(char **argv, char **tab, t_list **a)
 		return (0);
 }
 
-int	which_sort(t_list **a, t_list **b)
+static int	which_sort(t_list **a, t_list **b)
 {
 	int	j;
 

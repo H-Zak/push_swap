@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_big_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/24 17:19:57 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/10/24 18:03:19 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
 
-static void	sort(t_list *a, int j, int *tab);
-void		the_finish(t_list **a, t_list **b, int *tab);
-int			the_boucle(t_list **a, t_list **b, int j);
+static void		sort(t_list *a, int j, int *tab);
+static void		the_finish(t_list **a, t_list **b, int *tab);
+static int		the_boucle(t_list **a, t_list **b, int j);
 
 int	ft_big_sort(t_list **a, t_list **b, int j)
 {
@@ -41,7 +41,7 @@ int	ft_big_sort(t_list **a, t_list **b, int j)
 	return (0);
 }
 
-int	the_boucle(t_list **a, t_list **b, int j)
+static int	the_boucle(t_list **a, t_list **b, int j)
 {
 	int	chosen;
 	int	i;
@@ -62,10 +62,10 @@ int	the_boucle(t_list **a, t_list **b, int j)
 	return (0);
 }
 
-void	the_finish(t_list **a, t_list **b, int *tab)
+static void	the_finish(t_list **a, t_list **b, int *tab)
 {
 	t_list	*tmp_a;
-	int		taille;
+	int		size;
 	int		comp;
 
 	pos(a, b);
@@ -73,11 +73,11 @@ void	the_finish(t_list **a, t_list **b, int *tab)
 	tmp_a = (*a);
 	while (tab[0] != tmp_a->content)
 		tmp_a = tmp_a->next;
-	taille = ft_lstsize((*a)) / 2;
+	size = ft_lstsize((*a)) / 2;
 	comp = tmp_a->pos;
 	while (tmp_a->pos != 0)
 	{
-		if (comp > taille)
+		if (comp > size)
 			rra(a);
 		else
 			ra(a);
@@ -85,7 +85,7 @@ void	the_finish(t_list **a, t_list **b, int *tab)
 	}
 }
 
-void	sort(t_list *a, int j, int *tab)
+static void	sort(t_list *a, int j, int *tab)
 {
 	int		i;
 	t_list	*tmp;

@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_movement.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/24 17:19:28 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/10/24 18:05:04 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
 
-void	put_index(t_list **a, int *tab);
-void	do_the_mov(int i, t_list **a, t_list **b);
-void	mov_condition(t_list **a, t_list **b, int chosen);
-void	mov_cond_2(t_list **a, t_list **b, int chosen);
+void		put_index(t_list **a, int *tab);
+void		do_the_mov(int i, t_list **a, t_list **b);
+static void	mov_condition(t_list **a, t_list **b, int chosen);
+static void	mov_cond_2(t_list **a, t_list **b, int chosen);
 
 void	do_the_mov(int chosen, t_list **a, t_list **b)
 {
@@ -35,7 +35,7 @@ void	do_the_mov(int chosen, t_list **a, t_list **b)
 	}
 }
 
-void	mov_cond_2(t_list **a, t_list **b, int chosen)
+static void	mov_cond_2(t_list **a, t_list **b, int chosen)
 {	
 	t_list	*tmp_b;
 
@@ -60,7 +60,7 @@ void	mov_cond_2(t_list **a, t_list **b, int chosen)
 	}
 }
 
-void	mov_condition(t_list **a, t_list **b, int chosen)
+static void	mov_condition(t_list **a, t_list **b, int chosen)
 {
 	t_list	*tmp_b;
 

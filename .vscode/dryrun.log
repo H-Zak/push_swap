@@ -1,4 +1,4 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/zakariyahamdouchi/Documents/GitHub/push_swap'
 mkdir -p obj/
 gcc -Wall -Werror -Wextra -MMD -MP -g3 -I./includes/ -o obj/ft_little_sort.o -c srcs/ft_little_sort.c
@@ -14,7 +14,6 @@ mkdir -p obj/
 gcc -Wall -Werror -Wextra -MMD -MP -g3 -I./includes/ -o obj/rotate.o -c srcs/rotate.c
 mkdir -p obj/
 gcc -Wall -Werror -Wextra -MMD -MP -g3 -I./includes/ -o obj/ft_swap_tab.o -c srcs/ft_swap_tab.c
- 
 mkdir -p obj/
 gcc -Wall -Werror -Wextra -MMD -MP -g3 -I./includes/ -o obj/reverse_rotate.o -c srcs/reverse_rotate.c
 mkdir -p obj/

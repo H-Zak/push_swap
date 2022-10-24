@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cost.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhamdouc <zhamdouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:28:58 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/24 17:19:15 by zhamdouc         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:45:23 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ int		cost_reel(int cost_a, int cost_b);
 
 void	cost_a(t_list **a, t_list **b)
 {
-	int		taille;
-	int		mediane;
+	int		size;
+	int		median;
 	t_list	*tmp_b;
 
-	taille = ft_lstsize((*a));
-	mediane = taille / 2;
+	size = ft_lstsize((*a));
+	median = size / 2;
 	tmp_b = (*b);
 	while (tmp_b)
 	{
-		if (tmp_b->target_pos > mediane)
-			tmp_b->cost_a = tmp_b->target_pos - taille;
+		if (tmp_b->target_pos > median)
+			tmp_b->cost_a = tmp_b->target_pos - size;
 		else
 			tmp_b->cost_a = tmp_b->target_pos;
 		tmp_b = tmp_b->next;
@@ -95,17 +95,17 @@ int	cost_global(t_list **b)
 
 void	cost_b(t_list **b)
 {
-	int		taille;
-	int		mediane;
+	int		size;
+	int		median;
 	t_list	*tmp_b;
 
-	taille = ft_lstsize((*b));
-	mediane = taille / 2;
+	size = ft_lstsize((*b));
+	median = size / 2;
 	tmp_b = (*b);
 	while (tmp_b)
 	{
-		if (tmp_b->pos > mediane)
-			tmp_b->cost_b = tmp_b->pos - taille;
+		if (tmp_b->pos > median)
+			tmp_b->cost_b = tmp_b->pos - size;
 		else
 			tmp_b->cost_b = tmp_b->pos;
 		tmp_b = tmp_b->next;
