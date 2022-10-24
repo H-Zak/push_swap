@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbily <fbily@student.42.fr>                +#+  +:+       +#+        */
+/*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/23 18:48:54 by fbily            ###   ########.fr       */
+/*   Updated: 2022/10/24 17:14:47 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void	rr(t_list **a, t_list **b);
 void	sa(t_list **a);
 void	sb(t_list **b);
 void	ss(t_list **a, t_list **b);
-int		stack_size(t_list *a);
 int		ft_lstsize(t_list *lst);
 int		size_3(t_list **a);
 int		size_5(t_list **a, t_list **b, int j);
@@ -59,13 +58,13 @@ int		checker_if_list_sort(t_list *a);
 void	bubblesort(int *tab, int n);
 int		ft_big_sort(t_list **a, t_list **b, int j);
 void	cost_b(t_list **b);
-int		cout_global(t_list **b);
+int		cost_global(t_list **b);
 void	cost_a(t_list **a, t_list **b);
-int		cout_reel(int cost_a, int cost_b);
+int		cost_reel(int cost_a, int cost_b);
 void	pos(t_list **a, t_list **b);
 void	put_index(t_list **a, int *tab);
 int		target_pos(t_list **a, t_list **b);
-void	fait_le_mouv(int i, t_list **a, t_list **b);
+void	do_the_mov(int i, t_list **a, t_list **b);
 int		check_list(char **argv, char **tab);
 int		check(char **tab);
 int		do_it_chainlist(char **argv, char **tab, t_list **a, int i);

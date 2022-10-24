@@ -6,15 +6,15 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/23 19:06:55 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/24 17:06:52 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
 
-void	trie(t_list *a, int j, int *tab);
-void	the_finish(t_list **a, t_list **b, int *tab);
-int		the_boucle(t_list **a, t_list **b, int j);
+static void	sort(t_list *a, int j, int *tab);
+void		the_finish(t_list **a, t_list **b, int *tab);
+int			the_boucle(t_list **a, t_list **b, int j);
 
 int	ft_big_sort(t_list **a, t_list **b, int j)
 {
@@ -25,7 +25,7 @@ int	ft_big_sort(t_list **a, t_list **b, int j)
 	tab = malloc (j * sizeof(int));
 	if (tab == NULL)
 		return (free(tab), 1);
-	trie((*a), j, &tab[0]);
+	sort((*a), j, &tab[0]);
 	put_index(a, &tab[0]);
 	while (i < (j - 3))
 	{
@@ -85,7 +85,7 @@ void	the_finish(t_list **a, t_list **b, int *tab)
 	}
 }
 
-void	trie(t_list *a, int j, int *tab)
+void	sort(t_list *a, int j, int *tab)
 {
 	int		i;
 	t_list	*tmp;

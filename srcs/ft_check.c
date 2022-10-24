@@ -6,17 +6,17 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:28:01 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/23 19:06:59 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/24 17:07:58 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
 
-int		check(char **tab);
-int		do_it_chainlist(char **argv, char **tab, t_list **a, int i);
-int		check_doublons_int(t_list *a);
-int		list_check(char **argv, char **tab, t_list **a);
-void	boucle(t_list *a, int *tabtest);
+int			check(char **tab);
+int			do_it_chainlist(char **argv, char **tab, t_list **a, int i);
+int			check_doublons_int(t_list *a);
+int			list_check(char **argv, char **tab, t_list **a);
+static void	loop(t_list *a, int *tabtest);
 
 int	check_list(char **argv, char **tab)
 {
@@ -100,7 +100,7 @@ int	check_doublons_int(t_list *a)
 	tabtest = malloc (taille * sizeof(int));
 	if (tabtest == NULL)
 		return (free(tabtest), 1);
-	boucle(a, &tabtest[0]);
+	loop(a, &tabtest[0]);
 	i = 0;
 	while (i < (taille - 1))
 	{
@@ -116,8 +116,8 @@ int	check_doublons_int(t_list *a)
 	return (free(tabtest), 0);
 }
 
-//j'envoyer int i en plus avant dans boucle
-void	boucle(t_list *a, int *tabtest)
+//j'envoyer int i en plus avant dans loop
+void	loop(t_list *a, int *tabtest)
 {
 	int	i;
 

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_deplacement.c                                   :+:      :+:    :+:   */
+/*   ft_movement.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/23 19:07:10 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/24 17:14:12 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
 
 void	put_index(t_list **a, int *tab);
-void	fait_le_mouv(int i, t_list **a, t_list **b);
-void	mouv_condition(t_list **a, t_list **b, int elu);
-void	mouv_cond_2(t_list **a, t_list **b, int elu);
+void	do_the_mov(int i, t_list **a, t_list **b);
+void	mov_condition(t_list **a, t_list **b, int elu);
+void	mov_cond_2(t_list **a, t_list **b, int elu);
 
-void	fait_le_mouv(int elu, t_list **a, t_list **b)
+void	do_the_mov(int elu, t_list **a, t_list **b)
 {
 	t_list	*tmp_b;
 
@@ -28,14 +28,14 @@ void	fait_le_mouv(int elu, t_list **a, t_list **b)
 		return (pta(a, b));
 	while (tmp_b->cost_a != 0 || tmp_b->cost_b != 0)
 	{
-		mouv_condition(a, b, elu);
-		mouv_cond_2(a, b, elu);
+		mov_condition(a, b, elu);
+		mov_cond_2(a, b, elu);
 		if (tmp_b->cost_b == 0 && tmp_b->cost_a == 0)
 			pta(a, b);
 	}
 }
 
-void	mouv_cond_2(t_list **a, t_list **b, int elu)
+void	mov_cond_2(t_list **a, t_list **b, int elu)
 {	
 	t_list	*tmp_b;
 
@@ -60,7 +60,7 @@ void	mouv_cond_2(t_list **a, t_list **b, int elu)
 	}
 }
 
-void	mouv_condition(t_list **a, t_list **b, int elu)
+void	mov_condition(t_list **a, t_list **b, int elu)
 {
 	t_list	*tmp_b;
 

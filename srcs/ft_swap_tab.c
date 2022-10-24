@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/23 19:07:28 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/24 17:05:40 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_push_swap(char **argv, t_list **a, t_list **b)
 		}
 	}
 	else
-		write(1, "Error\n", 6);
+		write(2, "Error\n", 6);
 	return (0);
 }
 
@@ -99,11 +99,11 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-	if (argc == 1 || argc == 2)
+	if (argc == 1)
 		return (0);
 	j = ft_push_swap(argv, &a, &b);
 	if (j == 1)
-		write(1, "Error malloc\n", 13);
+		write(2, "Error\n", 6);
 	tmp = a;
 	while (tmp)
 	{

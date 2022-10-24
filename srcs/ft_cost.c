@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cout.c                                          :+:      :+:    :+:   */
+/*   ft_cost.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:28:58 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/23 19:07:06 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/24 17:14:06 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
 
 void	cost_b(t_list **b);
-int		cout_global(t_list **b);
+int		cost_global(t_list **b);
 void	cost_a(t_list **a, t_list **b);
-int		cout_reel(int cost_a, int cost_b);
+int		cost_reel(int cost_a, int cost_b);
 
 void	cost_a(t_list **a, t_list **b)
 {
@@ -36,11 +36,11 @@ void	cost_a(t_list **a, t_list **b)
 	}
 }
 
-int	cout_reel(int cost_a, int cost_b)
+int	cost_reel(int cost_a, int cost_b)
 {
-	int	cout;
+	int	cost;
 
-	cout = 0;
+	cost = 0;
 	if (cost_a < 0 && cost_b < 0)
 	{
 		if (cost_a < cost_b)
@@ -58,34 +58,34 @@ int	cout_reel(int cost_a, int cost_b)
 	else
 	{
 		if (cost_a <= 0)
-			cout = (cost_a * -1) + cost_b;
+			cost = (cost_a * -1) + cost_b;
 		else if (cost_b <= 0)
-			cout = cost_a + (cost_b * -1);
-		return (cout);
+			cost = cost_a + (cost_b * -1);
+		return (cost);
 	}
 }
 
-int	cout_global(t_list **b)
+int	cost_global(t_list **b)
 {
 	t_list	*tmp_b;
-	int		cout_1;
-	int		cout_2;
+	int		cost_1;
+	int		cost_2;
 	int		elu;
 
 	tmp_b = (*b);
 	elu = 0;
-	cout_1 = cout_reel(tmp_b->cost_a, tmp_b->cost_b);
+	cost_1 = cost_reel(tmp_b->cost_a, tmp_b->cost_b);
 	tmp_b = tmp_b->next;
 	while (tmp_b)
 	{
-		cout_2 = cout_reel(tmp_b->cost_a, tmp_b->cost_b);
-		if (cout_1 < 0)
-			cout_1 = cout_1 * -1;
-		if (cout_2 < 0)
-			cout_2 = cout_2 * -1;
-		if (cout_2 < cout_1)
+		cost_2 = cost_reel(tmp_b->cost_a, tmp_b->cost_b);
+		if (cost_1 < 0)
+			cost_1 = cost_1 * -1;
+		if (cost_2 < 0)
+			cost_2 = cost_2 * -1;
+		if (cost_2 < cost_1)
 		{
-			cout_1 = cout_2;
+			cost_1 = cost_2;
 			elu = tmp_b->pos;
 		}
 		tmp_b = tmp_b->next;

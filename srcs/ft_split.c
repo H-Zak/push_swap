@@ -6,7 +6,7 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 18:08:27 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/23 19:08:19 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/24 17:08:43 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int		count_1(char const *s, char c);
 static void		*count_2(char const *s, char c, char **tab, int nb_words);
-static void		remplir(char **tab, char const *s, char c, int j);
+static void		fill(char **tab, char const *s, char c, int j);
 static char		**c_vide(char const *s);
 
 char	**ft_split(char const *s, char c)
@@ -39,7 +39,7 @@ char	**ft_split(char const *s, char c)
 	if (tab == NULL)
 		return (NULL);
 	count_2(s, c, tab, nb_words);
-	remplir(tab, s, c, nb_words);
+	fill(tab, s, c, nb_words);
 	return (tab);
 }
 
@@ -92,7 +92,7 @@ static void	*count_2(char const *s, char c, char **tab, int nb_words)
 	return (0);
 }
 
-static void	remplir(char **tab, char const *s, char c, int nb_words)
+static void	fill(char **tab, char const *s, char c, int nb_words)
 {
 	int	j;
 	int	a;
