@@ -1,5 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/zakariyahamdouchi/Documents/GitHub/push_swap'
+make: Entering directory `/Users/zakariyahamdouchi/solong/push_swap'
 mkdir -p obj/
 gcc -Wall -Werror -Wextra -MMD -MP -g3 -I./includes/ -o obj/ft_little_sort.o -c srcs/ft_little_sort.c
 mkdir -p obj/
@@ -31,5 +31,5 @@ gcc -Wall -Werror -Wextra -MMD -MP -g3 -I./includes/ -o obj/ft_pos.o -c srcs/ft_
 mkdir -p obj/
 gcc -Wall -Werror -Wextra -MMD -MP -g3 -I./includes/ -o obj/ft_utils_little_sort.o -c srcs/ft_utils_little_sort.c
 gcc -Wall -Werror -Wextra -MMD -MP -g3 obj/ft_little_sort.o obj/ft_split.o obj/ft_lst_utils.o obj/push.o obj/ft_utils.o obj/rotate.o obj/ft_swap_tab.o obj/reverse_rotate.o obj/swap.o obj/ft_big_sort.o obj/ft_cost.o obj/ft_movement.o obj/ft_check.o obj/ft_pos.o obj/ft_utils_little_sort.o -o push_swap
-make: Leaving directory `/Users/zakariyahamdouchi/Documents/GitHub/push_swap'
+make: Leaving directory `/Users/zakariyahamdouchi/solong/push_swap'
  

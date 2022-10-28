@@ -6,11 +6,11 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:57:51 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/24 18:03:19 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/28 14:54:00 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Push_swap.h"
+#include "../includes/push_swap.h"
 
 static void		sort(t_list *a, int j, int *tab);
 static void		the_finish(t_list **a, t_list **b, int *tab);

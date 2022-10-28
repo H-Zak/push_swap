@@ -6,11 +6,11 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 15:08:37 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/23 19:07:19 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/28 14:54:14 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_lastadd_back(t_list **lst, t_list *new)
 {

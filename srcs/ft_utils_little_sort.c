@@ -6,11 +6,11 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:35:10 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/24 18:01:47 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/28 14:54:34 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Push_swap.h"
+#include "../includes/push_swap.h"
 
 static void	swap(int *xp, int *yp)
 {

@@ -6,11 +6,11 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:31:30 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/24 18:05:04 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/28 14:54:17 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Push_swap.h"
+#include "../includes/push_swap.h"
 
 void		put_index(t_list **a, int *tab);
 void		do_the_mov(int i, t_list **a, t_list **b);
@@ -36,7 +36,7 @@ void	do_the_mov(int chosen, t_list **a, t_list **b)
 }
 
 static void	mov_cond_2(t_list **a, t_list **b, int chosen)
-{	
+{
 	t_list	*tmp_b;
 
 	tmp_b = (*b);

@@ -6,11 +6,11 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:28:58 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/24 17:45:23 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/28 14:54:07 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Push_swap.h"
+#include "../includes/push_swap.h"
 
 void	cost_b(t_list **b);
 int		cost_global(t_list **b);

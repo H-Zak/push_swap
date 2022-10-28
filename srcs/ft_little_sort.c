@@ -6,11 +6,11 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:15:20 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/24 18:04:28 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/28 14:54:11 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Push_swap.h"
+#include "../includes/push_swap.h"
 
 static void	size_5_2(int *tab, t_list **a, t_list **b, int j);
 static void	size_5_3(t_list **a, t_list **b, int j);

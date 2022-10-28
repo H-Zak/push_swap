@@ -6,11 +6,11 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 13:10:16 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/24 18:05:24 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/28 14:54:30 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Push_swap.h"
+#include "../includes/push_swap.h"
 
 static int		ft_push_swap(char **argv, t_list **a, t_list **b);
 void			free_tabchar(char **tab);

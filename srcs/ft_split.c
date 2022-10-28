@@ -6,11 +6,11 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 18:08:27 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/24 18:02:44 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/28 14:54:25 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Push_swap.h"
+#include "../includes/push_swap.h"
 
 static int		count_1(char const *s, char c);
 static void		*count_2(char const *s, char c, char **tab, int nb_words);

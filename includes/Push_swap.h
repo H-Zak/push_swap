@@ -6,19 +6,14 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 11:29:55 by zakariyaham       #+#    #+#             */
-/*   Updated: 2022/10/24 17:59:58 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/28 14:57:22 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
 # include <unistd.h>
-# include <stddef.h>
 # include <stdlib.h>
-# include <stdio.h>
-# include <string.h>
-# include <limits.h>
 
 typedef struct s_list
 {

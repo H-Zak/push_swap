@@ -6,11 +6,11 @@
 /*   By: zakariyahamdouchi <zakariyahamdouchi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 14:48:25 by zhamdouc          #+#    #+#             */
-/*   Updated: 2022/10/23 19:07:45 by zakariyaham      ###   ########.fr       */
+/*   Updated: 2022/10/28 14:54:48 by zakariyaham      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ra(t_list **a)
 {
